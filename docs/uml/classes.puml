@@ -1,0 +1,533 @@
+@startuml Shoku Professionnal UML classes
+
+node "Types" {
+    interface Ingredient {
+        + id: string
+        + name: string
+        + image: Image
+        + allergens: Pictogram[]
+        + diets: Pictogram[]
+    }
+    Ingredient *-- Pictogram : contains
+
+    interface Pictogram {
+        + id: string
+        + name: string
+        + pictogram: Image
+    }
+
+    interface Restaurant {
+        + id: string
+        + name: string
+        + description: string
+        + image: Image
+        + average_rate: number
+        + average_price: string
+        + location: string
+        + phone: string
+        + url: string
+        + opening_time: TimeRange[][]
+        + current_card: Card
+        + cards: Card[]
+        + dishes: Dish[]
+    }
+    Restaurant *-- TimeRange : contains
+    Restaurant *-- Card : contains
+
+    interface TimeRange {
+        + from: string
+        + to: string
+    }
+
+    interface Card {
+        + id: string
+        + name: string
+        + dishes: Dish[]
+        + menus: Menu[]
+    }
+    Card *-- Dish : contains
+    Card *-- Menu : contains
+
+    interface Menu {
+        + id: string
+        + name: string
+        + price: string
+        + dishes: Dish[]
+    }
+    Menu *-- Dish : contains
+
+    interface Dish {
+        + id: string
+        + name: string
+        + description: string
+        + price: string
+        + ingredients: Ingredient[]
+        + sauces: Sauce[]
+    }
+    Dish *-- Ingredient : contains
+    Dish *-- Sauce : contains
+
+    interface Sauce {
+        id: string
+        name: string
+        ingredients: Ingredient[]
+    }
+    Sauce *-- Ingredient : contains
+
+    interface Profile {
+        + id: string
+        + email: string
+        + firstName: string
+        + lastName: string
+        + restaurant: Restaurant
+    }
+    Profile *-- Restaurant : contains
+}
+
+node "Repositories" {
+    interface Repository<T> {
+        + get(id: string): Promise<T>
+        + set(item: T): Promise<void>
+    }
+    Repository <|-down- IngredientRepository : extends
+    Repository <|-down- PictogramRepository : extends
+    Repository <|-down- RestaurantRepository : extends
+    Repository <|-down- CardRepository : extends
+    Repository <|-down- MenuRepository : extends
+    Repository <|-down- DishRepository : extends
+    Repository <|-down- ProfileRepository : extends
+
+    interface IngredientRepository {
+        + get(id: string): Promise<Ingredient>
+        + set(ingredient: Ingredient): Promise<void>
+    }
+    IngredientRepository <-- Ingredient : uses
+
+    interface PictogramRepository {
+        + get(id: string): Promise<Pictogram>
+        + set(pictogram: Pictogram): Promise<void>
+    }
+    PictogramRepository <-- Pictogram : uses
+
+    interface RestaurantRepository {
+        + get(id: string): Promise<Restaurant>
+        + set(restaurant: Restaurant): Promise<void>
+    }
+    RestaurantRepository <-- Restaurant : uses
+
+    interface CardRepository {
+        + get(id: string): Promise<Card>
+        + set(card: Card): Promise<void>
+    }
+    CardRepository <-- Card : uses
+
+    interface MenuRepository {
+        + get(id: string): Promise<Menu>
+        + set(menu: Menu): Promise<void>
+    }
+    MenuRepository <-- Menu : uses
+
+    interface DishRepository {
+        + get(id: string): Promise<Dish>
+        + set(dish: Dish): Promise<void>
+    }
+    DishRepository <-- Dish : uses
+
+    interface SauceRepository {
+        + get(id: string): Promise<Sauce>
+        + set(sauce: Sauce): Promise<void>
+    }
+    SauceRepository <-- Sauce : uses
+
+    interface ProfileRepository {
+        + get(id: string): Promise<Profile>
+        + set(profile: Profile): Promise<void>
+    }
+    ProfileRepository <-- Profile : uses
+}
+
+database "json" {
+}
+json <-up- Repository : uses
+
+node "BLoC" {
+    frame "BLoC - Ingredient" {
+        frame "BLoC - Ingredient - Event" {
+            abstract IngredientEvent {
+            }
+
+            class IngredientGetEvent {
+                + id: string
+
+                + constructor(id: string)
+            }
+            IngredientEvent <|-up- IngredientGetEvent : extends
+        }
+
+        frame "BLoC - Ingredient - State" {
+            abstract IngredientState {
+            }
+
+            class IngredientGetState {
+                + ingredient: Ingredient
+
+                + constructor(ingredient: Ingredient)
+            }
+            IngredientState <|-up- IngredientGetState : extends
+        }
+
+        class IngredientBloc {
+            + repository: IngredientRepository
+
+            + override async *mapEventToState(event: IngredientEvent)
+            + get(event: IngredientGetEvent): IngredientGetState
+        }
+        IngredientBloc *-down- IngredientRepository : contains
+        IngredientBloc <-up- IngredientGetEvent : uses
+        IngredientBloc <-up- IngredientGetState : uses
+    }
+
+    frame "BLoC - Pictogram" {
+        frame "BLoC - Pictogram - Event" {
+            abstract PictogramEvent {
+            }
+
+            class PictogramGetEvent {
+                + id: string
+
+                + constructor(id: string)
+            }
+            PictogramEvent <|-up- PictogramGetEvent : extends
+        }
+
+        frame "BLoC - Pictogram - State" {
+            abstract PictogramState {
+            }
+
+            class PictogramGetState {
+                + pictogram: Pictogram
+
+                + constructor(pictogram: Pictogram)
+            }
+            PictogramState <|-up- PictogramGetState : extends
+        }
+
+        class PictogramBloc {
+            + repository: PictogramRepository
+
+            + override async *mapEventToState(event: PictogramEvent)
+            + get(event: PictogramGetEvent): PictogramGetState
+        }
+        PictogramBloc *-down- PictogramRepository : contains
+        PictogramBloc <-up- PictogramGetEvent : uses
+        PictogramBloc <-up- PictogramGetState : uses
+    }
+
+    frame "BLoC - Restaurant" {
+        frame "BLoC - Restaurant - Event" {
+            abstract RestaurantEvent {
+            }
+
+            class RestaurantGetEvent {
+                + id: string
+
+                + constructor(id: string)
+            }
+            RestaurantEvent <|-up- RestaurantGetEvent : extends
+            
+            class RestaurantSetEvent {
+                + id: string
+                + restaurant: partial<Restaurant>
+
+                + constructor(id: string, restaurant: partial<Restaurant>)
+            }
+            RestaurantEvent <|-up- RestaurantSetEvent : extends
+        }
+
+        frame "BLoC - Restaurant - State" {
+            abstract RestaurantState {
+            }
+
+            class RestaurantGetState {
+                + restaurant: Restaurant
+
+                + constructor(restaurant: Restaurant)
+            }
+            RestaurantState <|-up- RestaurantGetState : extends
+
+            class RestaurantSetState {
+                + restaurant: Restaurant
+
+                + constructor(restaurant: Restaurant)
+            }
+            RestaurantState <|-up- RestaurantSetState : extends
+        }
+
+        class RestaurantBloc {
+            + repository: RestaurantRepository
+
+            + override async *mapEventToState(event: RestaurantEvent)
+            + get(event: RestaurantGetEvent): RestaurantGetState
+            + set(event: RestaurantSetEvent): RestaurantSetState
+        }
+        RestaurantBloc *-down- RestaurantRepository : contains
+        RestaurantBloc <-up- RestaurantGetEvent : uses
+        RestaurantBloc <-up- RestaurantSetEvent : uses
+        RestaurantBloc <-up- RestaurantGetState : uses
+        RestaurantBloc <-up- RestaurantSetState : uses
+    }
+
+    frame "BLoC - Card" {
+        frame "BLoC - Card - Event" {
+            abstract CardEvent {
+            }
+
+            class CardGetEvent {
+                + id: string
+
+                + constructor(id: string)
+            }
+            CardEvent <|-up- CardGetEvent : extends
+
+            class CardSetEvent {
+                + id: string
+                + card: partial<Card>
+
+                + constructor(id: string, card: partial<Card>)
+            }
+            CardEvent <|-up- CardSetEvent : extends
+        }
+
+        frame "BLoC - Card - State" {
+            abstract CardState {
+            }
+
+            class CardGetState {
+                + card: Card
+
+                + constructor(card: Card)
+            }
+            CardState <|-up- CardGetState : extends
+
+            class CardSetState {
+                + card: Card
+
+                + constructor(card: Card)
+            }
+            CardState <|-up- CardSetState : extends
+        }
+
+        class CardBloc {
+            + repository: CardRepository
+
+            + override async *mapEventToState(event: CardEvent)
+            + get(event: CardGetEvent): CardGetState
+            + set(event: CardSetEvent): CardSetState
+        }
+        CardBloc *-down- CardRepository : contains
+        CardBloc <-up- CardGetEvent : uses
+        CardBloc <-up- CardSetEvent : uses
+        CardBloc <-up- CardGetState : uses
+        CardBloc <-up- CardSetState : uses
+    }
+
+    frame "BLoC - Menu" {
+        frame "BLoC - Menu - Event" {
+            abstract MenuEvent {
+            }
+
+            class MenuGetEvent {
+                + id: string
+
+                + constructor(id: string)
+            }
+            MenuEvent <|-up- MenuGetEvent : extends
+
+            class MenuSetEvent {
+                + id: string
+                + menu: Partial<Menu>
+
+                + constructor(id: string, menu: Partial<Menu>)
+            }
+            MenuEvent <|-up- MenuSetEvent : extends
+        }
+
+        frame "BLoC - Menu - State" {
+            abstract MenuState {
+            }
+
+            class MenuGetState {
+                + menu: Menu
+
+                + constructor(menu: Menu)
+            }
+            MenuState <|-up- MenuGetState : extends
+
+            class MenuSetState {
+                + menu: Menu
+
+                + constructor(menu: Menu)
+            }
+            MenuState <|-up- MenuSetState : extends
+        }
+
+        class MenuBloc {
+            + repository: MenuRepository
+
+            + override async *mapEventToState(event: MenuEvent)
+            + get(event: MenuGetEvent): MenuGetState
+            + set(event: MenuSetEvent): MenuSetState
+        }
+        MenuBloc *-down- MenuRepository : contains
+        MenuBloc <-up- MenuGetEvent : uses
+        MenuBloc <-up- MenuSetEvent : uses
+        MenuBloc <-up- MenuGetState : uses
+        MenuBloc <-up- MenuSetState : uses
+    }
+
+    frame "BLoC - Dish" {
+        frame "BLoC - Dish - Event" {
+            abstract DishEvent {
+            }
+
+            class DishGetEvent {
+                + id: string
+
+                + constructor(id: string)
+            }
+            DishEvent <|-up- DishGetEvent : extends
+
+            class DishSetEvent {
+                + id: string
+                + dish: Partial<Dish>
+
+                + constructor(id: string, dish: Partial<Dish>)
+            }
+            DishEvent <|-up- DishSetEvent : extends
+        }
+
+        frame "BLoC - Dish - State" {
+            abstract DishState {
+            }
+
+            class DishGetState {
+                + dish: Dish
+
+                + constructor(dish: Dish)
+            }
+            DishState <|-up- DishGetState : extends
+
+            class DishSetState {
+                + dish: Dish
+
+                + constructor(dish: Dish)
+            }
+            DishState <|-up- DishSetState : extends
+        }
+
+        class DishBloc {
+            + repository: DishRepository
+
+            + override async *mapEventToState(event: DishEvent)
+            + get(event: DishGetEvent): DishGetState
+            + set(event: DishSetEvent): DishSetState
+        }
+        DishBloc *-down- DishRepository : contains
+        DishBloc <-up- DishGetEvent : uses
+        DishBloc <-up- DishSetEvent : uses
+        DishBloc <-up- DishGetState : uses
+        DishBloc <-up- DishSetState : uses
+    }
+
+    frame "BLoC - Sauce" {
+        frame "BLoC - Sauce - Event" {
+            abstract SauceEvent {
+            }
+
+            class SauceGetEvent {
+                + id: string
+
+                + constructor(id: string)
+            }
+            SauceEvent <|-up- SauceGetEvent : extends
+
+            class SauceSetEvent {
+                + id: string
+                + sauce: Partial<Sauce>
+
+                + constructor(id: string, sauce: Partial<Sauce>)
+            }
+            SauceEvent <|-up- SauceSetEvent : extends
+        }
+
+        frame "BLoC - Sauce - State" {
+            abstract SauceState {
+            }
+
+            class SauceGetState {
+                + sauce: Sauce
+
+                + constructor(sauce: Sauce)
+            }
+            SauceState <|-up- SauceGetState : extends
+
+            class SauceSetState {
+                + sauce: Sauce
+
+                + constructor(sauce: Sauce)
+            }
+            SauceState <|-up- SauceSetState : extends
+        }
+
+        class SauceBloc {
+            + repository: SauceRepository
+
+            + override async *mapEventToState(event: SauceEvent)
+            + get(event: SauceGetEvent): SauceGetState
+            + set(event: SauceSetEvent): SauceSetState
+        }
+        SauceBloc *-down- SauceRepository : contains
+        SauceBloc <-up- SauceGetEvent : uses
+        SauceBloc <-up- SauceSetEvent : uses
+        SauceBloc <-up- SauceGetState : uses
+        SauceBloc <-up- SauceSetState : uses
+    }
+
+    frame "BLoC - Profile" {
+        frame "BLoC - Profile - Event" {
+            abstract ProfileEvent {
+            }
+
+            class ProfileGetEvent {
+                + id: string
+
+                + constructor(id: string)
+            }
+            ProfileEvent <|-up- ProfileGetEvent : extends
+        }
+
+        frame "BLoC - Profile - State" {
+            abstract ProfileState {
+            }
+
+            class ProfileGetState {
+                + profile: Profile
+
+                + constructor(profile: Profile)
+            }
+            ProfileState <|-up- ProfileGetState : extends
+        }
+
+        class ProfileBloc {
+            + repository: ProfileRepository
+
+            + override async *mapEventToState(event: ProfileEvent)
+            + get(event: ProfileGetEvent): ProfileGetState
+        }
+        ProfileBloc *-down- ProfileRepository : contains
+        ProfileBloc <-up- ProfileGetEvent : uses
+        ProfileBloc <-up- ProfileGetState : uses
+    }
+}
+
+@enduml
