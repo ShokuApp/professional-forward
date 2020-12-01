@@ -1,26 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { registerRootComponent } from 'expo';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { SafeAreaView, StyleSheet } from "react-native";
+import { registerRootComponent } from "expo";
+import Home from "./screens/home";
 
-import useCachedResources from './hooks/use-cached-resources';
-import useColorScheme from './hooks/use-color-scheme';
-import Navigation from './navigation';
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
-function App() {
-  const isLoadingComplete = useCachedResources();
-  const colorScheme = useColorScheme();
-
-  if (!isLoadingComplete) {
-    return null;
-  } else {
-    return (
-      <SafeAreaProvider>
-        <Navigation colorScheme={colorScheme} />
-        <StatusBar />
-      </SafeAreaProvider>
-    );
-  }
-}
+const App = () => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <StatusBar />
+      <Home />
+    </SafeAreaView>
+  );
+};
 
 export default registerRootComponent(App);
