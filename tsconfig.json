@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    /* Project Options */
+    "target": "es5",
+    "module": "commonjs",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "jsx": "react-native",
+    "outDir": "./build",
+    "rootDir": "./src",
+
+    /* Module Options */
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+
+    /* Advanced Options */
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
