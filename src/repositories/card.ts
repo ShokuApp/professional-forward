@@ -18,21 +18,21 @@ export class CardRepository implements Repository<Card> {
 
     const dishes = await Promise.all(
       cardJson.dishes_ids.map(async (id) => {
-        return await dishRepository.get(id);
+        return dishRepository.get(id);
       })
     );
 
     const menus = await Promise.all(
       cardJson.menus_ids.map(async (id) => {
-        return await menuRepository.get(id);
+        return menuRepository.get(id);
       })
     );
 
     return {
       id: cardJson.id,
       name: cardJson.name,
-      dishes: dishes,
-      menus: menus,
+      dishes,
+      menus,
     };
   }
 

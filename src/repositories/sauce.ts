@@ -16,14 +16,14 @@ export class SauceRepository implements Repository<Sauce> {
 
     const ingredients = await Promise.all(
       sauceJson.ingredients_ids.map(async (id) => {
-        return await ingredientRepository.get(id);
+        return ingredientRepository.get(id);
       })
     );
 
     return {
       id: sauceJson.id,
       name: sauceJson.name,
-      ingredients: ingredients,
+      ingredients,
     };
   }
 

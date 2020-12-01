@@ -16,13 +16,13 @@ export class IngredientRepository implements Repository<Ingredient> {
 
     const allergens = await Promise.all(
       ingredientJson.allergens_ids.map(async (id) => {
-        return await pictogramRepository.get(id);
+        return pictogramRepository.get(id);
       })
     );
 
     const diets = await Promise.all(
       ingredientJson.allergens_ids.map(async (id) => {
-        return await pictogramRepository.get(id);
+        return pictogramRepository.get(id);
       })
     );
 
@@ -30,8 +30,8 @@ export class IngredientRepository implements Repository<Ingredient> {
       id: ingredientJson.id,
       name: ingredientJson.name,
       image: ingredientJson.image,
-      allergens: allergens,
-      diets: diets,
+      allergens,
+      diets,
     };
   }
 

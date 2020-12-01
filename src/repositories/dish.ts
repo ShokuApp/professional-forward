@@ -18,13 +18,13 @@ export class DishRepository implements Repository<Dish> {
 
     const ingredients = await Promise.all(
       dishJson.ingredients_ids.map(async (id) => {
-        return await ingredientRepository.get(id);
+        return ingredientRepository.get(id);
       })
     );
 
     const sauces = await Promise.all(
       dishJson.sauces_ids.map(async (id) => {
-        return await sauceRepository.get(id);
+        return sauceRepository.get(id);
       })
     );
 
@@ -32,9 +32,10 @@ export class DishRepository implements Repository<Dish> {
       id: dishJson.id,
       name: dishJson.name,
       description: dishJson.description,
+      type: dishJson.type,
       price: dishJson.price,
-      ingredients: ingredients,
-      sauces: sauces,
+      ingredients,
+      sauces,
     };
   }
 
@@ -43,6 +44,7 @@ export class DishRepository implements Repository<Dish> {
       id: dish.id,
       name: dish.name,
       description: dish.description,
+      type: dish.type,
       price: dish.price,
       ingredients_ids: dish.ingredients.map((ingredient) => ingredient.id),
       sauces_ids: dish.sauces.map((sauce) => sauce.id),

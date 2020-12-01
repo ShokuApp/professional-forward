@@ -16,7 +16,7 @@ export class MenuRepository implements Repository<Menu> {
 
     const dishes = await Promise.all(
       menuJson.dishes_ids.map(async (id) => {
-        return await dishRepository.get(id);
+        return dishRepository.get(id);
       })
     );
 
@@ -24,7 +24,7 @@ export class MenuRepository implements Repository<Menu> {
       id: menuJson.id,
       name: menuJson.name,
       price: menuJson.price,
-      dishes: dishes,
+      dishes,
     };
   }
 

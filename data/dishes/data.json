@@ -3,6 +3,7 @@
     "id": "1",
     "name": "Name",
     "description": "Hello, World!",
+    "type": "type",
     "price": "17",
     "ingredients_ids": ["1"],
     "sauces_ids": ["1"]

@@ -23,7 +23,7 @@ export class ProfileRepository implements Repository<Profile> {
       email: profileJson.email,
       firstName: profileJson.firstName,
       lastName: profileJson.lastName,
-      restaurant: restaurant,
+      restaurant,
     };
   }
 
