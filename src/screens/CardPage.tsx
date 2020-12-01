@@ -1,4 +1,4 @@
-import React from "react";
+import React, {FC} from "react";
 import {
   View,
   TouchableOpacity,
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     cardCategoryType: {
       color: '#2196F3',
       fontSize: 14
-    }
+    },
   }
 );
 
@@ -47,7 +47,7 @@ type Props = {
   list: Dish[]
 }
 
-const CardCategory = ({props, list}: Props) => {
+const CardCategory : FC<Props> = ({props, list}: Props) => {
   return (
     <View>
       <Text style={styles.cardCategoryType}>{props.title}</Text>
@@ -62,7 +62,7 @@ const CardCategory = ({props, list}: Props) => {
   );
 };
 
-const CardPage = () => {
+const CardPage : FC = () => {
   let firstDish: Dish = {
     id: "1",
     name: "Carpaccio",
