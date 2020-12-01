@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import React, { FC } from "react";
 import {
   View,
   TouchableOpacity,
@@ -9,8 +9,10 @@ import {
 } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator, HeaderBackButton } from "@react-navigation/stack";
-import { Dish } from '../models/dish'
+import { createStackNavigator } from "@react-navigation/stack";
+import { Dish } from "../models/dish";
+import { Menu } from "../models/menu";
+import { ScrollView } from "react-native-gesture-handler";
 
 const { height } = Dimensions.get("window");
 
@@ -28,7 +30,7 @@ const styles = StyleSheet.create({
       fontSize: 17
     },
     generalStyle: {
-      marginTop: 36,
+      paddingTop: 36,
       display: "flex",
       flexDirection: "column",
       marginLeft: 10,
@@ -85,12 +87,52 @@ const CARD_CATEGORY: CardCategoryProps[] = [
 ];
 
 type Props = {
-  props: CardCategoryProps,
-  list: Dish[]
-}
+  props: CardCategoryProps;
+  list: Dish[];
+};
+
+type MenuProps = {
+  menu: Menu;
+};
+
+const CardMenu: FC<MenuProps> = ({ menu }: MenuProps) => {
+  return (
+    <View>
+      <Text>{menu.name}</Text>
+      {menu.dishes.map((dish) => {
+        return (
+          <View key={dish.id}>
+            <Text>{dish.name}</Text>
+          </View>
+        );
+      })}
+    </View>
+  );
+};
+
+type MenusProps = {
+  menus: Menu[];
+};
+
+const CardMenuCategory: FC<MenusProps> = ({ menus }: MenusProps) => {
+  const txt = "Mes menus:";
+
+  return (
+    <View>
+      <Text style={styles.cardCategoryType}>{txt}</Text>
+      {menus.map((menu) => {
+        return (
+          <View key={menu.id}>
+            <CardMenu menu={menu} />
+          </View>
+        );
+      })}
+    </View>
+  );
+};
 
 const DISH_LIST: Dish[] = [
-  {
+{
     id: "1",
     name: "Carpaccio",
     type: "starter",
@@ -110,15 +152,6 @@ const DISH_LIST: Dish[] = [
   },
   {
     id: "3",
-    name: "Fondant au chocolat",
-    type: "dessert",
-    description: "Le meilleur fondant du monde",
-    price: "100",
-    ingredients: [],
-    sauces: [],
-  },
-  {
-    id: "4",
     name: "Entrecôte de boeuf",
     type: "plate",
     description: "Une entrecôte saignante",
@@ -127,7 +160,7 @@ const DISH_LIST: Dish[] = [
     sauces: [],
   },
   {
-    id: "5",
+    id: "4",
     name: "Pâtes bolognaise",
     type: "plate",
     description: "Des pâtes bolognaises",
@@ -136,14 +169,23 @@ const DISH_LIST: Dish[] = [
     sauces: [],
   },
   {
-    id: "6",
+    id: "5",
     name: "Glace à la vanille",
     type: "dessert",
     description: "Une super glace",
     price: "100",
     ingredients: [],
     sauces: [],
-  }
+  },
+  {
+    id: "6",
+    name: "Fondant au chocolat",
+    type: "dessert",
+    description: "Le meilleur fondant du monde",
+    price: "100",
+    ingredients: [],
+    sauces: [],
+  },
 ]
 
 const CardCategory : FC<Props> = ({props, list}: Props) => {
@@ -167,16 +209,38 @@ const CardCategory : FC<Props> = ({props, list}: Props) => {
 };
 
 const CardPage : FC = () => {
+
+
+  const Menu1: Menu = {
+    id: "1",
+    name: "Menu 1",
+    price: "$",
+    dishes: DISH_LIST.filter(dish => parseInt(dish.id) % 2 == 1),
+  };
+
+  const Menu2: Menu = {
+    id: "2",
+    name: "Menu 2",
+    price: "$",
+    dishes: DISH_LIST.filter(dish => parseInt(dish.id) % 2 == 0),
+  };
+
+  const menus = [Menu1, Menu2];
+
   return (
-    <View style={styles.generalStyle}>
+    <ScrollView style={styles.generalStyle}>
       {CARD_CATEGORY.map((card) => {
         return (
           <View style={styles.cardTypeDescription} key={card.title}>
-            <CardCategory props={card} list={DISH_LIST.filter(dish => dish.type == card.type)}/>
+            <CardCategory
+              props={card}
+              list={DISH_LIST.filter((dish) => dish.type == card.type)}
+            />
           </View>
         );
       })}
-    </View>
+      <CardMenuCategory menus={menus} />
+    </ScrollView>
   );
 };
 
