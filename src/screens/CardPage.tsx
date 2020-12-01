@@ -7,7 +7,7 @@ import {
   Image,
   Dimensions,
 } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, SimpleLineIcons} from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Dish } from "../models/dish";
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
       borderBottomWidth: 0.5,
       marginRight: 13,
       borderBottomColor: "#C6C6C8",
-      height: 35
+      minHeight: 45
     },
     cardCategoryContainer: {
       display: "flex",
@@ -59,6 +59,16 @@ const styles = StyleSheet.create({
       color: "#9A9A9A",
       fontSize: 15
     },
+    menuDishes: {
+      marginLeft: 45,
+      marginRight: 13,
+    },
+    menuItem: {
+      borderBottomWidth: 0.5,
+      borderBottomColor: "#C6C6C8",
+      minHeight: 35,
+      justifyContent: "center"
+    }
   }
 );
 
@@ -98,14 +108,17 @@ type MenuProps = {
 const CardMenu: FC<MenuProps> = ({ menu }: MenuProps) => {
   return (
     <View>
-      <Text>{menu.name}</Text>
-      {menu.dishes.map((dish) => {
-        return (
-          <View key={dish.id}>
-            <Text>{dish.name}</Text>
-          </View>
-        );
-      })}
+      <CardText label={menu.name} id={menu.id} icon=
+      {<SimpleLineIcons name="pencil" size={15} color="#C6C6C8" />} />
+      <View style={styles.menuDishes}>
+        {menu.dishes.map((dish) => {
+          return (
+            <View style={styles.menuItem} key={dish.id}>
+              <Text>{dish.name}</Text>
+            </View>
+          );
+        })}
+      </View>
     </View>
   );
 };
@@ -130,6 +143,21 @@ const CardMenuCategory: FC<MenusProps> = ({ menus }: MenusProps) => {
     </View>
   );
 };
+
+type CardTextProps = {
+  label: string,
+  id: string,
+  icon: any
+};
+
+const CardText: FC<CardTextProps> = ({label, id, icon}: CardTextProps) => {
+  return (
+    <View style={styles.categoryStyle} key={id}>
+        <Text style={styles.dishName}>{label}</Text>
+        {icon}
+    </View>
+  )
+}
 
 const DISH_LIST: Dish[] = [
 {
@@ -194,9 +222,9 @@ const CardCategory : FC<Props> = ({props, list}: Props) => {
       <Text style={styles.cardCategoryType}>{props.title}</Text>
       {list.map((dish) => {
         return (
-          <View style={styles.categoryStyle} key={dish.id}>
-            <Text style={styles.dishName}>{dish.name}</Text>
-            <AntDesign name="close" size={18} color="#C6C6C8" />
+          <View key={dish.id}>
+            <CardText label={dish.name} id={dish.id} icon=
+            {<AntDesign name={"close"} size={18} color="#C6C6C8" />}/>
           </View>
         )
       })}
