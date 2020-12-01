@@ -29,15 +29,15 @@ type CardCategoryProps = {
 
 const CARD_CATEGORY: CardCategoryProps[] = [
   {
-    title: "Mes entrées",
+    title: "Mes entrées:",
     type: "starter",
   },
   {
-    title: "Mes plats",
+    title: "Mes plats:",
     type: "plate"
   },
   {
-    title: "Mes desserts",
+    title: "Mes desserts:",
     type: "dessert"
   }
 ];
@@ -50,18 +50,53 @@ type Props = {
 const CardCategory = ({props, list}: Props) => {
   return (
     <View>
-      <Text>{props.title}</Text>
+      <Text style={styles.cardCategoryType}>{props.title}</Text>
+      {list.map((dish) => {
+        return (
+          <View key={dish.id}>
+            <Text>{dish.name}</Text>
+          </View>
+        )
+      })}
     </View>
   );
 };
 
 const CardPage = () => {
+  let firstDish: Dish = {
+    id: "1",
+    name: "Carpaccio",
+    type: "starter",
+    description: "Un super Carpaccio",
+    price: "7",
+    ingredients: [],
+    sauces: [],
+  };
+  let secondDish: Dish = {
+    id: "2",
+    name: "Salade de concombre",
+    type: "starter",
+    description: "La super salade",
+    price: "10",
+    ingredients: [],
+    sauces: [],
+  };
+  let thirdDish: Dish = {
+    id: "3",
+    name: "Fondant au chocolat",
+    type: "dessert",
+    description: "Le meilleur fondant du monde",
+    price: "100",
+    ingredients: [],
+    sauces: [],
+  };
+  let list = [firstDish, secondDish, thirdDish]
   return (
     <View>
       {CARD_CATEGORY.map((card) => {
         return (
           <View key={card.title}>
-            <CardCategory props={card} list={[]}/>
+            <CardCategory props={card} list={list.filter(dish => dish.type == card.type)}/>
           </View>
         );
       })}
