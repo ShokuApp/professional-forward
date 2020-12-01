@@ -13,7 +13,7 @@ node "Types" {
     interface Pictogram {
         + id: string
         + name: string
-        + pictogram: Image
+        + image: Image
     }
 
     interface Restaurant {
