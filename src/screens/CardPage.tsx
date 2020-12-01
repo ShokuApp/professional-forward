@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import React, { FC } from "react";
 import {
   View,
   TouchableOpacity,
@@ -10,17 +10,17 @@ import {
 import { AntDesign } from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Dish } from '../models/dish'
+import { Dish } from "../models/dish";
+import { Menu } from "../models/menu";
 
 const { height } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
-    cardCategoryType: {
-      color: '#2196F3',
-      fontSize: 14
-    },
-  }
-);
+  cardCategoryType: {
+    color: "#2196F3",
+    fontSize: 14,
+  },
+});
 
 type CardCategoryProps = {
   title: string;
@@ -34,20 +34,60 @@ const CARD_CATEGORY: CardCategoryProps[] = [
   },
   {
     title: "Mes plats:",
-    type: "plate"
+    type: "plate",
   },
   {
     title: "Mes desserts:",
-    type: "dessert"
-  }
+    type: "dessert",
+  },
 ];
 
 type Props = {
-  props: CardCategoryProps,
-  list: Dish[]
-}
+  props: CardCategoryProps;
+  list: Dish[];
+};
 
-const CardCategory : FC<Props> = ({props, list}: Props) => {
+type MenuProps = {
+  menu: Menu;
+};
+
+const CardMenu: FC<MenuProps> = ({ menu }: MenuProps) => {
+  return (
+    <View>
+      <Text>{menu.name}</Text>
+      {menu.dishes.map((dish) => {
+        return (
+          <View key={dish.id}>
+            <Text>{dish.name}</Text>
+          </View>
+        );
+      })}
+    </View>
+  );
+};
+
+type MenusProps = {
+  menus: Menu[];
+};
+
+const CardMenuCategory: FC<MenusProps> = ({ menus }: MenusProps) => {
+  const txt = "Mes menus:";
+
+  return (
+    <View>
+      <Text style={styles.cardCategoryType}>{txt}</Text>
+      {menus.map((menu) => {
+        return (
+          <View key={menu.id}>
+            <CardMenu menu={menu} />
+          </View>
+        );
+      })}
+    </View>
+  );
+};
+
+const CardCategory: FC<Props> = ({ props, list }: Props) => {
   return (
     <View>
       <Text style={styles.cardCategoryType}>{props.title}</Text>
@@ -56,14 +96,14 @@ const CardCategory : FC<Props> = ({props, list}: Props) => {
           <View key={dish.id}>
             <Text>{dish.name}</Text>
           </View>
-        )
+        );
       })}
     </View>
   );
 };
 
-const CardPage : FC = () => {
-  let firstDish: Dish = {
+const CardPage: FC = () => {
+  const firstDish: Dish = {
     id: "1",
     name: "Carpaccio",
     type: "starter",
@@ -72,7 +112,7 @@ const CardPage : FC = () => {
     ingredients: [],
     sauces: [],
   };
-  let secondDish: Dish = {
+  const secondDish: Dish = {
     id: "2",
     name: "Salade de concombre",
     type: "starter",
@@ -81,7 +121,7 @@ const CardPage : FC = () => {
     ingredients: [],
     sauces: [],
   };
-  let thirdDish: Dish = {
+  const thirdDish: Dish = {
     id: "3",
     name: "Fondant au chocolat",
     type: "dessert",
@@ -90,16 +130,40 @@ const CardPage : FC = () => {
     ingredients: [],
     sauces: [],
   };
-  let list = [firstDish, secondDish, thirdDish]
+
+  const list = [firstDish, secondDish, thirdDish];
+
+  const Menu1: Menu = {
+    id: "1",
+    name: "Menu 1",
+    price: "$",
+    dishes: list,
+  };
+
+  const list2 = [secondDish, thirdDish, firstDish];
+
+  const Menu2: Menu = {
+    id: "2",
+    name: "Menu 2",
+    price: "$",
+    dishes: list2,
+  };
+
+  const menus = [Menu1, Menu2];
+
   return (
     <View>
       {CARD_CATEGORY.map((card) => {
         return (
           <View key={card.title}>
-            <CardCategory props={card} list={list.filter(dish => dish.type == card.type)}/>
+            <CardCategory
+              props={card}
+              list={list.filter((dish) => dish.type == card.type)}
+            />
           </View>
         );
       })}
+      <CardMenuCategory menus={menus} />
     </View>
   );
 };
