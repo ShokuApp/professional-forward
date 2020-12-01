@@ -17,8 +17,33 @@ const { height } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   cardCategoryType: {
+    marginBottom: 7,
     color: "#2196F3",
-    fontSize: 14,
+    fontSize: 16,
+  },
+  cardTypeDescription: {
+    marginBottom: 50,
+  },
+  dishName: {
+    paddingLeft: 3,
+    fontSize: 17,
+  },
+  generalStyle: {
+    marginTop: 36,
+    display: "flex",
+    flexDirection: "column",
+    marginLeft: 10,
+  },
+  categoryStyle: {
+    borderBottomWidth: 0.5,
+    marginRight: 13,
+    borderBottomColor: "#C6C6C8",
+    justifyContent: "center",
+    height: 35,
+  },
+  cardCategoryContainer: {
+    display: "flex",
+    flexDirection: "column",
   },
 });
 
@@ -89,12 +114,12 @@ const CardMenuCategory: FC<MenusProps> = ({ menus }: MenusProps) => {
 
 const CardCategory: FC<Props> = ({ props, list }: Props) => {
   return (
-    <View>
+    <View style={styles.cardCategoryContainer}>
       <Text style={styles.cardCategoryType}>{props.title}</Text>
       {list.map((dish) => {
         return (
-          <View key={dish.id}>
-            <Text>{dish.name}</Text>
+          <View style={styles.categoryStyle} key={dish.id}>
+            <Text style={styles.dishName}>{dish.name}</Text>
           </View>
         );
       })}
@@ -131,7 +156,35 @@ const CardPage: FC = () => {
     sauces: [],
   };
 
-  const list = [firstDish, secondDish, thirdDish];
+  let fourthDish: Dish = {
+    id: "4",
+    name: "Entrecôte de boeuf",
+    type: "plate",
+    description: "Une entrecôte saignante",
+    price: "100",
+    ingredients: [],
+    sauces: [],
+  };
+  let fifthDish: Dish = {
+    id: "5",
+    name: "Pâtes bolognaise",
+    type: "plate",
+    description: "Des pâtes bolognaises",
+    price: "100",
+    ingredients: [],
+    sauces: [],
+  };
+  let sixthDish: Dish = {
+    id: "6",
+    name: "Glace à la vanille",
+    type: "dessert",
+    description: "Une super glace",
+    price: "100",
+    ingredients: [],
+    sauces: [],
+  };
+
+  let list = [firstDish, secondDish, thirdDish, fourthDish, fifthDish];
 
   const Menu1: Menu = {
     id: "1",
@@ -152,10 +205,10 @@ const CardPage: FC = () => {
   const menus = [Menu1, Menu2];
 
   return (
-    <View>
+    <View style={styles.generalStyle}>
       {CARD_CATEGORY.map((card) => {
         return (
-          <View key={card.title}>
+          <View style={styles.cardTypeDescription} key={card.title}>
             <CardCategory
               props={card}
               list={list.filter((dish) => dish.type == card.type)}
