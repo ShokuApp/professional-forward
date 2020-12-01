@@ -9,7 +9,10 @@
     ],
     "jsx": "react-native",
     "outDir": "./build",
-    "rootDir": "./src",
+    "rootDirs": [
+      "./src",
+      "./data"
+    ],
 
     /* Module Options */
     "moduleResolution": "node",
