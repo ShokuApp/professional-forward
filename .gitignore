@@ -1,0 +1,21 @@
+# Build
+build/
+
+# Gradle
+.gradle/
+
+# Node
+node_modules/
+
+# Expo
+.expo/
+
+# Jetbrains
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# macOS
+.DS_Store
+
