@@ -11,7 +11,7 @@ import {
 import { DishRepository } from "../../repositories";
 import { Dish } from "../../models";
 
-class DishBloc extends Bloc<DishEvent, DishState> {
+export class DishBloc extends Bloc<DishEvent, DishState> {
   private repository: DishRepository;
 
   constructor(repository: DishRepository) {

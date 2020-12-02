@@ -9,7 +9,7 @@ import {
 } from "./state";
 import { ProfileRepository } from "../../repositories";
 
-class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
+export class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   private repository: ProfileRepository;
 
   constructor(repository: ProfileRepository) {

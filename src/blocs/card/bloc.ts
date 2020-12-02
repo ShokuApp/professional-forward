@@ -11,7 +11,7 @@ import {
 import { CardRepository } from "../../repositories";
 import { Card } from "../../models";
 
-class CardBloc extends Bloc<CardEvent, CardState> {
+export class CardBloc extends Bloc<CardEvent, CardState> {
   private repository: CardRepository;
 
   constructor(repository: CardRepository) {

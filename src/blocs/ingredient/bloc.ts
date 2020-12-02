@@ -9,7 +9,7 @@ import {
 } from "./state";
 import { IngredientRepository } from "../../repositories";
 
-class IngredientBloc extends Bloc<IngredientEvent, IngredientState> {
+export class IngredientBloc extends Bloc<IngredientEvent, IngredientState> {
   private repository: IngredientRepository;
 
   constructor(repository: IngredientRepository) {
