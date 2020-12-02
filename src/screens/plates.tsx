@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { View, StyleSheet, Text } from "react-native";
 import PlateDescription from "../components/plates/plates-description";
+import SearchBar from "../components/plates/search-bar";
 
 const styles = StyleSheet.create({
   page: {
@@ -15,6 +16,7 @@ const styles = StyleSheet.create({
 const PlatesPage: FC = () => {
   return (
     <View style={styles.page}>
+      <SearchBar />
       <PlateDescription key="1" />
       <PlateDescription key="2" />
     </View>
