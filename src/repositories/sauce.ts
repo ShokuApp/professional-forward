@@ -15,7 +15,7 @@ export class SauceRepository implements Repository<Sauce> {
     }
 
     const ingredients = await Promise.all(
-      sauceJson.ingredients_ids.map(async (id) => {
+      sauceJson.ingredients.map(async (id) => {
         return ingredientRepository.get(id);
       })
     );
@@ -31,7 +31,7 @@ export class SauceRepository implements Repository<Sauce> {
     const sauceJson = {
       id: sauce.id,
       name: sauce.name,
-      ingredients_ids: sauce.ingredients.map((ingredient) => ingredient.id),
+      ingredients: sauce.ingredients.map((ingredient) => ingredient.id),
     };
     const index = sauces.findIndex((item) => item.id === sauce.id);
 
