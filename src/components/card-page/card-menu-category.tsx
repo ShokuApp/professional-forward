@@ -17,11 +17,9 @@ type MenusProps = {
 };
 
 const CardMenuCategory: FC<MenusProps> = ({ menus }: MenusProps) => {
-  const txt = "Mes menus:";
-
   return (
     <View style={{ marginBottom: 36 }}>
-      <Text style={styles.cardCategoryType}>{txt}</Text>
+      <Text style={styles.cardCategoryType}>Mes menus:</Text>
       {menus.map((menu) => {
         return (
           <View key={menu.id}>
