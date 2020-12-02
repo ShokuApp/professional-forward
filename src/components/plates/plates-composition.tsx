@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { Ingredient } from "../../models/ingredient";
 
 const styles = StyleSheet.create({
   ingredients: {
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
 
 type PlateCompositionProps = {
   label: string;
-  list: string[];
+  list: Ingredient[];
 };
 
 const PlateComposition: FC<PlateCompositionProps> = ({
@@ -32,14 +33,14 @@ const PlateComposition: FC<PlateCompositionProps> = ({
       <View style={styles.ingredients}>
         {list.map((ingredient) => {
           return (
-            <View key={ingredient} style={styles.ingredientItems}>
+            <View key={ingredient.id} style={styles.ingredientItems}>
               {ingredient !== list[list.length - 1] ? (
                 <View style={styles.ingredientItems}>
-                  <Text style={styles.ingredientName}>{ingredient}</Text>
+                  <Text style={styles.ingredientName}>{ingredient.name}</Text>
                   <Text style={styles.ingredientName}>, </Text>
                 </View>
               ) : (
-                <Text style={styles.ingredientName}>{ingredient}</Text>
+                <Text style={styles.ingredientName}>{ingredient.name}</Text>
               )}
             </View>
           );
