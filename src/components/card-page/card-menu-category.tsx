@@ -21,11 +21,7 @@ const CardMenuCategory: FC<MenusProps> = ({ menus }: MenusProps) => {
     <View style={{ marginBottom: 36 }}>
       <Text style={styles.cardCategoryType}>Mes menus:</Text>
       {menus.map((menu) => {
-        return (
-          <View key={menu.id}>
-            <CardMenu menu={menu} />
-          </View>
-        );
+        return <CardMenu key={menu.id} menu={menu} />;
       })}
       <AppendCategory label={"un menu"} />
     </View>

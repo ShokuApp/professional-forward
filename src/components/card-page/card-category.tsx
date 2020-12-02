@@ -46,7 +46,7 @@ const CardCategory: FC<Props> = ({ cardBloc, props, card }: Props) => {
           onPress: () => deleteDish(dish.id),
         },
         {
-          text: "Cancel",
+          text: "Annuler",
           onPress: () => null,
           style: "cancel",
         },
