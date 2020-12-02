@@ -17,15 +17,15 @@ export class RestaurantRepository implements Repository<Restaurant> {
     }
 
     const current_card = await cardRepository.get(
-      restaurantJson.current_card_id
+      restaurantJson.current_card
     );
     const cards = await Promise.all(
-      restaurantJson.cards_ids.map(async (id) => {
+      restaurantJson.cards.map(async (id) => {
         return cardRepository.get(id);
       })
     );
     const dishes = await Promise.all(
-      restaurantJson.dishes_ids.map(async (id) => {
+      restaurantJson.dishes.map(async (id) => {
         return dishRepository.get(id);
       })
     );
@@ -59,9 +59,9 @@ export class RestaurantRepository implements Repository<Restaurant> {
       phone: restaurant.phone,
       url: restaurant.url,
       opening_time: restaurant.opening_time,
-      current_card_id: restaurant.current_card.id,
-      cards_ids: restaurant.cards.map((card) => card.id),
-      dishes_ids: restaurant.dishes.map((dish) => dish.id),
+      current_card: restaurant.current_card.id,
+      cards: restaurant.cards.map((card) => card.id),
+      dishes: restaurant.dishes.map((dish) => dish.id),
     };
     const index = restaurants.findIndex((item) => item.id === restaurant.id);
 

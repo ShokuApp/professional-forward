@@ -15,13 +15,13 @@ export class IngredientRepository implements Repository<Ingredient> {
     }
 
     const allergens = await Promise.all(
-      ingredientJson.allergens_ids.map(async (id) => {
+      ingredientJson.allergens.map(async (id) => {
         return pictogramRepository.get(id);
       })
     );
 
     const diets = await Promise.all(
-      ingredientJson.allergens_ids.map(async (id) => {
+      ingredientJson.allergens.map(async (id) => {
         return pictogramRepository.get(id);
       })
     );
@@ -40,8 +40,8 @@ export class IngredientRepository implements Repository<Ingredient> {
       id: ingredient.id,
       name: ingredient.name,
       image: ingredient.image,
-      allergens_ids: ingredient.allergens.map((allergen) => allergen.id),
-      diets_ids: ingredient.diets.map((diet) => diet.id),
+      allergens: ingredient.allergens.map((allergen) => allergen.id),
+      diets: ingredient.diets.map((diet) => diet.id),
     };
     const index = ingredients.findIndex((item) => item.id === ingredient.id);
 
