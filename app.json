@@ -4,7 +4,7 @@
     "slug": "professional-forward",
     "version": "1.0.0",
     "orientation": "portrait",
-    "entryPoint": "./src/App.tsx",
+    "entryPoint": "./src/app.tsx",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
@@ -16,9 +16,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },

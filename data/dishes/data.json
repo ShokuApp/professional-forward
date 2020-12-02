@@ -1,0 +1,726 @@
+[
+    {
+        "id": "4a80c7db-5252-4d0c-b832-45b732c2fbc9",
+        "name": "Dish 1",
+        "type": "plate",
+        "description": "A generic description",
+        "price": "22€",
+        "ingredients": [
+            "72a34fdc-d038-4747-988b-308a30f950da",
+            "c588fbd4-882b-471b-b648-ab1aaa0b6a5b",
+            "6b23388a-e5b0-4288-bd29-282cd111fca2",
+            "3f2a3432-9c03-4ed8-a1e9-7ace655e2bf2",
+            "e572e039-eee4-486f-ab79-4a39b78b21f2"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "806ec7a6-87b7-4f8c-ae90-8e2913e74c92",
+        "name": "Dish 2",
+        "type": "plate",
+        "description": "A generic description",
+        "price": "23€",
+        "ingredients": [
+            "3d67d168-2133-4d8c-8a07-be9ca351405c"
+        ],
+        "sauces": [
+            "cb094116-aa3f-48e5-923d-a24af736ebf5"
+        ]
+    },
+    {
+        "id": "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055",
+        "name": "Dish 3",
+        "type": "plate",
+        "description": "A generic description",
+        "price": "8€",
+        "ingredients": [
+            "fcf26b65-82f2-47dd-a729-06552d045095",
+            "99f905e5-9aab-43b9-84d3-94549961f154"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "b0863fd0-7618-4072-87e4-715fdb8d9452",
+        "name": "Dish 4",
+        "type": "plate",
+        "description": "A generic description",
+        "price": "23€",
+        "ingredients": [
+            "262bc49e-b935-4aea-bdb8-d91099e96ea3"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "fdc442ad-41cc-4b96-be42-fcecfa9d4640",
+        "name": "Dish 5",
+        "type": "plate",
+        "description": "A generic description",
+        "price": "17€",
+        "ingredients": [
+            "b2165eb5-9202-44b7-a70b-b910f89b69da",
+            "bcf92313-25c1-4b56-8911-82955e5006e7"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "8185fdf5-3b2e-4295-b23a-5d00899d588a",
+        "name": "Dish 6",
+        "type": "plate",
+        "description": "A generic description",
+        "price": "21€",
+        "ingredients": [
+            "87625f1c-1211-4cb9-bd15-fa5b8ce68d18",
+            "83e98047-145a-47f5-ae63-bc352444e217",
+            "7bf73095-6359-46c5-bc8b-9b3a1a65ba24",
+            "e572e039-eee4-486f-ab79-4a39b78b21f2",
+            "4bb01c75-882a-492a-89c2-e511bc1f8ffa"
+        ],
+        "sauces": [
+            "445a6725-bf9d-493b-9cd8-b10836f86b4c"
+        ]
+    },
+    {
+        "id": "3fcf4def-280f-4b98-975f-cde668f45774",
+        "name": "Dish 7",
+        "type": "starter",
+        "description": "A generic description",
+        "price": "19€",
+        "ingredients": [
+            "941f0df0-d35d-46f0-a9f9-10a32afb9106",
+            "eb120378-60e6-49da-9198-3250e7a4a569",
+            "fcf26b65-82f2-47dd-a729-06552d045095",
+            "0f82393c-ee3f-487d-a16f-d81c4787f9da",
+            "0180d42d-a663-48a9-bd62-a6a8849d923c"
+        ],
+        "sauces": [
+            "04a2be6a-7dd2-4957-97c1-ddeac4610fd3"
+        ]
+    },
+    {
+        "id": "0d30c66c-d932-4377-ae2f-bfbb53afd911",
+        "name": "Dish 8",
+        "type": "plate",
+        "description": "A generic description",
+        "price": "6€",
+        "ingredients": [
+            "83e98047-145a-47f5-ae63-bc352444e217",
+            "0180d42d-a663-48a9-bd62-a6a8849d923c",
+            "cd002746-cf62-4be0-b934-f99c9bd8b5a9",
+            "54b3382d-1da4-491c-8e59-372cd8ade4bb"
+        ],
+        "sauces": [
+            "1cb22e6d-4a45-4213-b9fc-636ce5fbd92a"
+        ]
+    },
+    {
+        "id": "967d7555-859f-4102-a100-559faf352000",
+        "name": "Dish 9",
+        "type": "starter",
+        "description": "A generic description",
+        "price": "24€",
+        "ingredients": [
+            "04e57a13-d56a-46a7-9efe-f238e54b3a76",
+            "4e870ce7-b804-4aac-8ce3-95300c6addd9",
+            "6b23388a-e5b0-4288-bd29-282cd111fca2",
+            "897f359d-8a5f-47de-8cb8-38770fe15715"
+        ],
+        "sauces": [
+            "7e36223c-907d-4f94-986a-8ffe5f4d764f"
+        ]
+    },
+    {
+        "id": "3c3a12e4-1a0d-434a-bf4f-0b1deba4236f",
+        "name": "Dish 10",
+        "type": "plate",
+        "description": "A generic description",
+        "price": "25€",
+        "ingredients": [
+            "262bc49e-b935-4aea-bdb8-d91099e96ea3",
+            "8de15127-c2f6-4874-80db-8dadf7ca23fe",
+            "7bf73095-6359-46c5-bc8b-9b3a1a65ba24",
+            "722c924c-da15-4d60-945a-a6731c619f0c"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "de51f742-bf08-4464-ade9-6f59a9fbb672",
+        "name": "Dish 11",
+        "type": "dessert",
+        "description": "A generic description",
+        "price": "7€",
+        "ingredients": [
+            "7bf73095-6359-46c5-bc8b-9b3a1a65ba24",
+            "6b23388a-e5b0-4288-bd29-282cd111fca2",
+            "c7c8937e-3f03-4286-898a-415f8ea9c350",
+            "b2165eb5-9202-44b7-a70b-b910f89b69da",
+            "3f2a3432-9c03-4ed8-a1e9-7ace655e2bf2"
+        ],
+        "sauces": [
+            "b2d192cd-7b85-4733-9d4e-0fe6ec20315c"
+        ]
+    },
+    {
+        "id": "083f3e79-90b6-4711-ac5d-a75768e8e889",
+        "name": "Dish 12",
+        "type": "dessert",
+        "description": "A generic description",
+        "price": "17€",
+        "ingredients": [
+            "a0148b26-9e35-449c-97ad-2acba737413d",
+            "3f2a3432-9c03-4ed8-a1e9-7ace655e2bf2",
+            "2f850941-676e-4f2e-8463-623e5b3f7b5b",
+            "bcf92313-25c1-4b56-8911-82955e5006e7",
+            "a3beb7f8-38d4-4ce1-88dc-9d44f07a353f"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "ed378895-baca-4673-8d18-0a30bf81dd74",
+        "name": "Dish 13",
+        "type": "starter",
+        "description": "A generic description",
+        "price": "17€",
+        "ingredients": [
+            "4bb01c75-882a-492a-89c2-e511bc1f8ffa",
+            "83e98047-145a-47f5-ae63-bc352444e217",
+            "941f0df0-d35d-46f0-a9f9-10a32afb9106"
+        ],
+        "sauces": [
+            "c1d92232-3a83-4c89-84dd-ddbd9a6115ba"
+        ]
+    },
+    {
+        "id": "834d1f59-e6c7-4796-ad44-efe9382b6298",
+        "name": "Dish 14",
+        "type": "dessert",
+        "description": "A generic description",
+        "price": "7€",
+        "ingredients": [
+            "0180d42d-a663-48a9-bd62-a6a8849d923c",
+            "54b3382d-1da4-491c-8e59-372cd8ade4bb",
+            "c3de111d-4a13-4144-87fe-a909c08fde0b"
+        ],
+        "sauces": [
+            "4fe109f5-cfdc-4222-b6f8-6fc6e0f92fe6"
+        ]
+    },
+    {
+        "id": "178da1f7-9bb7-4ef9-a035-ef44a7611531",
+        "name": "Dish 15",
+        "type": "starter",
+        "description": "A generic description",
+        "price": "20€",
+        "ingredients": [
+            "bcf92313-25c1-4b56-8911-82955e5006e7",
+            "262bc49e-b935-4aea-bdb8-d91099e96ea3",
+            "941f0df0-d35d-46f0-a9f9-10a32afb9106",
+            "81768102-ea40-49a2-83b6-d04805c8bc3e"
+        ],
+        "sauces": [
+            "ad88a6ed-9c2d-4387-98ff-b80576b3b1ac"
+        ]
+    },
+    {
+        "id": "badbd0b4-970f-4579-bfbc-de5a6b75d5b5",
+        "name": "Dish 16",
+        "type": "plate",
+        "description": "A generic description",
+        "price": "17€",
+        "ingredients": [
+            "a0148b26-9e35-449c-97ad-2acba737413d",
+            "722c924c-da15-4d60-945a-a6731c619f0c",
+            "81768102-ea40-49a2-83b6-d04805c8bc3e",
+            "e1026388-7ea4-4d0e-b3e4-cbc7a91bafd6"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+        "name": "Dish 17",
+        "type": "dessert",
+        "description": "A generic description",
+        "price": "24€",
+        "ingredients": [
+            "83e98047-145a-47f5-ae63-bc352444e217",
+            "81768102-ea40-49a2-83b6-d04805c8bc3e"
+        ],
+        "sauces": [
+            "9f8c7db8-205a-40b8-93b4-a9527fae18c2"
+        ]
+    },
+    {
+        "id": "a3561d52-ad15-43ca-9fae-6f47cd02eaa0",
+        "name": "Dish 18",
+        "type": "starter",
+        "description": "A generic description",
+        "price": "18€",
+        "ingredients": [
+            "8d8722dc-a6fe-4c16-9b99-64f2d4640c68",
+            "fcf26b65-82f2-47dd-a729-06552d045095",
+            "81768102-ea40-49a2-83b6-d04805c8bc3e",
+            "088d68f2-ba21-4ca1-b714-62204a412b09",
+            "c7c8937e-3f03-4286-898a-415f8ea9c350"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "b7b9d03b-bd5f-4061-b152-0607344ebe31",
+        "name": "Dish 19",
+        "type": "dessert",
+        "description": "A generic description",
+        "price": "10€",
+        "ingredients": [
+            "99f905e5-9aab-43b9-84d3-94549961f154",
+            "262bc49e-b935-4aea-bdb8-d91099e96ea3",
+            "bcf92313-25c1-4b56-8911-82955e5006e7",
+            "8d8722dc-a6fe-4c16-9b99-64f2d4640c68"
+        ],
+        "sauces": [
+            "7e75452e-c342-4a4a-8a1d-50b15bb1fc89"
+        ]
+    },
+    {
+        "id": "62267d4a-14e8-4746-b71c-cd6b1775eb22",
+        "name": "Dish 20",
+        "type": "plate",
+        "description": "A generic description",
+        "price": "19€",
+        "ingredients": [
+            "bcf92313-25c1-4b56-8911-82955e5006e7",
+            "4e3be63a-b1ef-4a84-8b22-195f7561abae"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "e38fd688-23db-4d93-906f-ce757277fc2e",
+        "name": "Dish 21",
+        "type": "dessert",
+        "description": "A generic description",
+        "price": "17€",
+        "ingredients": [
+            "8de15127-c2f6-4874-80db-8dadf7ca23fe",
+            "e572e039-eee4-486f-ab79-4a39b78b21f2",
+            "bcf92313-25c1-4b56-8911-82955e5006e7"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "f326336d-dd81-45e9-adfe-831e54ca5378",
+        "name": "Dish 22",
+        "type": "dessert",
+        "description": "A generic description",
+        "price": "24€",
+        "ingredients": [
+            "81768102-ea40-49a2-83b6-d04805c8bc3e"
+        ],
+        "sauces": [
+            "59bbc187-b656-43d1-aa44-ebe3f54f8d8e"
+        ]
+    },
+    {
+        "id": "92f98dd3-d6c6-452d-8a71-4296121c770b",
+        "name": "Dish 23",
+        "type": "starter",
+        "description": "A generic description",
+        "price": "7€",
+        "ingredients": [
+            "37ebf37d-918a-4426-a413-df2546cd2b8e",
+            "83e98047-145a-47f5-ae63-bc352444e217"
+        ],
+        "sauces": [
+            "b2d192cd-7b85-4733-9d4e-0fe6ec20315c"
+        ]
+    },
+    {
+        "id": "def1e7ab-a27c-4f63-bb4b-c9f84168b622",
+        "name": "Dish 24",
+        "type": "starter",
+        "description": "A generic description",
+        "price": "19€",
+        "ingredients": [
+            "37ebf37d-918a-4426-a413-df2546cd2b8e",
+            "0180d42d-a663-48a9-bd62-a6a8849d923c"
+        ],
+        "sauces": [
+            "66c15360-5dde-49a5-86ba-81b1b2d198a2"
+        ]
+    },
+    {
+        "id": "19c9cfaf-a2ab-4dea-840b-f98086cd17ad",
+        "name": "Dish 25",
+        "type": "starter",
+        "description": "A generic description",
+        "price": "22€",
+        "ingredients": [
+            "04e57a13-d56a-46a7-9efe-f238e54b3a76",
+            "897f359d-8a5f-47de-8cb8-38770fe15715",
+            "0180d42d-a663-48a9-bd62-a6a8849d923c",
+            "2f850941-676e-4f2e-8463-623e5b3f7b5b"
+        ],
+        "sauces": [
+            "8b5feb2e-4701-447a-a129-daf113050c61"
+        ]
+    },
+    {
+        "id": "0f3206a9-880c-476a-a2ea-7288b67caaaa",
+        "name": "Dish 26",
+        "type": "plate",
+        "description": "A generic description",
+        "price": "24€",
+        "ingredients": [
+            "72a34fdc-d038-4747-988b-308a30f950da",
+            "c588fbd4-882b-471b-b648-ab1aaa0b6a5b",
+            "e572e039-eee4-486f-ab79-4a39b78b21f2"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "71d86793-3a65-45a0-bf47-c0e6de0da80d",
+        "name": "Dish 27",
+        "type": "plate",
+        "description": "A generic description",
+        "price": "17€",
+        "ingredients": [
+            "722c924c-da15-4d60-945a-a6731c619f0c",
+            "bcf92313-25c1-4b56-8911-82955e5006e7",
+            "8d8722dc-a6fe-4c16-9b99-64f2d4640c68"
+        ],
+        "sauces": [
+            "239b9003-0d3c-4c90-a4d9-71f24a6bbe32"
+        ]
+    },
+    {
+        "id": "dfadc6e2-0a9e-43c2-8dfd-f3f63414b894",
+        "name": "Dish 28",
+        "type": "dessert",
+        "description": "A generic description",
+        "price": "11€",
+        "ingredients": [
+            "3d67d168-2133-4d8c-8a07-be9ca351405c",
+            "a0148b26-9e35-449c-97ad-2acba737413d",
+            "bcf92313-25c1-4b56-8911-82955e5006e7",
+            "c82f50a6-402d-4e58-bb90-73ec9317f66a",
+            "8d8722dc-a6fe-4c16-9b99-64f2d4640c68"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "80680926-27dd-4c2b-b1cf-d4eea6c32d95",
+        "name": "Dish 29",
+        "type": "starter",
+        "description": "A generic description",
+        "price": "22€",
+        "ingredients": [
+            "4e870ce7-b804-4aac-8ce3-95300c6addd9",
+            "3d67d168-2133-4d8c-8a07-be9ca351405c",
+            "3f2a3432-9c03-4ed8-a1e9-7ace655e2bf2"
+        ],
+        "sauces": [
+            "75976ac1-ee4e-454e-846b-636500644fd6"
+        ]
+    },
+    {
+        "id": "4e096175-1f6c-4a15-9dd8-6605ad9b7fa5",
+        "name": "Dish 30",
+        "type": "dessert",
+        "description": "A generic description",
+        "price": "12€",
+        "ingredients": [
+            "c5e98656-2ecb-4647-b6db-558b68d4dead"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "6278f43e-434c-40ce-a939-031e79b5de71",
+        "name": "Dish 31",
+        "type": "plate",
+        "description": "A generic description",
+        "price": "15€",
+        "ingredients": [
+            "3d67d168-2133-4d8c-8a07-be9ca351405c",
+            "c7c8937e-3f03-4286-898a-415f8ea9c350",
+            "7bf73095-6359-46c5-bc8b-9b3a1a65ba24"
+        ],
+        "sauces": [
+            "fddc68bf-c3bb-4936-956b-1fab1d480ab8"
+        ]
+    },
+    {
+        "id": "7bf328bb-5f2f-4e93-8168-b974db080e7a",
+        "name": "Dish 32",
+        "type": "dessert",
+        "description": "A generic description",
+        "price": "13€",
+        "ingredients": [
+            "c5e98656-2ecb-4647-b6db-558b68d4dead",
+            "0180d42d-a663-48a9-bd62-a6a8849d923c",
+            "cd002746-cf62-4be0-b934-f99c9bd8b5a9",
+            "7bf73095-6359-46c5-bc8b-9b3a1a65ba24"
+        ],
+        "sauces": [
+            "5009a07c-1b97-4daf-b5db-6191467808c6"
+        ]
+    },
+    {
+        "id": "c107a598-c062-4082-a3e2-3c22f933bdfd",
+        "name": "Dish 33",
+        "type": "plate",
+        "description": "A generic description",
+        "price": "15€",
+        "ingredients": [
+            "c82f50a6-402d-4e58-bb90-73ec9317f66a",
+            "cd002746-cf62-4be0-b934-f99c9bd8b5a9",
+            "722c924c-da15-4d60-945a-a6731c619f0c",
+            "54b3382d-1da4-491c-8e59-372cd8ade4bb",
+            "c5e98656-2ecb-4647-b6db-558b68d4dead"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "b31c53e1-2218-4782-a6be-3d0735121a40",
+        "name": "Dish 34",
+        "type": "plate",
+        "description": "A generic description",
+        "price": "22€",
+        "ingredients": [
+            "897f359d-8a5f-47de-8cb8-38770fe15715"
+        ],
+        "sauces": [
+            "4b7ae32a-90da-42d0-ab45-a25e30c0a96a"
+        ]
+    },
+    {
+        "id": "5713ac19-d25a-4cdc-9a66-603ec9f24c05",
+        "name": "Dish 35",
+        "type": "dessert",
+        "description": "A generic description",
+        "price": "23€",
+        "ingredients": [
+            "04e57a13-d56a-46a7-9efe-f238e54b3a76",
+            "c3de111d-4a13-4144-87fe-a909c08fde0b",
+            "e1026388-7ea4-4d0e-b3e4-cbc7a91bafd6"
+        ],
+        "sauces": [
+            "3e43208a-f681-48ce-b806-dad6625703b3"
+        ]
+    },
+    {
+        "id": "d3cf8192-3470-4833-8272-d2fa4eee9c5d",
+        "name": "Dish 36",
+        "type": "plate",
+        "description": "A generic description",
+        "price": "8€",
+        "ingredients": [
+            "0180d42d-a663-48a9-bd62-a6a8849d923c",
+            "04e57a13-d56a-46a7-9efe-f238e54b3a76",
+            "bcf92313-25c1-4b56-8911-82955e5006e7"
+        ],
+        "sauces": [
+            "3eed7c6d-674c-4296-bd59-ba6dfb553e08"
+        ]
+    },
+    {
+        "id": "777d5393-f72e-4603-aa56-f965c115c943",
+        "name": "Dish 37",
+        "type": "starter",
+        "description": "A generic description",
+        "price": "8€",
+        "ingredients": [
+            "eb120378-60e6-49da-9198-3250e7a4a569",
+            "99f905e5-9aab-43b9-84d3-94549961f154",
+            "722c924c-da15-4d60-945a-a6731c619f0c",
+            "c588fbd4-882b-471b-b648-ab1aaa0b6a5b",
+            "a3beb7f8-38d4-4ce1-88dc-9d44f07a353f"
+        ],
+        "sauces": [
+            "a3fcf969-acd8-4262-be32-1a693278351d"
+        ]
+    },
+    {
+        "id": "c7d3f84d-eb5b-47ce-a6e4-010e42d9a737",
+        "name": "Dish 38",
+        "type": "starter",
+        "description": "A generic description",
+        "price": "6€",
+        "ingredients": [
+            "722c924c-da15-4d60-945a-a6731c619f0c"
+        ],
+        "sauces": [
+            "e6433668-7363-48de-8ab8-1fe26abbdcb6"
+        ]
+    },
+    {
+        "id": "77ad6fb5-d183-48f9-9ed2-58da18193075",
+        "name": "Dish 39",
+        "type": "starter",
+        "description": "A generic description",
+        "price": "18€",
+        "ingredients": [
+            "a0148b26-9e35-449c-97ad-2acba737413d",
+            "262bc49e-b935-4aea-bdb8-d91099e96ea3",
+            "088d68f2-ba21-4ca1-b714-62204a412b09",
+            "4e3be63a-b1ef-4a84-8b22-195f7561abae",
+            "37ebf37d-918a-4426-a413-df2546cd2b8e"
+        ],
+        "sauces": [
+            "43b10dfd-8466-4449-a072-c8fcd764cf56"
+        ]
+    },
+    {
+        "id": "b69fbe69-4f2c-43a7-ac70-4731909038f3",
+        "name": "Dish 40",
+        "type": "dessert",
+        "description": "A generic description",
+        "price": "24€",
+        "ingredients": [
+            "83e98047-145a-47f5-ae63-bc352444e217"
+        ],
+        "sauces": [
+            "43b10dfd-8466-4449-a072-c8fcd764cf56"
+        ]
+    },
+    {
+        "id": "2be028db-4028-49a4-af59-31747a07e4df",
+        "name": "Dish 41",
+        "type": "dessert",
+        "description": "A generic description",
+        "price": "10€",
+        "ingredients": [
+            "b2165eb5-9202-44b7-a70b-b910f89b69da",
+            "2f850941-676e-4f2e-8463-623e5b3f7b5b",
+            "941f0df0-d35d-46f0-a9f9-10a32afb9106",
+            "e572e039-eee4-486f-ab79-4a39b78b21f2",
+            "8de15127-c2f6-4874-80db-8dadf7ca23fe"
+        ],
+        "sauces": [
+            "424fc02c-1658-447b-88ee-00b0823774ae"
+        ]
+    },
+    {
+        "id": "b9104edf-609c-459f-8e54-7cc32978e890",
+        "name": "Dish 42",
+        "type": "starter",
+        "description": "A generic description",
+        "price": "24€",
+        "ingredients": [
+            "262bc49e-b935-4aea-bdb8-d91099e96ea3",
+            "c38a0e43-3bec-422a-ba30-9432732ff2dc",
+            "7bf73095-6359-46c5-bc8b-9b3a1a65ba24",
+            "e1026388-7ea4-4d0e-b3e4-cbc7a91bafd6",
+            "e572e039-eee4-486f-ab79-4a39b78b21f2"
+        ],
+        "sauces": [
+            "530d0a2c-0f66-404d-b61d-36779c4c25f8"
+        ]
+    },
+    {
+        "id": "c638ad49-116c-4071-a028-9ff1b09f9b0a",
+        "name": "Dish 43",
+        "type": "starter",
+        "description": "A generic description",
+        "price": "23€",
+        "ingredients": [
+            "0180d42d-a663-48a9-bd62-a6a8849d923c",
+            "54b3382d-1da4-491c-8e59-372cd8ade4bb"
+        ],
+        "sauces": [
+            "9e9edb59-1a5e-41f4-b922-84c64ed39237"
+        ]
+    },
+    {
+        "id": "a07d9f8f-1356-41e3-9595-7c3d39506510",
+        "name": "Dish 44",
+        "type": "plate",
+        "description": "A generic description",
+        "price": "6€",
+        "ingredients": [
+            "cd002746-cf62-4be0-b934-f99c9bd8b5a9",
+            "c588fbd4-882b-471b-b648-ab1aaa0b6a5b",
+            "4e3be63a-b1ef-4a84-8b22-195f7561abae",
+            "7bf73095-6359-46c5-bc8b-9b3a1a65ba24",
+            "04e57a13-d56a-46a7-9efe-f238e54b3a76"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "f1bbb7ce-b288-47c7-acd7-ef4c5f0c3661",
+        "name": "Dish 45",
+        "type": "starter",
+        "description": "A generic description",
+        "price": "21€",
+        "ingredients": [
+            "c3de111d-4a13-4144-87fe-a909c08fde0b",
+            "04e57a13-d56a-46a7-9efe-f238e54b3a76"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "124fde13-791d-4636-b208-e0440354141b",
+        "name": "Dish 46",
+        "type": "dessert",
+        "description": "A generic description",
+        "price": "5€",
+        "ingredients": [
+            "8d8722dc-a6fe-4c16-9b99-64f2d4640c68"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "86313987-5588-4857-b14b-a606511c9726",
+        "name": "Dish 47",
+        "type": "starter",
+        "description": "A generic description",
+        "price": "23€",
+        "ingredients": [
+            "c5e98656-2ecb-4647-b6db-558b68d4dead",
+            "c6cae453-f61c-4354-a96e-e132c6fa5d34",
+            "3d67d168-2133-4d8c-8a07-be9ca351405c",
+            "15bc47b2-f22b-4feb-89e3-92fdec59e629"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "93a61276-2f4c-4cc4-a097-3ef1b225bee5",
+        "name": "Dish 48",
+        "type": "starter",
+        "description": "A generic description",
+        "price": "8€",
+        "ingredients": [
+            "83e98047-145a-47f5-ae63-bc352444e217",
+            "e1026388-7ea4-4d0e-b3e4-cbc7a91bafd6",
+            "2f850941-676e-4f2e-8463-623e5b3f7b5b"
+        ],
+        "sauces": [
+            "1cb22e6d-4a45-4213-b9fc-636ce5fbd92a"
+        ]
+    },
+    {
+        "id": "524da1db-173d-41d1-b629-aae1b3e6a752",
+        "name": "Dish 49",
+        "type": "dessert",
+        "description": "A generic description",
+        "price": "24€",
+        "ingredients": [
+            "897f359d-8a5f-47de-8cb8-38770fe15715",
+            "e1026388-7ea4-4d0e-b3e4-cbc7a91bafd6",
+            "37ebf37d-918a-4426-a413-df2546cd2b8e",
+            "eb120378-60e6-49da-9198-3250e7a4a569",
+            "2f850941-676e-4f2e-8463-623e5b3f7b5b"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "b9446c65-635b-44e3-9193-0f524c992421",
+        "name": "Dish 50",
+        "type": "dessert",
+        "description": "A generic description",
+        "price": "22€",
+        "ingredients": [
+            "941f0df0-d35d-46f0-a9f9-10a32afb9106",
+            "0f82393c-ee3f-487d-a16f-d81c4787f9da"
+        ],
+        "sauces": [
+            "4fe109f5-cfdc-4222-b6f8-6fc6e0f92fe6"
+        ]
+    }
+]
