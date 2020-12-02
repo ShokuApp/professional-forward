@@ -10,6 +10,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { Dish } from "../models/dish";
 import { Menu } from "../models/menu";
 import { ScrollView } from "react-native-gesture-handler";
+import { Icon } from "@expo/vector-icons/build/createIconSet";
 
 const styles = StyleSheet.create({
     cardCategoryType: {
@@ -142,7 +143,7 @@ const CardMenuCategory: FC<MenusProps> = ({ menus }: MenusProps) => {
 type CardTextProps = {
   label: string,
   id: string,
-  icon: any
+  icon: React.ReactElement<Icon<string, string>>,
 };
 
 const CardText: FC<CardTextProps> = ({label, id, icon}: CardTextProps) => {
@@ -238,14 +239,14 @@ const CardPage : FC = () => {
     id: "1",
     name: "Menu 1",
     price: "$",
-    dishes: DISH_LIST.filter(dish => parseInt(dish.id) % 2 == 1),
+    dishes: DISH_LIST.filter((dish) => parseInt(dish.id) % 2 === 1),
   };
 
   const Menu2: Menu = {
     id: "2",
     name: "Menu 2",
     price: "$",
-    dishes: DISH_LIST.filter(dish => parseInt(dish.id) % 2 == 0),
+    dishes: DISH_LIST.filter((dish) => parseInt(dish.id) % 2 === 0),
   };
 
   const menus = [Menu1, Menu2];
@@ -257,7 +258,7 @@ const CardPage : FC = () => {
           <View style={styles.cardTypeDescription} key={card.title}>
             <CardCategory
               props={card}
-              list={DISH_LIST.filter((dish) => dish.type == card.type)}
+              list={DISH_LIST.filter((dish) => dish.type === card.type)}
             />
           </View>
         );
