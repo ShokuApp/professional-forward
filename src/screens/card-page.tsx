@@ -1,7 +1,5 @@
 import React, { FC } from "react";
 import { View, StyleSheet, Text } from "react-native";
-import { Dish } from "../models/dish";
-import { Menu } from "../models/menu";
 import { ScrollView } from "react-native-gesture-handler";
 import CardCategory, {
   CardCategoryProps,
@@ -13,7 +11,6 @@ import {
   CardGetEvent,
   CardGetState,
   CardState,
-  CardSetEvent,
   CardErrorState,
   CardLoadingState,
   CardInitialState,

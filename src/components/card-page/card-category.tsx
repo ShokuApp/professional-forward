@@ -1,19 +1,10 @@
 import React, { FC } from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import { Dish, Card } from "../../models/";
+import { Card } from "../../models/";
 import CardText from "./card-text";
 import AppendCategory from "./append-category";
-import {
-  CardBloc,
-  CardSetEvent,
-  CardState,
-  CardGetState,
-  CardErrorState,
-  CardInitialState,
-  CardLoadingState,
-} from "../../blocs";
-import { BlocBuilder } from "@felangel/react-bloc";
+import { CardBloc, CardSetEvent } from "../../blocs";
 
 const styles = StyleSheet.create({
   cardCategoryContainer: {
