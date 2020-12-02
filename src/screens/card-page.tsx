@@ -7,6 +7,9 @@ import CardCategory, {
   CardCategoryProps,
 } from "../components/card-page/card-category";
 import CardMenuCategory from "../components/card-page/card-menu-category";
+import { BlocBuilder } from "@felangel/react-bloc";
+import { CardBloc, CardGetEvent, CardGetState, CardState } from "../blocs";
+import { CardRepository } from "../repositories";
 
 const styles = StyleSheet.create({
   container: {
@@ -112,20 +115,38 @@ const CardPage: FC = () => {
   };
 
   const menus = [Menu1, Menu2];
+  const id = "21515";
+  const card = new CardBloc(new CardRepository());
+
+  card.add(new CardGetEvent(id));
 
   return (
     <ScrollView style={styles.container}>
-      {CARD_CATEGORY.map((card) => {
-        return (
-          <View style={styles.cardTypeDescription} key={card.title}>
-            <CardCategory
-              props={card}
-              list={DISH_LIST.filter((dish) => dish.type === card.type)}
-            />
-          </View>
-        );
-      })}
-      <CardMenuCategory menus={menus} />
+      <BlocBuilder
+        bloc={card}
+        builder={(state: CardState) => {
+          if (!(state instanceof CardGetState)) {
+            return <Text>Loading</Text>;
+          }
+          return (
+            <View>
+              {CARD_CATEGORY.map((card) => {
+                return (
+                  <View style={styles.cardTypeDescription} key={card.title}>
+                    <CardCategory
+                      props={card}
+                      list={state.card.dishes.filter(
+                        (dish) => dish.type === card.type
+                      )}
+                    />
+                  </View>
+                );
+              })}
+              <CardMenuCategory menus={state.card.menus} />
+            </View>
+          );
+        }}
+      />
     </ScrollView>
   );
 };
