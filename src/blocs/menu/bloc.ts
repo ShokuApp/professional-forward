@@ -11,7 +11,7 @@ import {
 import { MenuRepository } from "../../repositories";
 import { Menu } from "../../models";
 
-class MenuBloc extends Bloc<MenuEvent, MenuState> {
+export class MenuBloc extends Bloc<MenuEvent, MenuState> {
   private repository: MenuRepository;
 
   constructor(repository: MenuRepository) {

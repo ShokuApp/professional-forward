@@ -9,7 +9,7 @@ import {
 } from "./state";
 import { PictogramRepository } from "../../repositories";
 
-class PictogramBloc extends Bloc<PictogramEvent, PictogramState> {
+export class PictogramBloc extends Bloc<PictogramEvent, PictogramState> {
   private repository: PictogramRepository;
 
   constructor(repository: PictogramRepository) {

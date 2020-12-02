@@ -11,7 +11,7 @@ import {
 import { SauceRepository } from "../../repositories";
 import { Sauce } from "../../models";
 
-class SauceBloc extends Bloc<SauceEvent, SauceState> {
+export class SauceBloc extends Bloc<SauceEvent, SauceState> {
   private repository: SauceRepository;
 
   constructor(repository: SauceRepository) {
