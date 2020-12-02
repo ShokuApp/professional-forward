@@ -15,7 +15,7 @@ export class ProfileRepository implements Repository<Profile> {
     }
 
     const restaurant = await restaurantRepository.get(
-      profileJson.restaurant_id
+      profileJson.restaurant
     );
 
     return {
@@ -33,7 +33,7 @@ export class ProfileRepository implements Repository<Profile> {
       email: profile.email,
       firstName: profile.firstName,
       lastName: profile.lastName,
-      restaurant_id: profile.restaurant.id,
+      restaurant: profile.restaurant.id,
     };
     const index = profiles.findIndex((item) => item.id === profile.id);
 

@@ -15,7 +15,7 @@ export class MenuRepository implements Repository<Menu> {
     }
 
     const dishes = await Promise.all(
-      menuJson.dishes_ids.map(async (id) => {
+      menuJson.dishes.map(async (id) => {
         return dishRepository.get(id);
       })
     );
@@ -33,7 +33,7 @@ export class MenuRepository implements Repository<Menu> {
       id: menu.id,
       name: menu.name,
       price: menu.price,
-      dishes_ids: menu.dishes.map((dish) => dish.id),
+      dishes: menu.dishes.map((dish) => dish.id),
     };
     const index = menus.findIndex((item) => item.id === menu.id);
 

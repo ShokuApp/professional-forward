@@ -17,13 +17,13 @@ export class DishRepository implements Repository<Dish> {
     }
 
     const ingredients = await Promise.all(
-      dishJson.ingredients_ids.map(async (id) => {
+      dishJson.ingredients.map(async (id) => {
         return ingredientRepository.get(id);
       })
     );
 
     const sauces = await Promise.all(
-      dishJson.sauces_ids.map(async (id) => {
+      dishJson.sauces.map(async (id) => {
         return sauceRepository.get(id);
       })
     );
@@ -46,8 +46,8 @@ export class DishRepository implements Repository<Dish> {
       description: dish.description,
       type: dish.type,
       price: dish.price,
-      ingredients_ids: dish.ingredients.map((ingredient) => ingredient.id),
-      sauces_ids: dish.sauces.map((sauce) => sauce.id),
+      ingredients: dish.ingredients.map((ingredient) => ingredient.id),
+      sauces: dish.sauces.map((sauce) => sauce.id),
     };
     const index = dishes.findIndex((item) => item.id === dish.id);
 
