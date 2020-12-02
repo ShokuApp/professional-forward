@@ -75,18 +75,18 @@ const Home: FC = () => {
           }}
         />
         <Stack.Screen
-        name="CardPage"
-        component={CardPage}
-        options={{
-          title: "Ma carte",
-          headerBackImage: () => (
-            <AntDesign
-              name="arrowleft"
-              size={25}
-              style={{ paddingLeft: 15 }}
-            />
-          ),
-        }}
+          name="CardPage"
+          component={CardPage}
+          options={{
+            title: "Ma carte",
+            headerBackImage: () => (
+              <AntDesign
+                name="arrowleft"
+                size={25}
+                style={{ paddingLeft: 15 }}
+              />
+            ),
+          }}
         />
         <Stack.Screen
           name="DishesPage"
