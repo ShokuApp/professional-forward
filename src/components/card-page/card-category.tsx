@@ -1,9 +1,19 @@
 import React, { FC } from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import { Dish } from "../../models/dish";
+import { Dish, Card } from "../../models/";
 import CardText from "./card-text";
 import AppendCategory from "./append-category";
+import {
+  CardBloc,
+  CardSetEvent,
+  CardState,
+  CardGetState,
+  CardErrorState,
+  CardInitialState,
+  CardLoadingState,
+} from "../../blocs";
+import { BlocBuilder } from "@felangel/react-bloc";
 
 const styles = StyleSheet.create({
   cardCategoryContainer: {
@@ -24,25 +34,40 @@ export type CardCategoryProps = {
 };
 
 type Props = {
+  cardBloc: CardBloc;
   props: CardCategoryProps;
-  list: Dish[];
+  card: Card;
 };
 
-const CardCategory: FC<Props> = ({ props, list }: Props) => {
+const deleteDish = (cardBloc: CardBloc, card: Card, dishId: string) => {
+  card.dishes = card.dishes.filter((dish) => dish.id !== dishId);
+  cardBloc.add(new CardSetEvent(card.id, card));
+};
+
+const CardCategory: FC<Props> = ({ cardBloc, props, card }: Props) => {
   return (
     <View style={styles.cardCategoryContainer}>
       <Text style={styles.cardCategoryType}>{props.title}</Text>
-      {list.map((dish) => {
-        return (
-          <View key={dish.id}>
-            <CardText
-              label={dish.name}
-              id={dish.id}
-              icon={<AntDesign name={"close"} size={18} color="#C6C6C8" />}
-            />
-          </View>
-        );
-      })}
+      {card.dishes
+        .filter((dish) => dish.type === props.type)
+        .map((dish) => {
+          return (
+            <View key={dish.id}>
+              <CardText
+                label={dish.name}
+                id={dish.id}
+                icon={
+                  <AntDesign
+                    name={"close"}
+                    size={18}
+                    color="#C6C6C8"
+                    onPress={() => deleteDish(cardBloc, card, dish.id)}
+                  />
+                }
+              />
+            </View>
+          );
+        })}
       <AppendCategory label={props.category} />
     </View>
   );

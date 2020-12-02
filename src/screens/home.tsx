@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import RestaurantButton from "../components/home/restaurant-button";
 import Button, { ButtonProps } from "../components/home/button";
 import CardPage from "./card-page";
+import { AntDesign } from "@expo/vector-icons";
 
 const styles = StyleSheet.create({
   container: {
@@ -57,6 +58,7 @@ const Home: FC = () => {
             shadowOffset: { width: 0, height: 2 },
             shadowRadius: 2,
           },
+          headerBackTitleVisible: false,
         }}
       >
         <Stack.Screen
@@ -76,6 +78,13 @@ const Home: FC = () => {
           component={CardPage}
           options={{
             title: "Ma carte",
+            headerBackImage: () => (
+              <AntDesign
+                name="arrowleft"
+                size={25}
+                style={{ paddingLeft: 15 }}
+              />
+            ),
           }}
         />
       </Stack.Navigator>
