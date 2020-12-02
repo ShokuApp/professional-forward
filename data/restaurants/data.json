@@ -1,0 +1,28 @@
+[
+  {
+    "id": "1",
+    "name": "Name",
+    "description": "Hello, World!",
+    "image": "https://images.fr/name",
+    "average_rate": "4.5",
+    "average_price": "cheap",
+    "location": "43.6125149,1.428957,21z",
+    "phone": "0612345678",
+    "url": "https://salutmonpote.fr",
+    "opening_time": [
+      [
+        {
+          "from": "10",
+          "to": "14"
+        },
+        {
+          "from": "18",
+          "to": "22"
+        }
+      ]
+    ],
+    "current_card_id": "1",
+    "cards_ids": ["1"],
+    "dishes_ids": ["1"]
+  }
+]
