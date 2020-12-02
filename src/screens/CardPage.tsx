@@ -1,11 +1,8 @@
 import React, { FC } from "react";
 import {
   View,
-  TouchableOpacity,
   StyleSheet,
   Text,
-  Image,
-  Dimensions,
 } from "react-native";
 import { AntDesign, SimpleLineIcons} from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
@@ -13,8 +10,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { Dish } from "../models/dish";
 import { Menu } from "../models/menu";
 import { ScrollView } from "react-native-gesture-handler";
-
-const { height } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
     cardCategoryType: {
