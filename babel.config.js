@@ -1,8 +1,9 @@
 module.exports = function (api) {
-  api.cache(true)
+  api.cache(true);
   return {
     presets: ["babel-preset-expo"],
     plugins: [
+      "@babel/plugin-proposal-async-generator-functions",
       [
         "module-resolver",
         {
@@ -15,10 +16,11 @@ module.exports = function (api) {
             ".android.tsx",
             ".ios.js",
             ".ios.tsx",
+            ".json",
           ],
-          root: ["./src"],
+          root: ["./src", "./data"],
         },
       ],
     ],
   };
-}
+};
