@@ -1,10 +1,6 @@
 import React, { FC } from "react";
-import {
-  View,
-  StyleSheet,
-  Text,
-} from "react-native";
-import { AntDesign, SimpleLineIcons} from "@expo/vector-icons";
+import { View, StyleSheet, Text } from "react-native";
+import { AntDesign, SimpleLineIcons } from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Dish } from "../models/dish";
@@ -13,60 +9,60 @@ import { ScrollView } from "react-native-gesture-handler";
 import { Icon } from "@expo/vector-icons/build/createIconSet";
 
 const styles = StyleSheet.create({
-    cardCategoryType: {
-      marginBottom: 7,
-      color: '#2196F3',
-      fontSize: 16
-    },
-    cardTypeDescription: {
-      marginBottom: 50
-    },
-    dishName: {
-      paddingLeft: 3,
-      fontSize: 17
-    },
-    generalStyle: {
-      paddingTop: 36,
-      display: "flex",
-      flexDirection: "column",
-      marginLeft: 10,
-    },
-    categoryStyle: {
-      flexDirection: "row",
-      alignItems: "center",
-      justifyContent: "space-between",
-      borderBottomWidth: 0.5,
-      marginRight: 13,
-      borderBottomColor: "#C6C6C8",
-      minHeight: 45
-    },
-    cardCategoryContainer: {
-      display: "flex",
-      flexDirection: "column"
-    },
-    categoryAppend: {
-      display: "flex",
-      flexDirection: "row",
-      alignItems: "center",
-      marginTop: 10
-    },
-    textAdd: {
-      marginLeft: 10,
-      color: "#9A9A9A",
-      fontSize: 15
-    },
-    menuDishes: {
-      marginLeft: 45,
-      marginRight: 13,
-    },
-    menuItem: {
-      borderBottomWidth: 0.5,
-      borderBottomColor: "#C6C6C8",
-      minHeight: 35,
-      justifyContent: "center"
-    }
-  }
-);
+  container: {
+    paddingTop: 36,
+    display: "flex",
+    flexDirection: "column",
+    backgroundColor: "white",
+    paddingLeft: 10,
+  },
+  cardCategoryType: {
+    marginBottom: 7,
+    color: "#2196F3",
+    fontSize: 16,
+  },
+  cardTypeDescription: {
+    marginBottom: 50,
+  },
+  dishName: {
+    paddingLeft: 3,
+    fontSize: 17,
+  },
+  categoryStyle: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    borderBottomWidth: 0.5,
+    marginRight: 13,
+    borderBottomColor: "#C6C6C8",
+    minHeight: 45,
+  },
+  cardCategoryContainer: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  categoryAppend: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 10,
+  },
+  textAdd: {
+    marginLeft: 10,
+    color: "#9A9A9A",
+    fontSize: 15,
+  },
+  menuDishes: {
+    marginLeft: 45,
+    marginRight: 13,
+  },
+  menuItem: {
+    borderBottomWidth: 0.5,
+    borderBottomColor: "#C6C6C8",
+    minHeight: 35,
+    justifyContent: "center",
+  },
+});
 
 type CardCategoryProps = {
   title: string;
@@ -78,19 +74,32 @@ const CARD_CATEGORY: CardCategoryProps[] = [
   {
     title: "Mes entrées:",
     type: "starter",
-    category: "une entrée"
+    category: "une entrée",
   },
   {
     title: "Mes plats:",
     type: "plate",
-    category: "un plat"
+    category: "un plat",
   },
   {
     title: "Mes desserts:",
     type: "dessert",
-    category: "un dessert"
-  }
+    category: "un dessert",
+  },
 ];
+
+type AppendCategoryProps = {
+  label: string;
+};
+
+const AppendCategory: FC<AppendCategoryProps> = ({label}: AppendCategoryProps) => {
+  return (
+    <View style={styles.categoryAppend}>
+      <AntDesign name="plus" size={20} color="#2196F3" />
+      <Text style={styles.textAdd}>Ajouter {label}</Text>
+    </View>
+  );
+};
 
 type Props = {
   props: CardCategoryProps;
@@ -104,8 +113,11 @@ type MenuProps = {
 const CardMenu: FC<MenuProps> = ({ menu }: MenuProps) => {
   return (
     <View>
-      <CardText label={menu.name} id={menu.id} icon=
-      {<SimpleLineIcons name="pencil" size={15} color="#C6C6C8" />} />
+      <CardText
+        label={menu.name}
+        id={menu.id}
+        icon={<SimpleLineIcons name="pencil" size={15} color="#C6C6C8" />}
+      />
       <View style={styles.menuDishes}>
         {menu.dishes.map((dish) => {
           return (
@@ -127,7 +139,7 @@ const CardMenuCategory: FC<MenusProps> = ({ menus }: MenusProps) => {
   const txt = "Mes menus:";
 
   return (
-    <View>
+    <View style={{ marginBottom: 36 }}>
       <Text style={styles.cardCategoryType}>{txt}</Text>
       {menus.map((menu) => {
         return (
@@ -136,27 +148,28 @@ const CardMenuCategory: FC<MenusProps> = ({ menus }: MenusProps) => {
           </View>
         );
       })}
+      <AppendCategory label={"un menu"} />
     </View>
   );
 };
 
 type CardTextProps = {
-  label: string,
-  id: string,
-  icon: React.ReactElement<Icon<string, string>>,
+  label: string;
+  id: string;
+  icon: React.ReactElement<Icon<string, string>>;
 };
 
-const CardText: FC<CardTextProps> = ({label, id, icon}: CardTextProps) => {
+const CardText: FC<CardTextProps> = ({ label, id, icon }: CardTextProps) => {
   return (
     <View style={styles.categoryStyle} key={id}>
-        <Text style={styles.dishName}>{label}</Text>
-        {icon}
+      <Text style={styles.dishName}>{label}</Text>
+      {icon}
     </View>
-  )
-}
+  );
+};
 
 const DISH_LIST: Dish[] = [
-{
+  {
     id: "1",
     name: "Carpaccio",
     type: "starter",
@@ -210,49 +223,47 @@ const DISH_LIST: Dish[] = [
     ingredients: [],
     sauces: [],
   },
-]
+];
 
-const CardCategory : FC<Props> = ({props, list}: Props) => {
+const CardCategory: FC<Props> = ({ props, list }: Props) => {
   return (
     <View style={styles.cardCategoryContainer}>
       <Text style={styles.cardCategoryType}>{props.title}</Text>
       {list.map((dish) => {
         return (
           <View key={dish.id}>
-            <CardText label={dish.name} id={dish.id} icon=
-            {<AntDesign name={"close"} size={18} color="#C6C6C8" />}/>
+            <CardText
+              label={dish.name}
+              id={dish.id}
+              icon={<AntDesign name={"close"} size={18} color="#C6C6C8" />}
+            />
           </View>
-        )
+        );
       })}
-      <View style={styles.categoryAppend}>
-        <AntDesign name="plus" size={20} color='#2196F3' />
-        <Text style={styles.textAdd}>Ajouter {props.category}</Text>
-      </View>
+      <AppendCategory label={props.category} />
     </View>
   );
 };
 
-const CardPage : FC = () => {
-
-
+const CardPage: FC = () => {
   const Menu1: Menu = {
     id: "1",
     name: "Menu 1",
     price: "$",
-    dishes: DISH_LIST.filter((dish) => parseInt(dish.id) % 2 === 1),
+    dishes: DISH_LIST,
   };
 
   const Menu2: Menu = {
     id: "2",
     name: "Menu 2",
     price: "$",
-    dishes: DISH_LIST.filter((dish) => parseInt(dish.id) % 2 === 0),
+    dishes: DISH_LIST,
   };
 
   const menus = [Menu1, Menu2];
 
   return (
-    <ScrollView style={styles.generalStyle}>
+    <ScrollView style={styles.container}>
       {CARD_CATEGORY.map((card) => {
         return (
           <View style={styles.cardTypeDescription} key={card.title}>
@@ -280,16 +291,24 @@ export default () => {
             shadowRadius: 2,
           },
           headerTitleStyle: {
-            fontSize: 18
-          }
+            fontSize: 18,
+          },
         }}
       >
-        <Stack.Screen name="Ma carte" component={CardPage} options={{
-          headerLeft: () => (
-            <AntDesign style={{paddingLeft: 20}} name="arrowleft" size={25} color={"black"}
-            onPress={() => alert("Todo")}/>
-          ),
-        }}
+        <Stack.Screen
+          name="Ma carte"
+          component={CardPage}
+          options={{
+            headerLeft: () => (
+              <AntDesign
+                style={{ paddingLeft: 20 }}
+                name="arrowleft"
+                size={25}
+                color={"black"}
+                onPress={() => alert("Todo")}
+              />
+            ),
+          }}
         ></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
