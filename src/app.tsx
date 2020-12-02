@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
 import { registerRootComponent } from "expo";
-import CardPage from "./screens/CardPage";
+import Home from "./screens/home";
 
 const styles = StyleSheet.create({
   container: {
@@ -14,7 +14,7 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar />
-      <CardPage />
+      <Home />
     </SafeAreaView>
   );
 };
