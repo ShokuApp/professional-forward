@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import RestaurantButton from "../components/home/restaurant-button";
 import Button, { ButtonProps } from "../components/home/button";
+import CardPage from "./card-page";
 
 const styles = StyleSheet.create({
   container: {
@@ -68,6 +69,13 @@ const Home: FC = () => {
                 style={{ width: 135, height: 36 }}
               />
             ),
+          }}
+        />
+        <Stack.Screen
+          name="CardPage"
+          component={CardPage}
+          options={{
+            title: "Ma carte",
           }}
         />
       </Stack.Navigator>

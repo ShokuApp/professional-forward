@@ -279,38 +279,4 @@ const CardPage: FC = () => {
   );
 };
 
-const Stack = createStackNavigator();
-
-export default () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerStyle: {
-            shadowOffset: { width: 0, height: 2 },
-            shadowRadius: 2,
-          },
-          headerTitleStyle: {
-            fontSize: 18,
-          },
-        }}
-      >
-        <Stack.Screen
-          name="Ma carte"
-          component={CardPage}
-          options={{
-            headerLeft: () => (
-              <AntDesign
-                style={{ paddingLeft: 20 }}
-                name="arrowleft"
-                size={25}
-                color={"black"}
-                onPress={() => alert("Todo")}
-              />
-            ),
-          }}
-        ></Stack.Screen>
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-};
+export default CardPage;
