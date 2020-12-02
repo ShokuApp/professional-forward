@@ -115,7 +115,7 @@ const CardPage: FC = () => {
   };
 
   const menus = [Menu1, Menu2];
-  const id = "21515";
+  const id = "004d8d6c-ecf5-4e90-98ca-92720510a857";
   const card = new CardBloc(new CardRepository());
 
   card.add(new CardGetEvent(id));
