@@ -1,0 +1,9 @@
+[
+  {
+    "id": "1",
+    "name": "Name",
+    "image": "https://images.fr/name",
+    "allergens_ids": ["1"],
+    "diets_ids": ["1"]
+  }
+]
