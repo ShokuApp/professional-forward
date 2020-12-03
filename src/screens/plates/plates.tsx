@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import { View, StyleSheet, Text } from "react-native";
-import PlateDescription from "../components/plates/plates-description";
-import SearchBar from "../components/plates/search-bar";
-import Data from "../../data/dishes/data.json";
+import PlateDescription from "../../components/plates/plates-description";
+import SearchBar from "../../components/plates/search-bar";
+import Data from "../../../data/dishes/data.json";
 import {
   DishBloc,
   DishGetEvent,
@@ -11,10 +11,11 @@ import {
   DishLoadingState,
   DishInitialState,
   DishGetState,
-} from "../blocs";
-import { DishRepository } from "../repositories";
+} from "../../blocs";
+import { DishRepository } from "../../repositories";
 import { BlocBuilder } from "@felangel/react-bloc";
 import { ScrollView } from "react-native-gesture-handler";
+import { createStackNavigator } from "@react-navigation/stack";
 
 const styles = StyleSheet.create({
   container: {
@@ -23,6 +24,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
     justifyContent: "center",
+  },
+  arrowLeft: {
+    paddingLeft: 15,
   },
 });
 
