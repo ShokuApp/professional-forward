@@ -17,6 +17,9 @@ const styles = StyleSheet.create({
   arrowLeft: {
     paddingLeft: 15,
   },
+  plus: {
+    paddingRight: 15,
+  },
 });
 
 const BUTTONS: ButtonProps[] = [
@@ -106,6 +109,15 @@ const Home: FC = () => {
                 style={styles.arrowLeft}
               />
             ),
+            headerRight: () => (
+              <Icon
+                type="antdesign"
+                name="plus"
+                size={25}
+                onPress={() => alert('TODO')}
+                style={styles.plus}
+              />
+            )
           }}
         />
       </Stack.Navigator>
