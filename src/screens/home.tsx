@@ -117,7 +117,7 @@ const Home: FC = () => {
           name="AddPlatePage"
           component={AddPlate}
           options={{
-            title: "Ajouter un plat",
+            title: "Nouveau plat",
             headerBackImage: () => (
               <Icon
                 type="antdesign"
