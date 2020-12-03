@@ -7,11 +7,15 @@ import Button, { ButtonProps } from "../components/home/button";
 import PlatePage from "../screens/plates";
 import CardPage from "./card-page";
 import { AntDesign } from "@expo/vector-icons";
+import { Icon } from "react-native-elements";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
+  },
+  arrowLeft: {
+    paddingLeft: 15,
   },
 });
 
@@ -80,10 +84,11 @@ const Home: FC = () => {
           options={{
             title: "Ma carte",
             headerBackImage: () => (
-              <AntDesign
+              <Icon
+                type="antdesign"
                 name="arrowleft"
                 size={25}
-                style={{ paddingLeft: 15 }}
+                style={styles.arrowLeft}
               />
             ),
           }}
@@ -94,10 +99,11 @@ const Home: FC = () => {
           options={{
             title: "Mes plats",
             headerBackImage: () => (
-              <AntDesign
+              <Icon
+                type="antdesign"
                 name="arrowleft"
                 size={25}
-                style={{ paddingLeft: 15 }}
+                style={styles.arrowLeft}
               />
             ),
           }}
