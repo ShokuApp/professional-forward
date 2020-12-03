@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
 });
 
 const getPlatesIds: () => string[] = () => {
-  let ids: string[] = [];
+  const ids: string[] = [];
 
   Data.map((dish) => {
     ids.push(dish.id);
