@@ -4,13 +4,20 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import RestaurantButton from "../components/home/restaurant-button";
 import Button, { ButtonProps } from "../components/home/button";
+import PlatePage from "../screens/plates";
 import CardPage from "./card-page";
-import { AntDesign } from "@expo/vector-icons";
+import { Icon } from "react-native-elements";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
+  },
+  arrowLeft: {
+    paddingLeft: 15,
+  },
+  plus: {
+    paddingRight: 15,
   },
 });
 
@@ -79,12 +86,37 @@ const Home: FC = () => {
           options={{
             title: "Ma carte",
             headerBackImage: () => (
-              <AntDesign
+              <Icon
+                type="antdesign"
                 name="arrowleft"
                 size={25}
-                style={{ paddingLeft: 15 }}
+                style={styles.arrowLeft}
               />
             ),
+          }}
+        />
+        <Stack.Screen
+          name="DishesPage"
+          component={PlatePage}
+          options={{
+            title: "Mes plats",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
+            headerRight: () => (
+              <Icon
+                type="antdesign"
+                name="plus"
+                size={25}
+                onPress={() => alert('TODO')}
+                style={styles.plus}
+              />
+            )
           }}
         />
       </Stack.Navigator>
