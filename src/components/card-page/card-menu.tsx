@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import { View, StyleSheet, Text } from "react-native";
-import { SimpleLineIcons } from "@expo/vector-icons";
 import { Menu } from "../../models/menu";
 import CardText from "./card-text";
+import { Icon } from "react-native-elements";
 
 const styles = StyleSheet.create({
   menuDishes: {
@@ -27,7 +27,7 @@ const CardMenu: FC<MenuProps> = ({ menu }: MenuProps) => {
       <CardText
         label={menu.name}
         id={menu.id}
-        icon={<SimpleLineIcons name="pencil" size={15} color="#C6C6C8" />}
+        icon={<Icon type="simple-line-icon" name="pencil" size={15} color="#C6C6C8" />}
       />
       <View style={styles.menuDishes}>
         {menu.dishes.map((dish) => {

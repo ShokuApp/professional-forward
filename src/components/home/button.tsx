@@ -30,7 +30,7 @@ const Button: FC<ButtonProps> = ({ id, label }: ButtonProps) => {
     <TouchableOpacity
       activeOpacity={1}
       style={styles.button}
-      onPress={() => id === "CardPage" ? navigate(id) : alert("Todo")}
+      onPress={() => (id !== "AllergenNotebookPage" ? navigate(id) : alert("Todo!"))}
     >
       <Text style={styles.buttonText}>{label}</Text>
       <AntDesign name="right" size={15} color="#C6C6C8" />

@@ -1,14 +1,13 @@
 import React, { FC } from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { Menu } from "../../models/menu";
+import CategoryTitle from "../common/category-title";
 import AppendCategory from "./append-category";
 import CardMenu from "./card-menu";
 
 const styles = StyleSheet.create({
-  cardCategoryType: {
-    marginBottom: 7,
-    color: "#2196F3",
-    fontSize: 16,
+  container: {
+    marginBottom: 36,
   },
 });
 
@@ -18,8 +17,8 @@ type MenusProps = {
 
 const CardMenuCategory: FC<MenusProps> = ({ menus }: MenusProps) => {
   return (
-    <View style={{ marginBottom: 36 }}>
-      <Text style={styles.cardCategoryType}>Mes menus:</Text>
+    <View style={styles.container}>
+      <CategoryTitle label="Mes menus:" />
       {menus.map((menu) => {
         return <CardMenu key={menu.id} menu={menu} />;
       })}
