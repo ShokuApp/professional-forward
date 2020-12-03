@@ -2,6 +2,8 @@ import React, { FC } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { SimpleLineIcons } from "@expo/vector-icons";
 import PlateComposition from "./plates-composition";
+import { Dish } from "../../models/dish";
+import { Sauce } from "../../models/sauce";
 
 const styles = StyleSheet.create({
   container: {
@@ -41,25 +43,29 @@ const styles = StyleSheet.create({
   },
 });
 
-const PlateDescription: FC = () => {
+type Props = {
+  dish: Dish;
+};
+
+const PlateDescription: FC<Props> = ({ dish }: Props) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Text> </Text>
-        <Text style={styles.label}>Pâtes carbonara</Text>
+        <Text style={styles.label}>{dish.name}</Text>
         <SimpleLineIcons name="pencil" size={16} color="white" />
       </View>
       <View style={styles.composition}>
         <View style={{ marginBottom: 25 }}>
           <PlateComposition
             label={"Ingrédients:"}
-            list={["Ingredient 1", "Ingredient 2"]}
+            list={dish.ingredients}
           />
         </View>
         <View>
           <PlateComposition
             label={"Sauces:"}
-            list={["Ingredient 1", "Ingredient 2"]}
+            list={dish.sauces.length !== 0 ? dish.sauces[0].ingredients : []}
           />
         </View>
       </View>
