@@ -5,6 +5,7 @@ import { Ingredient } from "../../models/ingredient";
 const styles = StyleSheet.create({
   ingredients: {
     display: "flex",
+    flexWrap: "wrap",
     flexDirection: "row",
     marginTop: 5,
   },

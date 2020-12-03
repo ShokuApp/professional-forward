@@ -1,14 +1,15 @@
 import React, { FC } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Dimensions } from "react-native";
 import { SimpleLineIcons } from "@expo/vector-icons";
 import PlateComposition from "./plates-composition";
 import { Dish } from "../../models/dish";
 import { Sauce } from "../../models/sauce";
 
+const { width, height } = Dimensions.get("window");
+
 const styles = StyleSheet.create({
   container: {
-    width: "93%",
-    minHeight: 145,
+    width: (93 * width) / 100,
     borderRadius: 20,
     shadowColor: "#000",
     shadowOffset: {
@@ -41,6 +42,9 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     padding: 10,
   },
+  sauce: {
+    marginTop: 25,
+  },
 });
 
 type Props = {
@@ -56,18 +60,17 @@ const PlateDescription: FC<Props> = ({ dish }: Props) => {
         <SimpleLineIcons name="pencil" size={16} color="white" />
       </View>
       <View style={styles.composition}>
-        <View style={{ marginBottom: 25 }}>
-          <PlateComposition
-            label={"Ingrédients:"}
-            list={dish.ingredients}
-          />
-        </View>
         <View>
-          <PlateComposition
-            label={"Sauces:"}
-            list={dish.sauces.length !== 0 ? dish.sauces[0].ingredients : []}
-          />
+          <PlateComposition label={"Ingrédients:"} list={dish.ingredients} />
         </View>
+        {dish.sauces.length !== 0 ? (
+          <View style={styles.sauce}>
+            <PlateComposition
+              label={"Sauces:"}
+              list={dish.sauces[0].ingredients}
+            />
+          </View>
+        ) : null}
       </View>
     </View>
   );

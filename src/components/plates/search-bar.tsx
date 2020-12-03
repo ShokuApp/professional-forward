@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { EvilIcons, FontAwesome } from "@expo/vector-icons";
+import { Icon } from "react-native-elements";
 
 const styles = StyleSheet.create({
   container: {
@@ -31,10 +32,9 @@ const SearchBar: FC = () => {
   return (
     <View style={styles.container}>
       <View style={styles.containerLeft}>
-        <EvilIcons name="search" size={24} color="#767680" />
+        <Icon type="evil-icon" name="search" size={24} color="#767680" />
         <Text style={styles.searchText}>Rechercher</Text>
       </View>
-      <FontAwesome name="microphone" size={19} color="#767680" />
     </View>
   );
 };
