@@ -5,16 +5,12 @@ import CardText from "./card-text";
 import AppendCategory from "./append-category";
 import { CardBloc, CardSetEvent } from "../../blocs";
 import { Icon } from "react-native-elements";
+import CategoryTitle from "../common/category-title";
 
 const styles = StyleSheet.create({
   cardCategoryContainer: {
     display: "flex",
     flexDirection: "column",
-  },
-  cardCategoryType: {
-    marginBottom: 7,
-    color: "#2196F3",
-    fontSize: 16,
   },
 });
 
@@ -57,7 +53,7 @@ const CardCategory: FC<Props> = ({ cardBloc, props, card }: Props) => {
 
   return (
     <View style={styles.cardCategoryContainer}>
-      <Text style={styles.cardCategoryType}>{props.title}</Text>
+      <CategoryTitle label={props.title} />
       {card.dishes
         .filter((dish) => dish.type === props.type)
         .map((dish) => {
