@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { View, StyleSheet, Text } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
+import { Icon } from "react-native-elements";
 
 const styles = StyleSheet.create({
   categoryAppend: {
@@ -25,7 +25,7 @@ const AppendCategory: FC<AppendCategoryProps> = ({
 }: AppendCategoryProps) => {
   return (
     <View style={styles.categoryAppend}>
-      <AntDesign name="plus" size={20} color="#2196F3" />
+      <Icon type="antdesign" name="plus" size={20} color="#2196F3" />
       <Text style={styles.textAdd}>Ajouter {label}</Text>
     </View>
   );

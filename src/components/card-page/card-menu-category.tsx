@@ -5,6 +5,9 @@ import AppendCategory from "./append-category";
 import CardMenu from "./card-menu";
 
 const styles = StyleSheet.create({
+  container: {
+    marginBottom: 36,
+  },
   cardCategoryType: {
     marginBottom: 7,
     color: "#2196F3",
@@ -18,7 +21,7 @@ type MenusProps = {
 
 const CardMenuCategory: FC<MenusProps> = ({ menus }: MenusProps) => {
   return (
-    <View style={{ marginBottom: 36 }}>
+    <View style={styles.container}>
       <Text style={styles.cardCategoryType}>Mes menus:</Text>
       {menus.map((menu) => {
         return (

@@ -6,7 +6,6 @@ import RestaurantButton from "../components/home/restaurant-button";
 import Button, { ButtonProps } from "../components/home/button";
 import PlatePage from "../screens/plates";
 import CardPage from "./card-page";
-import { AntDesign } from "@expo/vector-icons";
 import { Icon } from "react-native-elements";
 
 const styles = StyleSheet.create({

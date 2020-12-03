@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 import { View, StyleSheet, Text, Alert } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
 import { Card, Dish } from "../../models/";
 import CardText from "./card-text";
 import AppendCategory from "./append-category";
 import { CardBloc, CardSetEvent } from "../../blocs";
+import { Icon } from "react-native-elements";
 
 const styles = StyleSheet.create({
   cardCategoryContainer: {
@@ -67,7 +67,8 @@ const CardCategory: FC<Props> = ({ cardBloc, props, card }: Props) => {
                 label={dish.name}
                 id={dish.id}
                 icon={
-                  <AntDesign
+                  <Icon
+                    type="antdesign"
                     name={"close"}
                     size={18}
                     color="#C6C6C8"
