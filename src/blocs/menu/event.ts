@@ -7,7 +7,6 @@ export class MenuGetEvent extends MenuEvent {
 
   constructor(id: string) {
     super();
-
     this.id = id;
   }
 }
@@ -23,3 +22,5 @@ export class MenuSetEvent extends MenuEvent {
     this.menu = menu;
   }
 }
+
+export class MenuListEvent extends MenuEvent {}

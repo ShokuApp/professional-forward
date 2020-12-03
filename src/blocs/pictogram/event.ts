@@ -5,7 +5,8 @@ export class PictogramGetEvent extends PictogramEvent {
 
   constructor(id: string) {
     super();
-
     this.id = id;
   }
 }
+
+export class PictogramListEvent extends PictogramEvent {}

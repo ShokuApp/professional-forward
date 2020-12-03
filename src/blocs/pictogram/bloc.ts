@@ -1,9 +1,10 @@
 import { Bloc } from "@felangel/bloc";
-import { PictogramEvent, PictogramGetEvent } from "./event";
+import { PictogramEvent, PictogramGetEvent, PictogramListEvent } from "./event";
 import {
   PictogramErrorState,
   PictogramGetState,
   PictogramInitialState,
+  PictogramListState,
   PictogramLoadingState,
   PictogramState,
 } from "./state";
@@ -25,6 +26,8 @@ export class PictogramBloc extends Bloc<PictogramEvent, PictogramState> {
 
     if (event instanceof PictogramGetEvent) {
       yield* this.get(event);
+    } else if (event instanceof PictogramListEvent) {
+      yield* this.list(event);
     }
   }
 
@@ -33,6 +36,16 @@ export class PictogramBloc extends Bloc<PictogramEvent, PictogramState> {
       const pictogram = await this.repository.get(event.id);
 
       yield new PictogramGetState(pictogram);
+    } catch (e) {
+      yield new PictogramErrorState();
+    }
+  }
+
+  async *list(event: PictogramListEvent) {
+    try {
+      const pictograms = await this.repository.list();
+
+      yield new PictogramListState(pictograms);
     } catch (e) {
       yield new PictogramErrorState();
     }

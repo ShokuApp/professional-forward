@@ -23,3 +23,5 @@ export class SauceSetEvent extends SauceEvent {
     this.sauce = sauce;
   }
 }
+
+export class SauceListEvent extends SauceEvent {}
