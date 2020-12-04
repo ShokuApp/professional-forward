@@ -334,7 +334,7 @@ def main():
         file.close()
     else:
         pictogram_data = pictogram_list(random.randint(5, 100))
-        save_to_file(pictogram_data, "./data/pictograms/data.json")
+    save_to_file(pictogram_data, "./data/pictograms/data.json")
 
     if os.path.exists("./data/ingredients/second-data.json"):
         file = open("./data/ingredients/second-data.json")
@@ -342,7 +342,7 @@ def main():
         file.close()
     else:
         ingredient_data = ingredient_list(random.randint(5, 100), pictogram_data)
-        save_to_file(ingredient_data, "./data/ingredients/data.json")
+    save_to_file(ingredient_data, "./data/ingredients/data.json")
 
     if os.path.exists("./data/sauces/second-data.json"):
         file = open("./data/sauces/second-data.json")
@@ -350,7 +350,7 @@ def main():
         file.close()
     else:
         sauce_data = sauce_list(random.randint(5, 100), ingredient_data)
-        save_to_file(sauce_data, "./data/sauces/data.json")
+    save_to_file(sauce_data, "./data/sauces/data.json")
 
     if os.path.exists("./data/dishes/second-data.json"):
         file = open("./data/dishes/second-data.json")
@@ -358,7 +358,7 @@ def main():
         file.close()
     else:
         dish_data = dish_list(random.randint(5, 100), ingredient_data, sauce_data)
-        save_to_file(dish_data, "./data/dishes/data.json")
+    save_to_file(dish_data, "./data/dishes/data.json")
 
     if os.path.exists("./data/menus/second-data.json"):
         file = open("./data/menus/second-data.json")
@@ -366,7 +366,7 @@ def main():
         file.close()
     else:
         menu_data = menu_list(random.randint(5, 100), dish_data)
-        save_to_file(menu_data, "./data/menus/data.json")
+    save_to_file(menu_data, "./data/menus/data.json")
 
     if os.path.exists("./data/cards/second-data.json"):
         file = open("./data/cards/second-data.json")
@@ -374,7 +374,7 @@ def main():
         file.close()
     else:
         card_data = card_list(random.randint(5, 100), dish_data, menu_data)
-        save_to_file(card_data, "./data/cards/data.json")
+    save_to_file(card_data, "./data/cards/data.json")
 
     restaurant_data = restaurant_list(random.randint(5, 100), restaurant_names, street_names, postal_codes, card_data,
                                       dish_data)
