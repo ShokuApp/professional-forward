@@ -34,7 +34,7 @@ type PlateNameProps = {
 const PlateName: FC<PlateNameProps> = ({ name, setName }: PlateNameProps) => {
   return (
     <View style={styles.container}>
-      <CategoryTitle label="Nom du plat:" />
+      <CategoryTitle label="Nom du plat :" />
       <View style={styles.border}>
         <View style={styles.input}>
           <TextInput
