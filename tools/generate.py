@@ -6,44 +6,44 @@ import uuid
 from datetime import datetime
 
 
-def generate_profile_name():
+def get_profile_names():
     file = open("./tools/samples/profile-name.txt")
     lines = file.readlines()
     file.close()
 
-    name = random.choice(lines).replace('\n', '').split(" ")
+    lines = [line.replace('\n', '') for line in lines]
 
-    return name[0], name[1]
+    return lines
 
 
-def generate_restaurant_name():
+def get_restaurant_names():
     file = open("./tools/samples/restaurant-name.txt")
     lines = file.readlines()
     file.close()
 
-    name = random.choice(lines).replace('\n', '')
+    lines = [line.replace('\n', '') for line in lines]
 
-    return name
+    return lines
 
 
-def generate_street_name():
+def get_street_names():
     file = open("./tools/samples/street-name.txt")
     lines = file.readlines()
     file.close()
 
-    name = random.choice(lines).replace('\n', '')
+    lines = [line.replace('\n', '') for line in lines]
 
-    return name
+    return lines
 
 
-def generate_postal_code():
+def get_postal_codes():
     file = open("./tools/samples/postal-code.txt")
     lines = file.readlines()
     file.close()
 
-    name = random.choice(lines).replace('\n', '')
+    lines = [line.replace('\n', '') for line in lines]
 
-    return name
+    return lines
 
 
 def save_to_file(data, path):
@@ -202,10 +202,7 @@ def card_list(length, dish_data, menu_data):
     return data
 
 
-def restaurant(card_data, dish_data):
-    restaurant_name = generate_restaurant_name()
-    street_name = generate_street_name()
-    postal_code = generate_postal_code()
+def restaurant(restaurant_name, street_name, postal_code, card_data, dish_data):
     longitude_float = random.randint(41000, 47000)
     latitude_float = random.randint(57000, 60000)
 
@@ -281,17 +278,24 @@ def restaurant(card_data, dish_data):
     return data
 
 
-def restaurant_list(length, card_data, dish_data):
+def restaurant_list(length, restaurant_names, street_names, postal_codes, card_data, dish_data):
     data = []
 
     for i in range(1, length + 1):
-        data.append(restaurant(card_data, dish_data))
+        restaurant_name = random.choice(restaurant_names)
+        street_name = random.choice(street_names)
+        postal_code = random.choice(postal_codes)
+
+        restaurant_names.remove(restaurant_name)
+        street_names.remove(street_name)
+
+        data.append(restaurant(restaurant_name, street_name, postal_code, card_data, dish_data))
 
     return data
 
 
-def profile(restaurant_data):
-    first_name, last_name = generate_profile_name()
+def profile(name, restaurant_data):
+    first_name, last_name = name.split(" ")
 
     data = {"id": str(uuid.uuid4()),
             "email": first_name.lower() + "." + last_name.lower() + "@example.com",
@@ -302,17 +306,26 @@ def profile(restaurant_data):
     return data
 
 
-def profile_list(length, restaurant_data):
+def profile_list(length, profile_names, restaurant_data):
     data = []
 
     for i in range(1, length + 1):
-        data.append(profile(restaurant_data))
+        name = random.choice(profile_names)
+
+        profile_names.remove(name)
+
+        data.append(profile(name, restaurant_data))
 
     return data
 
 
 def main():
     random.seed(datetime.now())
+
+    profile_names = get_profile_names()
+    restaurant_names = get_restaurant_names()
+    street_names = get_street_names()
+    postal_codes = get_postal_codes()
 
     pictogram_data = pictogram_list(random.randint(5, 100))
     save_to_file(pictogram_data, "./data/pictograms/data.json")
@@ -332,10 +345,11 @@ def main():
     card_data = card_list(random.randint(5, 100), dish_data, menu_data)
     save_to_file(card_data, "./data/cards/data.json")
 
-    restaurant_data = restaurant_list(random.randint(5, 100), card_data, dish_data)
+    restaurant_data = restaurant_list(random.randint(5, 100), restaurant_names, street_names, postal_codes, card_data,
+                                      dish_data)
     save_to_file(restaurant_data, "./data/restaurants/data.json")
 
-    profile_data = profile_list(random.randint(5, 100), restaurant_data)
+    profile_data = profile_list(random.randint(5, 100), profile_names, restaurant_data)
     save_to_file(profile_data, "./data/profiles/data.json")
 
     return
