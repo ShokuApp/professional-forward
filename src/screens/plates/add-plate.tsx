@@ -7,6 +7,8 @@ import PlateType from "../../components/plates/add-plate/plate-type";
 import PlateIngredients from "../../components/plates/add-plate/plate-ingredients";
 import PlateSauces from "../../components/plates/add-plate/plate-sauces";
 import PlatePrice from "../../components/plates/add-plate/plate-price";
+import PlateAdaptable from "../../components/plates/add-plate/plate-adaptable";
+import { ScrollView } from "react-native-gesture-handler";
 
 const styles = StyleSheet.create({
   container: {
@@ -83,9 +85,10 @@ const AddPlate: FC = () => {
   const [sauces, setSauces] = React.useState(testSauces);
   const [price, setPrice] = React.useState("");
   const [plateType, setPlateType] = React.useState("plate");
+  const [isAdaptable, setAdaptable] = React.useState(false);
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <PlateName name={plateName} setName={setPlateName} />
       <PlateType type={plateType} setType={setPlateType} />
       <PlateIngredients
@@ -94,7 +97,8 @@ const AddPlate: FC = () => {
       />
       <PlateSauces sauces={sauces} setSauces={setSauces} />
       <PlatePrice setPrice={setPrice} />
-    </View>
+      <PlateAdaptable isAdaptable={isAdaptable} setAdaptable={setAdaptable} />
+    </ScrollView>
   );
 };
 
