@@ -4,7 +4,7 @@
         "name": "Oeufs Mimosa",
         "type": "starter",
         "description": "Oeufs Mimosa avec mayonnaise et basilique",
-        "price": "7€",
+        "price": "7",
         "ingredients": [
             "a0148b26-9e35-449c-97ad-2acba737413d",
             "cd002746-cf62-4be0-b934-f99c9bd8b5a9",
@@ -20,7 +20,7 @@
         "name": "Côte de boeuf 450g, frites",
         "type": "plate",
         "description": "Une tendre et généreuse côte de boeuf servie avec ses frites et une sauce au choix",
-        "price": "29€",
+        "price": "29",
         "ingredients": [
             "bcf92313-25c1-4b56-8911-82955e5006e7",
             "0180d42d-a663-48a9-bd62-a6a8849d923c",
@@ -42,7 +42,7 @@
         "name": "Dame Blanche",
         "type": "dessert",
         "description": "Trois boules de glace à la vanille, chocolat chaud, chantilly et amandes effilées",
-        "price": "9€",
+        "price": "9",
         "ingredients": [
             "8d8722dc-a6fe-4c16-9b99-64f2d4640c68",
             "eb120378-60e6-49da-9198-3250e7a4a569",
@@ -57,7 +57,7 @@
         "name": "Foie gras",
         "type": "starter",
         "description": "Toast de foie gras sur son pain d'épice, et chutney d'oignons",
-        "price": "14€",
+        "price": "14",
         "ingredients": [
             "87625f1c-1211-4cb9-bd15-fa5b8ce68d18",
             "4e870ce7-b804-4aac-8ce3-95300c6addd9",
@@ -74,7 +74,7 @@
         "name": "Magret de canard et écrasé de pommes de terre",
         "type": "plate",
         "description": "Magret de canard et écrasé de pommes de terre, avec sa sauce au vin rouge",
-        "price": "23€",
+        "price": "23",
         "ingredients": [
             "04e57a13-d56a-46a7-9efe-f238e54b3a76",
             "c5e98656-2ecb-4647-b6db-558b68d4dead",
@@ -93,7 +93,7 @@
         "name": "Tartelette à la framboise",
         "type": "dessert",
         "description": "Une belle tartelette à la framboise maison",
-        "price": "9€",
+        "price": "9",
         "ingredients": [
             "7bf73095-6359-46c5-bc8b-9b3a1a65ba24",
             "c5e98656-2ecb-4647-b6db-558b68d4dead",
@@ -111,7 +111,7 @@
         "name": "Salade du Sud",
         "type": "starter",
         "description": "Salade de melon et jambon de pays, tomates et fromage de chèvre",
-        "price": "12€",
+        "price": "12",
         "ingredients": [
             "c6cae453-f61c-4354-a96e-e132c6fa5d34",
             "e572e039-eee4-486f-ab79-4a39b78b21f2",
@@ -127,7 +127,7 @@
         "name": "Lasagnes",
         "type": "plate",
         "description": "Lasagnes maison",
-        "price": "19€",
+        "price": "19",
         "ingredients": [
             "c588fbd4-882b-471b-b648-ab1aaa0b6a5b",
             "72a34fdc-d038-4747-988b-308a30f950da",
@@ -150,7 +150,7 @@
         "name": "Îles flottantes",
         "type": "dessert",
         "description": "Les véritables îles flottantes",
-        "price": "8€",
+        "price": "8",
         "ingredients": [
             "a0148b26-9e35-449c-97ad-2acba737413d",
             "e1026388-7ea4-4d0e-b3e4-cbc7a91bafd6",
@@ -167,7 +167,7 @@
         "name": "Les tomates mozzarella",
         "type": "starter",
         "description": "Simple salade fraîche de tomates et mozzarella",
-        "price": "11€",
+        "price": "11",
         "ingredients": [
             "4e3be63a-b1ef-4a84-8b22-195f7561abae",
             "41ad5aad-5b4b-45bb-9bde-dd2ed64edeab",
@@ -181,7 +181,7 @@
         "name": "Tartiflette",
         "type": "plate",
         "description": "Une bonne tartiflette du pays, façon traditionnelle",
-        "price": "18€",
+        "price": "18",
         "ingredients": [
             "0180d42d-a663-48a9-bd62-a6a8849d923c",
             "30dc1056-2d40-4db5-9610-a78348fc863a",
@@ -199,7 +199,7 @@
         "name": "Tarte au citron meringuée",
         "type": "dessert",
         "description": "La classique tarte au citron meringuée",
-        "price": "8€",
+        "price": "8",
         "ingredients": [
             "c82f50a6-402d-4e58-bb90-73ec9317f66a",
             "c5e98656-2ecb-4647-b6db-558b68d4dead",
@@ -215,7 +215,7 @@
         "name": "Quiche Lorraine",
         "type": "starter",
         "description": "La traditionnelle quiche Lorraine",
-        "price": "12€",
+        "price": "12",
         "ingredients": [
             "59f053cc-0a52-4262-a2a7-088abf7648e3",
             "a41a5636-8e67-4be9-a3e6-084e7b925242",
@@ -234,7 +234,7 @@
         "name": "Raclette",
         "type": "plate",
         "description": "Du fromage à raclette, de la charcuterie du pays, de tendres pommes de terre et sa salade verte pour un bon repas.",
-        "price": "23€",
+        "price": "23",
         "ingredients": [
             "0180d42d-a663-48a9-bd62-a6a8849d923c",
             "5e6fd33b-104e-402b-a086-5d94a3bb974e",
@@ -251,7 +251,7 @@
         "name": "Tatin aux pommes à la canelle",
         "type": "dessert",
         "description": "Une jolie tarte tatin aux pommes caramélisées et à la canelle",
-        "price": "9€",
+        "price": "9",
         "ingredients": [
             "59f053cc-0a52-4262-a2a7-088abf7648e3",
             "82e1be32-ea5b-4b2b-ba02-09e6f33a8071",
@@ -267,7 +267,7 @@
         "name": "Avocat et thon",
         "type": "starter",
         "description": "Classique, efficace... un avocat et du thon",
-        "price": "7€",
+        "price": "7",
         "ingredients": [
             "80ca5159-7ab0-4a24-b0ab-4c5188b51dc1",
             "f7ed90ee-7f23-49de-9788-f57e4c6a6ea3"
@@ -280,7 +280,7 @@
         "name": "Suprême de poulet à la crème",
         "type": "plate",
         "description": "Suprême de poulet à la crème et ses petits légumes",
-        "price": "17€",
+        "price": "17",
         "ingredients": [
             "dddf74bb-c698-4c02-96d1-325b15ae667f",
             "897f359d-8a5f-47de-8cb8-38770fe15715",
@@ -300,7 +300,7 @@
         "name": "Tiramisu",
         "type": "dessert",
         "description": "Le Classique Tiramisu",
-        "price": "8€",
+        "price": "8",
         "ingredients": [
             "a0148b26-9e35-449c-97ad-2acba737413d",
             "250534df-6901-4f8c-9107-3cbf2e466681",
