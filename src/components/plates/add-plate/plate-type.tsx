@@ -32,7 +32,7 @@ const PlateType: FC<PlateTypeProps> = ({ type, setType }: PlateTypeProps) => {
           { label: "Plat", value: "plate" },
           { label: "Dessert", value: "dessert" },
         ]}
-        defaultValue="plate"
+        defaultValue={type}
         containerStyle={styles.containerPicker}
         style={styles.picker}
         dropDownStyle={styles.picker}
