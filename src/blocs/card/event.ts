@@ -7,7 +7,6 @@ export class CardGetEvent extends CardEvent {
 
   constructor(id: string) {
     super();
-
     this.id = id;
   }
 }
@@ -23,3 +22,5 @@ export class CardSetEvent extends CardEvent {
     this.card = card;
   }
 }
+
+export class CardListEvent extends CardEvent {}

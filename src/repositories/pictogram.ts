@@ -3,6 +3,7 @@ import { Pictogram } from "../models";
 
 import pictograms from "../../data/pictograms/data.json";
 
+// deepcode ignore no-any: JSON
 export class PictogramRepository implements Repository<Pictogram> {
   async get(id: string): Promise<Pictogram> {
     const pictogram = pictograms.find((item) => item.id === id);
@@ -22,5 +23,9 @@ export class PictogramRepository implements Repository<Pictogram> {
     } else {
       pictograms.push(pictogram);
     }
+  }
+
+  async list(): Promise<Pictogram[]> {
+    return pictograms;
   }
 }
