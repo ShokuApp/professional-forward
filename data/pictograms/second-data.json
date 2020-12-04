@@ -68,5 +68,25 @@
         "id": "98408d34-dd9e-4b6a-a415-0ec9d06f6160",
         "name": "Mollusques",
         "image": "https://source.unsplash.com/random"
+    },
+    {
+        "id": "d34d5667-a48a-4c10-bcb3-66044800bc84",
+        "name": "Végétarien",
+        "image": "https://source.unsplash.com/random"
+    },
+    {
+        "id": "7c8ff128-c23d-443c-ace2-7b96f5417adc",
+        "name": "Vegan",
+        "image": "https://source.unsplash.com/random"
+    },
+    {
+        "id": "7fb21b99-29df-4c8c-ad37-e9104db96892",
+        "name": "Paléo",
+        "image": "https://source.unsplash.com/random"
+    },
+    {
+        "id": "72b94464-a362-43b6-bb53-c2372442bb91",
+        "name": "Kéto",
+        "image": "https://source.unsplash.com/random"
     }
 ]
