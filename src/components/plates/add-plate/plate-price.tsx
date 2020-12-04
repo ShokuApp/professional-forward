@@ -8,13 +8,13 @@ import CategoryTitle from "../../common/category-title";
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 10,
     marginTop: 42,
   },
   price: {
     flexDirection: "row",
   },
   inputBox: {
+    paddingVertical: 5,
     borderRadius: 5,
     borderColor: "#2196F3",
     borderWidth: 1,

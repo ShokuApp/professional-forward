@@ -8,15 +8,13 @@ import PlatePrice from "../../components/plates/add-plate/plate-price";
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 10,
     width: "100%",
     height: "100%",
     backgroundColor: "white",
+    paddingHorizontal: 10,
   },
 });
 
-  
-  
 const testTab: Ingredient[] = [
   {
     id: "9eac69a2-21e9-4d16-968a-db5d40513baa",
@@ -41,9 +39,9 @@ const AddPlate: FC = () => {
   const [plateType, setPlateType] = React.useState("plate");
 
   return (
-    <View>
+    <View style={styles.container}>
       <PlateName name={plateName} setName={setPlateName} />
-      <PlateType type={plateType} setType={setType} />
+      <PlateType type={plateType} setType={setPlateType} />
       <PlateIngredients
         ingredients={ingredients}
         setIngredients={setIngredients}
