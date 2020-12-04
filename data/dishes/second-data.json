@@ -1,0 +1,298 @@
+[
+    {
+        "id": "4a80c7db-5252-4d0c-b832-45b732c2fbc9",
+        "name": "Oeufs Mimosa",
+        "type": "starter",
+        "description": "Oeufs Mimosa avec mayonnaise et basilique",
+        "price": "7€",
+        "ingredients": [
+            "a0148b26-9e35-449c-97ad-2acba737413d",
+            "cd002746-cf62-4be0-b934-f99c9bd8b5a9",
+            "15bc47b2-f22b-4feb-89e3-92fdec59e629",
+            "37ebf37d-918a-4426-a413-df2546cd2b8e",
+            "262bc49e-b935-4aea-bdb8-d91099e96ea3"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "806ec7a6-87b7-4f8c-ae90-8e2913e74c92",
+        "name": "Côte de boeuf 450g, frites",
+        "type": "plate",
+        "description": "Une tendre et généreuse côte de boeuf servie avec ses frites et une sauce au choix",
+        "price": "29€",
+        "ingredients": [
+            "bcf92313-25c1-4b56-8911-82955e5006e7",
+            "0180d42d-a663-48a9-bd62-a6a8849d923c",
+            "cd002746-cf62-4be0-b934-f99c9bd8b5a9",
+            "3f2a3432-9c03-4ed8-a1e9-7ace655e2bf2",
+            "722c924c-da15-4d60-945a-a6731c619f0c"
+        ],
+        "sauces": [
+            "43b10dfd-8466-4449-a072-c8fcd764cf56",
+            "ba82e1a5-41b8-4053-8da4-29ce90314edd",
+            "7021643b-2791-432c-b145-c35de0b8b151",
+            "d2011a02-8220-4eb7-b9e9-fae9a5448ebf",
+            "4b7ae32a-90da-42d0-ab45-a25e30c0a96a"
+        ]
+    },
+    {
+        "id": "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055",
+        "name": "Dame Blanche",
+        "type": "dessert",
+        "description": "Trois boules de glace à la vanille, chocolat chaud, chantilly et amandes effilées",
+        "price": "9€",
+        "ingredients": [
+            "8d8722dc-a6fe-4c16-9b99-64f2d4640c68",
+            "eb120378-60e6-49da-9198-3250e7a4a569",
+            "c7c8937e-3f03-4286-898a-415f8ea9c350",
+            "088d68f2-ba21-4ca1-b714-62204a412b09"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "b0863fd0-7618-4072-87e4-715fdb8d9452",
+        "name": "Foie gras",
+        "type": "starter",
+        "description": "Toast de foie gras sur son pain d'épice, et chutney d'oignons",
+        "price": "14€",
+        "ingredients": [
+            "87625f1c-1211-4cb9-bd15-fa5b8ce68d18",
+            "4e870ce7-b804-4aac-8ce3-95300c6addd9",
+            "72a34fdc-d038-4747-988b-308a30f950da",
+            "99f905e5-9aab-43b9-84d3-94549961f154",
+            "15bc47b2-f22b-4feb-89e3-92fdec59e629",
+            "83e98047-145a-47f5-ae63-bc352444e217"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "fdc442ad-41cc-4b96-be42-fcecfa9d4640",
+        "name": "Magret de canard et écrasé de pommes de terre",
+        "type": "plate",
+        "description": "Magret de canard et écrasé de pommes de terre, avec sa sauce au vin rouge",
+        "price": "23€",
+        "ingredients": [
+            "04e57a13-d56a-46a7-9efe-f238e54b3a76",
+            "c5e98656-2ecb-4647-b6db-558b68d4dead",
+            "0180d42d-a663-48a9-bd62-a6a8849d923c",
+            "e1026388-7ea4-4d0e-b3e4-cbc7a91bafd6",
+            "83e98047-145a-47f5-ae63-bc352444e217"
+        ],
+        "sauces": [
+            "43b10dfd-8466-4449-a072-c8fcd764cf56",
+            "ba82e1a5-41b8-4053-8da4-29ce90314edd"
+        ]
+    },
+    {
+        "id": "8185fdf5-3b2e-4295-b23a-5d00899d588a",
+        "name": "Tartelette à la framboise",
+        "type": "dessert",
+        "description": "Une belle tartelette à la framboise maison",
+        "price": "9€",
+        "ingredients": [
+            "7bf73095-6359-46c5-bc8b-9b3a1a65ba24",
+            "c5e98656-2ecb-4647-b6db-558b68d4dead",
+            "c82f50a6-402d-4e58-bb90-73ec9317f66a",
+            "a0148b26-9e35-449c-97ad-2acba737413d",
+            "e1026388-7ea4-4d0e-b3e4-cbc7a91bafd6",
+            "941f0df0-d35d-46f0-a9f9-10a32afb9106",
+            "c38a0e43-3bec-422a-ba30-9432732ff2dc"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "3fcf4def-280f-4b98-975f-cde668f45774",
+        "name": "Salade du Sud",
+        "type": "starter",
+        "description": "Salade de melon et jambon de pays, tomates et fromage de chèvre",
+        "price": "12€",
+        "ingredients": [
+            "c6cae453-f61c-4354-a96e-e132c6fa5d34",
+            "e572e039-eee4-486f-ab79-4a39b78b21f2",
+            "6b23388a-e5b0-4288-bd29-282cd111fca2",
+            "4e3be63a-b1ef-4a84-8b22-195f7561abae",
+            "7de2bdba-3881-471c-9311-477959b2f288"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "0d30c66c-d932-4377-ae2f-bfbb53afd911",
+        "name": "Lasagnes",
+        "type": "plate",
+        "description": "Lasagnes maison",
+        "price": "19€",
+        "ingredients": [
+            "c588fbd4-882b-471b-b648-ab1aaa0b6a5b",
+            "72a34fdc-d038-4747-988b-308a30f950da",
+            "3f2a3432-9c03-4ed8-a1e9-7ace655e2bf2",
+            "4bb01c75-882a-492a-89c2-e511bc1f8ffa",
+            "8de15127-c2f6-4874-80db-8dadf7ca23fe",
+            "bcf92313-25c1-4b56-8911-82955e5006e7",
+            "4e3be63a-b1ef-4a84-8b22-195f7561abae",
+            "83e98047-145a-47f5-ae63-bc352444e217",
+            "2f850941-676e-4f2e-8463-623e5b3f7b5b",
+            "0f82393c-ee3f-487d-a16f-d81c4787f9da",
+            "73b6da6d-493b-42c6-a495-1767fdf71d80",
+            "262bc49e-b935-4aea-bdb8-d91099e96ea3"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "967d7555-859f-4102-a100-559faf352000",
+        "name": "Îles flottantes",
+        "type": "dessert",
+        "description": "Les véritables îles flottantes",
+        "price": "8€",
+        "ingredients": [
+            "a0148b26-9e35-449c-97ad-2acba737413d",
+            "e1026388-7ea4-4d0e-b3e4-cbc7a91bafd6",
+            "a167d439-3ff4-46d1-a577-5a5471cb11de",
+            "088d68f2-ba21-4ca1-b714-62204a412b09",
+            "7bf73095-6359-46c5-bc8b-9b3a1a65ba24",
+            "722c924c-da15-4d60-945a-a6731c619f0c"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "3c3a12e4-1a0d-434a-bf4f-0b1deba4236f",
+        "name": "Les tomates mozzarella",
+        "type": "starter",
+        "description": "Simple salade fraîche de tomates et mozzarella",
+        "price": "11€",
+        "ingredients": [
+            "4e3be63a-b1ef-4a84-8b22-195f7561abae",
+            "41ad5aad-5b4b-45bb-9bde-dd2ed64edeab",
+            "cd002746-cf62-4be0-b934-f99c9bd8b5a9"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "de51f742-bf08-4464-ade9-6f59a9fbb672",
+        "name": "Tartiflette",
+        "type": "plate",
+        "description": "Une bonne tartiflette du pays, façon traditionnelle",
+        "price": "18€",
+        "ingredients": [
+            "0180d42d-a663-48a9-bd62-a6a8849d923c",
+            "30dc1056-2d40-4db5-9610-a78348fc863a",
+            "72a34fdc-d038-4747-988b-308a30f950da",
+            "54b3382d-1da4-491c-8e59-372cd8ade4bb",
+            "897f359d-8a5f-47de-8cb8-38770fe15715",
+            "a41a5636-8e67-4be9-a3e6-084e7b925242",
+            "262bc49e-b935-4aea-bdb8-d91099e96ea3"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "083f3e79-90b6-4711-ac5d-a75768e8e889",
+        "name": "Tarte au citron meringuée",
+        "type": "dessert",
+        "description": "La classique tarte au citron meringuée",
+        "price": "8€",
+        "ingredients": [
+            "c82f50a6-402d-4e58-bb90-73ec9317f66a",
+            "c5e98656-2ecb-4647-b6db-558b68d4dead",
+            "7bf73095-6359-46c5-bc8b-9b3a1a65ba24",
+            "a0148b26-9e35-449c-97ad-2acba737413d",
+            "722c924c-da15-4d60-945a-a6731c619f0c"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "ed378895-baca-4673-8d18-0a30bf81dd74",
+        "name": "Quiche Lorraine",
+        "type": "starter",
+        "description": "La traditionnelle quiche Lorraine",
+        "price": "12€",
+        "ingredients": [
+            "59f053cc-0a52-4262-a2a7-088abf7648e3",
+            "a41a5636-8e67-4be9-a3e6-084e7b925242",
+            "897f359d-8a5f-47de-8cb8-38770fe15715",
+            "941f0df0-d35d-46f0-a9f9-10a32afb9106",
+            "a0148b26-9e35-449c-97ad-2acba737413d",
+            "262bc49e-b935-4aea-bdb8-d91099e96ea3",
+            "0f82393c-ee3f-487d-a16f-d81c4787f9da",
+            "5e6fd33b-104e-402b-a086-5d94a3bb974e"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "834d1f59-e6c7-4796-ad44-efe9382b6298",
+        "name": "Raclette",
+        "type": "plate",
+        "description": "Du fromage à raclette, de la charcuterie du pays, de tendres pommes de terre et sa salade verte pour un bon repas.",
+        "price": "23€",
+        "ingredients": [
+            "0180d42d-a663-48a9-bd62-a6a8849d923c",
+            "5e6fd33b-104e-402b-a086-5d94a3bb974e",
+            "6b23388a-e5b0-4288-bd29-282cd111fca2",
+            "dcd6e255-0253-4c15-b1af-2765edfad252",
+            "c6cae453-f61c-4354-a96e-e132c6fa5d34",
+            "53668e09-2559-4ddb-afa5-8402f4dfca79"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "178da1f7-9bb7-4ef9-a035-ef44a7611531",
+        "name": "Tatin aux pommes à la canelle",
+        "type": "dessert",
+        "description": "Une jolie tarte tatin aux pommes caramélisées et à la canelle",
+        "price": "9€",
+        "ingredients": [
+            "59f053cc-0a52-4262-a2a7-088abf7648e3",
+            "82e1be32-ea5b-4b2b-ba02-09e6f33a8071",
+            "7bf73095-6359-46c5-bc8b-9b3a1a65ba24",
+            "c5e98656-2ecb-4647-b6db-558b68d4dead",
+            "c7e33582-f7a9-41f5-b776-2f8689352070"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "badbd0b4-970f-4579-bfbc-de5a6b75d5b5",
+        "name": "Avocat et thon",
+        "type": "starter",
+        "description": "Classique, efficace... un avocat et du thon",
+        "price": "7€",
+        "ingredients": [
+            "80ca5159-7ab0-4a24-b0ab-4c5188b51dc1",
+            "f7ed90ee-7f23-49de-9788-f57e4c6a6ea3"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+        "name": "Suprême de poulet à la crème",
+        "type": "plate",
+        "description": "Suprême de poulet à la crème et ses petits légumes",
+        "price": "17€",
+        "ingredients": [
+            "dddf74bb-c698-4c02-96d1-325b15ae667f",
+            "897f359d-8a5f-47de-8cb8-38770fe15715",
+            "a41a5636-8e67-4be9-a3e6-084e7b925242",
+            "0ebcc6ef-8c03-4414-82cd-4a3cb7a3f421",
+            "262bc49e-b935-4aea-bdb8-d91099e96ea3",
+            "5e6fd33b-104e-402b-a086-5d94a3bb974e",
+            "1b81ad80-494a-4f4b-a7f7-d6080688cddc",
+            "9684f555-c9fa-4f1b-8076-3009bf6eaabd",
+            "4e3be63a-b1ef-4a84-8b22-195f7561abae"
+        ],
+        "sauces": []
+    },
+    {
+        "id": "a3561d52-ad15-43ca-9fae-6f47cd02eaa0",
+        "name": "Tiramisu",
+        "type": "dessert",
+        "description": "Le Classique Tiramisu",
+        "price": "8€",
+        "ingredients": [
+            "a0148b26-9e35-449c-97ad-2acba737413d",
+            "250534df-6901-4f8c-9107-3cbf2e466681",
+            "a167d439-3ff4-46d1-a577-5a5471cb11de",
+            "0d63452e-1a8c-4a7e-86a5-7ad6fcfa4f2e",
+            "95b10323-9226-4ac5-9608-3ee45ae3be08",
+            "f67e2e6c-70a4-4e42-8208-7f4174ac77fb",
+            "5360a315-924a-495b-8d43-32daf5e356b2"
+        ],
+        "sauces": []
+    }
+]
