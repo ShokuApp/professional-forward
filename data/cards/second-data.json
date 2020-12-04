@@ -1,0 +1,383 @@
+[
+    {
+        "id": "46087e3d-1943-4e57-9ced-2af2291e1f91",
+        "name": "Card 1",
+        "dishes": [
+            "ed378895-baca-4673-8d18-0a30bf81dd74",
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "834d1f59-e6c7-4796-ad44-efe9382b6298",
+            "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+            "de51f742-bf08-4464-ade9-6f59a9fbb672",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055",
+            "178da1f7-9bb7-4ef9-a035-ef44a7611531"
+        ],
+        "menus": [
+            "ca4a4490-dd10-462d-9892-a6121b6cb6c7",
+            "b5ce3fd6-4e1d-4a43-b5df-f426fed7d1b4"
+        ]
+    },
+    {
+        "id": "a2773326-417f-4510-a390-54b875850cf9",
+        "name": "Card 2",
+        "dishes": [
+            "badbd0b4-970f-4579-bfbc-de5a6b75d5b5",
+            "3c3a12e4-1a0d-434a-bf4f-0b1deba4236f",
+            "4a80c7db-5252-4d0c-b832-45b732c2fbc9",
+            "3fcf4def-280f-4b98-975f-cde668f45774",
+            "0d30c66c-d932-4377-ae2f-bfbb53afd911",
+            "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+            "a3561d52-ad15-43ca-9fae-6f47cd02eaa0",
+            "8185fdf5-3b2e-4295-b23a-5d00899d588a",
+            "178da1f7-9bb7-4ef9-a035-ef44a7611531",
+            "083f3e79-90b6-4711-ac5d-a75768e8e889"
+        ],
+        "menus": [
+            "3e2919ba-fe5f-4834-afe8-c146b7c79d1d",
+            "66ba7216-369d-463e-8b5f-40396ac4a465"
+        ]
+    },
+    {
+        "id": "d47fe205-2ea5-4f74-8f14-f2898b3ada45",
+        "name": "Card 3",
+        "dishes": [
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "3fcf4def-280f-4b98-975f-cde668f45774",
+            "3c3a12e4-1a0d-434a-bf4f-0b1deba4236f",
+            "ed378895-baca-4673-8d18-0a30bf81dd74",
+            "de51f742-bf08-4464-ade9-6f59a9fbb672",
+            "0d30c66c-d932-4377-ae2f-bfbb53afd911",
+            "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+            "fdc442ad-41cc-4b96-be42-fcecfa9d4640",
+            "806ec7a6-87b7-4f8c-ae90-8e2913e74c92",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055",
+            "8185fdf5-3b2e-4295-b23a-5d00899d588a",
+            "083f3e79-90b6-4711-ac5d-a75768e8e889",
+            "a3561d52-ad15-43ca-9fae-6f47cd02eaa0",
+            "178da1f7-9bb7-4ef9-a035-ef44a7611531"
+        ],
+        "menus": [
+            "8b29b9b9-b361-4f55-87ef-a1c1c40369bd"
+        ]
+    },
+    {
+        "id": "1fc98608-a4df-4f5a-b81a-eb4b6e6bd5e1",
+        "name": "Card 4",
+        "dishes": [
+            "4a80c7db-5252-4d0c-b832-45b732c2fbc9",
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "3fcf4def-280f-4b98-975f-cde668f45774",
+            "3c3a12e4-1a0d-434a-bf4f-0b1deba4236f",
+            "0d30c66c-d932-4377-ae2f-bfbb53afd911",
+            "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+            "a3561d52-ad15-43ca-9fae-6f47cd02eaa0",
+            "8185fdf5-3b2e-4295-b23a-5d00899d588a",
+            "178da1f7-9bb7-4ef9-a035-ef44a7611531"
+        ],
+        "menus": [
+            "ca4a4490-dd10-462d-9892-a6121b6cb6c7",
+            "3e2919ba-fe5f-4834-afe8-c146b7c79d1d"
+        ]
+    },
+    {
+        "id": "7d3f0c1b-a93e-4eec-b922-c2b077daa234",
+        "name": "Card 5",
+        "dishes": [
+            "ed378895-baca-4673-8d18-0a30bf81dd74",
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "834d1f59-e6c7-4796-ad44-efe9382b6298",
+            "806ec7a6-87b7-4f8c-ae90-8e2913e74c92",
+            "de51f742-bf08-4464-ade9-6f59a9fbb672",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055",
+            "178da1f7-9bb7-4ef9-a035-ef44a7611531",
+            "083f3e79-90b6-4711-ac5d-a75768e8e889"
+        ],
+        "menus": [
+            "b5ce3fd6-4e1d-4a43-b5df-f426fed7d1b4",
+            "c7ca73c4-eb50-4e0a-886a-7b9cac04176e"
+        ]
+    },
+    {
+        "id": "c8512c5d-58e4-4694-8b5d-395fd7165454",
+        "name": "Card 6",
+        "dishes": [
+            "4a80c7db-5252-4d0c-b832-45b732c2fbc9",
+            "badbd0b4-970f-4579-bfbc-de5a6b75d5b5",
+            "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+            "0d30c66c-d932-4377-ae2f-bfbb53afd911",
+            "083f3e79-90b6-4711-ac5d-a75768e8e889",
+            "967d7555-859f-4102-a100-559faf352000",
+            "8185fdf5-3b2e-4295-b23a-5d00899d588a",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055"
+        ],
+        "menus": [
+            "46ea0b4e-b738-445a-a5c9-67dc31a77dc5",
+            "98a68e2e-e473-458b-ac44-9a7bf95e1824"
+        ]
+    },
+    {
+        "id": "fc959142-e583-41aa-af7d-13eb733f03c3",
+        "name": "Card 7",
+        "dishes": [
+            "badbd0b4-970f-4579-bfbc-de5a6b75d5b5",
+            "3c3a12e4-1a0d-434a-bf4f-0b1deba4236f",
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "0d30c66c-d932-4377-ae2f-bfbb53afd911",
+            "fdc442ad-41cc-4b96-be42-fcecfa9d4640",
+            "967d7555-859f-4102-a100-559faf352000",
+            "178da1f7-9bb7-4ef9-a035-ef44a7611531",
+            "083f3e79-90b6-4711-ac5d-a75768e8e889"
+        ],
+        "menus": [
+            "66ba7216-369d-463e-8b5f-40396ac4a465",
+            "814c2956-abe7-4a42-85d6-d9c9c796f2ac"
+        ]
+    },
+    {
+        "id": "8aac3dce-33d1-4e49-8dc5-145577dc881f",
+        "name": "Card 8",
+        "dishes": [
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "ed378895-baca-4673-8d18-0a30bf81dd74",
+            "806ec7a6-87b7-4f8c-ae90-8e2913e74c92",
+            "834d1f59-e6c7-4796-ad44-efe9382b6298",
+            "fdc442ad-41cc-4b96-be42-fcecfa9d4640",
+            "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+            "de51f742-bf08-4464-ade9-6f59a9fbb672",
+            "178da1f7-9bb7-4ef9-a035-ef44a7611531",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055"
+        ],
+        "menus": [
+            "f7b9f85e-993a-4f6e-9090-cdb93ad3c704",
+            "61e05702-8626-4047-9fe0-ad72c37e9516"
+        ]
+    },
+    {
+        "id": "f71d1ce8-d59a-4d8d-9b43-1a7011219b47",
+        "name": "Card 9",
+        "dishes": [
+            "3fcf4def-280f-4b98-975f-cde668f45774",
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "ed378895-baca-4673-8d18-0a30bf81dd74",
+            "834d1f59-e6c7-4796-ad44-efe9382b6298",
+            "806ec7a6-87b7-4f8c-ae90-8e2913e74c92",
+            "178da1f7-9bb7-4ef9-a035-ef44a7611531",
+            "a3561d52-ad15-43ca-9fae-6f47cd02eaa0",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055"
+        ],
+        "menus": [
+            "6cd36b0d-a374-4ba0-aed2-3273dbf8cbc0",
+            "ff21520c-acde-48f1-9a2f-319012f11871"
+        ]
+    },
+    {
+        "id": "88744501-fb78-41b0-a1e6-bc6a5da00528",
+        "name": "Card 10",
+        "dishes": [
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "3fcf4def-280f-4b98-975f-cde668f45774",
+            "3c3a12e4-1a0d-434a-bf4f-0b1deba4236f",
+            "ed378895-baca-4673-8d18-0a30bf81dd74",
+            "de51f742-bf08-4464-ade9-6f59a9fbb672",
+            "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+            "0d30c66c-d932-4377-ae2f-bfbb53afd911",
+            "fdc442ad-41cc-4b96-be42-fcecfa9d4640",
+            "806ec7a6-87b7-4f8c-ae90-8e2913e74c92",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055",
+            "8185fdf5-3b2e-4295-b23a-5d00899d588a",
+            "a3561d52-ad15-43ca-9fae-6f47cd02eaa0",
+            "083f3e79-90b6-4711-ac5d-a75768e8e889",
+            "178da1f7-9bb7-4ef9-a035-ef44a7611531"
+        ],
+        "menus": [
+            "8b29b9b9-b361-4f55-87ef-a1c1c40369bd",
+            "d6c5bb1d-37fe-4078-8ac7-2ac8199df2bc"
+        ]
+    },
+    {
+        "id": "22571ee1-045e-42d1-b069-1ab39ea7d58d",
+        "name": "Card 11",
+        "dishes": [
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "ed378895-baca-4673-8d18-0a30bf81dd74",
+            "3fcf4def-280f-4b98-975f-cde668f45774",
+            "fdc442ad-41cc-4b96-be42-fcecfa9d4640",
+            "834d1f59-e6c7-4796-ad44-efe9382b6298",
+            "806ec7a6-87b7-4f8c-ae90-8e2913e74c92",
+            "8185fdf5-3b2e-4295-b23a-5d00899d588a",
+            "a3561d52-ad15-43ca-9fae-6f47cd02eaa0",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055"
+        ],
+        "menus": [
+            "26296ee5-865e-4136-a50e-c2232828ba79",
+            "6d7ff948-b7fa-4ced-8280-7273078ee2b9"
+        ]
+    },
+    {
+        "id": "12d7812b-d39a-4beb-9e1d-b96d0b570b22",
+        "name": "Card 12",
+        "dishes": [
+            "4a80c7db-5252-4d0c-b832-45b732c2fbc9",
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "badbd0b4-970f-4579-bfbc-de5a6b75d5b5",
+            "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+            "806ec7a6-87b7-4f8c-ae90-8e2913e74c92",
+            "0d30c66c-d932-4377-ae2f-bfbb53afd911",
+            "083f3e79-90b6-4711-ac5d-a75768e8e889",
+            "967d7555-859f-4102-a100-559faf352000"
+        ],
+        "menus": [
+            "46ea0b4e-b738-445a-a5c9-67dc31a77dc5"
+        ]
+    },
+    {
+        "id": "69b0f166-38d5-4df6-aa12-ef8823b6a691",
+        "name": "Card 13",
+        "dishes": [
+            "ed378895-baca-4673-8d18-0a30bf81dd74",
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "834d1f59-e6c7-4796-ad44-efe9382b6298",
+            "fdc442ad-41cc-4b96-be42-fcecfa9d4640",
+            "178da1f7-9bb7-4ef9-a035-ef44a7611531",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055"
+        ],
+        "menus": [
+            "6cd36b0d-a374-4ba0-aed2-3273dbf8cbc0"
+        ]
+    },
+    {
+        "id": "d48bcfbe-91c8-48f6-b011-e9f9eb05d3b8",
+        "name": "Card 14",
+        "dishes": [
+            "4a80c7db-5252-4d0c-b832-45b732c2fbc9",
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "badbd0b4-970f-4579-bfbc-de5a6b75d5b5",
+            "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+            "fdc442ad-41cc-4b96-be42-fcecfa9d4640",
+            "0d30c66c-d932-4377-ae2f-bfbb53afd911",
+            "083f3e79-90b6-4711-ac5d-a75768e8e889",
+            "967d7555-859f-4102-a100-559faf352000",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055"
+        ],
+        "menus": [
+            "46ea0b4e-b738-445a-a5c9-67dc31a77dc5",
+            "61e05702-8626-4047-9fe0-ad72c37e9516"
+        ]
+    },
+    {
+        "id": "b4e32f01-f947-48bd-a152-05d37ed8ad02",
+        "name": "Card 15",
+        "dishes": [
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "3fcf4def-280f-4b98-975f-cde668f45774",
+            "806ec7a6-87b7-4f8c-ae90-8e2913e74c92",
+            "083f3e79-90b6-4711-ac5d-a75768e8e889",
+            "a3561d52-ad15-43ca-9fae-6f47cd02eaa0",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055"
+        ],
+        "menus": [
+            "c7ca73c4-eb50-4e0a-886a-7b9cac04176e",
+            "ff21520c-acde-48f1-9a2f-319012f11871"
+        ]
+    },
+    {
+        "id": "47bd911d-5c21-49d0-86a8-d62fda28caf7",
+        "name": "Card 16",
+        "dishes": [
+            "4a80c7db-5252-4d0c-b832-45b732c2fbc9",
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "badbd0b4-970f-4579-bfbc-de5a6b75d5b5",
+            "0d30c66c-d932-4377-ae2f-bfbb53afd911",
+            "806ec7a6-87b7-4f8c-ae90-8e2913e74c92",
+            "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+            "8185fdf5-3b2e-4295-b23a-5d00899d588a",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055",
+            "083f3e79-90b6-4711-ac5d-a75768e8e889"
+        ],
+        "menus": [
+            "98a68e2e-e473-458b-ac44-9a7bf95e1824"
+        ]
+    },
+    {
+        "id": "61e3ebcf-3c72-4c73-b791-634bcd1bc716",
+        "name": "Card 17",
+        "dishes": [
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "3fcf4def-280f-4b98-975f-cde668f45774",
+            "3c3a12e4-1a0d-434a-bf4f-0b1deba4236f",
+            "ed378895-baca-4673-8d18-0a30bf81dd74",
+            "3f80bc21-4b1f-401d-b37b-82dc84aaa625",
+            "10ca2817-e985-4ae7-98f4-7a28a84a6b42",
+            "de51f742-bf08-4464-ade9-6f59a9fbb672",
+            "0d30c66c-d932-4377-ae2f-bfbb53afd911",
+            "fdc442ad-41cc-4b96-be42-fcecfa9d4640",
+            "806ec7a6-87b7-4f8c-ae90-8e2913e74c92",
+            "84900658-6866-4089-8ac7-89e1a29b31c3",
+            "db241736-9228-4475-80df-be5eb78a00bf",
+            "bb2ce7f5-17a9-4ab1-8672-13f96333358f",
+            "f42ee122-67b1-4a49-91e6-9c701946ef3f",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055",
+            "8185fdf5-3b2e-4295-b23a-5d00899d588a",
+            "083f3e79-90b6-4711-ac5d-a75768e8e889",
+            "178da1f7-9bb7-4ef9-a035-ef44a7611531"
+        ],
+        "menus": [
+            "ff21520c-acde-48f1-9a2f-319012f11871",
+            "8b29b9b9-b361-4f55-87ef-a1c1c40369bd"
+        ]
+    },
+    {
+        "id": "7048da34-c19e-4d49-8f7a-9d52aad9b71c",
+        "name": "Card 18",
+        "dishes": [
+            "4a80c7db-5252-4d0c-b832-45b732c2fbc9",
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "badbd0b4-970f-4579-bfbc-de5a6b75d5b5",
+            "3fcf4def-280f-4b98-975f-cde668f45774",
+            "3c3a12e4-1a0d-434a-bf4f-0b1deba4236f",
+            "fdc442ad-41cc-4b96-be42-fcecfa9d4640",
+            "0d30c66c-d932-4377-ae2f-bfbb53afd911",
+            "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+            "a3561d52-ad15-43ca-9fae-6f47cd02eaa0",
+            "8185fdf5-3b2e-4295-b23a-5d00899d588a",
+            "967d7555-859f-4102-a100-559faf352000",
+            "178da1f7-9bb7-4ef9-a035-ef44a7611531"
+        ],
+        "menus": [
+            "3e2919ba-fe5f-4834-afe8-c146b7c79d1d",
+            "814c2956-abe7-4a42-85d6-d9c9c796f2ac"
+        ]
+    },
+    {
+        "id": "9875914d-6acf-46c9-925e-1659f7bbaf99",
+        "name": "Card 19",
+        "dishes": [
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "ed378895-baca-4673-8d18-0a30bf81dd74",
+            "806ec7a6-87b7-4f8c-ae90-8e2913e74c92",
+            "834d1f59-e6c7-4796-ad44-efe9382b6298",
+            "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+            "de51f742-bf08-4464-ade9-6f59a9fbb672",
+            "178da1f7-9bb7-4ef9-a035-ef44a7611531",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055"
+        ],
+        "menus": [
+            "f7b9f85e-993a-4f6e-9090-cdb93ad3c704"
+        ]
+    },
+    {
+        "id": "5dab1a34-8394-4488-a679-d9322ebaddd9",
+        "name": "Card 20",
+        "dishes": [
+            "3fcf4def-280f-4b98-975f-cde668f45774",
+            "ed378895-baca-4673-8d18-0a30bf81dd74",
+            "834d1f59-e6c7-4796-ad44-efe9382b6298",
+            "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+            "a3561d52-ad15-43ca-9fae-6f47cd02eaa0",
+            "178da1f7-9bb7-4ef9-a035-ef44a7611531"
+        ],
+        "menus": [
+            "6cd36b0d-a374-4ba0-aed2-3273dbf8cbc0",
+            "d6c5bb1d-37fe-4078-8ac7-2ac8199df2bc"
+        ]
+    }
+]
