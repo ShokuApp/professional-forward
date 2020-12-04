@@ -1,0 +1,57 @@
+[
+    {
+        "id": "43b10dfd-8466-4449-a072-c8fcd764cf56",
+        "name": "Sauce Poivre",
+        "ingredients": [
+            Beurre,
+            Farine de blé,
+            Bouillon,
+            Poivre
+        ]
+    },
+    {
+        "id": "ba82e1a5-41b8-4053-8da4-29ce90314edd",
+        "name": "Sauce Roquefort",
+        "ingredients": [
+            Roquefort,
+            Lait,
+            Crème
+        ]
+    },
+    {
+        "id": "7021643b-2791-432c-b145-c35de0b8b151",
+        "name": "Sauce Bleu",
+        "ingredients": [
+            Bleu d'Auvergne,
+            Lait,
+            Crème
+        ]
+    },
+    {
+        "id": "d2011a02-8220-4eb7-b9e9-fae9a5448ebf",
+        "name": "Sauce Béarnaise",
+        "ingredients": [
+            Oeufs,
+            Vin blanc,
+            Vinaigre,
+            Estragon,
+            Échalote,
+            Beurre,
+            Poivre
+        ]
+    },
+    {
+        "id": "4b7ae32a-90da-42d0-ab45-a25e30c0a96a",
+        "name": "Ketchup",
+        "ingredients": [
+            Tomate,
+            Oignon,
+            Ail,
+            Vinaigre,
+            Sucre,
+            Poivre,
+            Clous de girofle,
+            Piment
+        ]
+    }
+]
