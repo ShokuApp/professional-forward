@@ -3,7 +3,7 @@ import { View, StyleSheet, Text } from "react-native";
 import { Icon } from "@expo/vector-icons/build/createIconSet";
 
 const styles = StyleSheet.create({
-  dishName: {
+  elementName: {
     paddingLeft: 3,
     fontSize: 17,
   },
@@ -18,16 +18,15 @@ const styles = StyleSheet.create({
   },
 });
 
-type CardTextProps = {
+type CategoryTextProps = {
   label: string;
-  id: string;
   icon: React.ReactElement<Icon<string, string>>;
 };
 
-const CardText: FC<CardTextProps> = ({ label, id, icon }: CardTextProps) => {
+const CardText: FC<CategoryTextProps> = ({ label, icon }: CategoryTextProps) => {
   return (
-    <View style={styles.categoryStyle} key={id}>
-      <Text style={styles.dishName}>{label}</Text>
+    <View style={styles.categoryStyle}>
+      <Text style={styles.elementName}>{label}</Text>
       {icon}
     </View>
   );
