@@ -3,6 +3,7 @@ import { View, StyleSheet, Text } from "react-native";
 import { Ingredient } from "../../models/ingredient";
 import PlateName from "../../components/plates/add-plate/plate-name";
 import PlateIngredients from "../../components/plates/add-plate/plate-ingredients";
+import PlatePrice from "../../components/plates/add-plate/plate-price";
 
 const testTab: Ingredient[] = [
   {
@@ -24,6 +25,7 @@ const testTab: Ingredient[] = [
 const AddPlate: FC = () => {
   const [plateName, setPlateName] = React.useState("");
   const [ingredients, setIngredients] = React.useState(testTab);
+  const [price, setPrice] = React.useState("");
 
   return (
     <View>
@@ -32,6 +34,7 @@ const AddPlate: FC = () => {
         ingredients={ingredients}
         setIngredients={setIngredients}
       />
+      <PlatePrice setPrice={setPrice} />
     </View>
   );
 };
