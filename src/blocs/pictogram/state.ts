@@ -13,7 +13,15 @@ export class PictogramGetState extends PictogramState {
 
   constructor(pictogram: Pictogram) {
     super();
-
     this.pictogram = pictogram;
+  }
+}
+
+export class PictogramListState extends PictogramState {
+  pictograms: Pictogram[];
+
+  constructor(pictograms: Pictogram[]) {
+    super();
+    this.pictograms = pictograms;
   }
 }

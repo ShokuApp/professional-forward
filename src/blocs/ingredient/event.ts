@@ -5,7 +5,8 @@ export class IngredientGetEvent extends IngredientEvent {
 
   constructor(id: string) {
     super();
-
     this.id = id;
   }
 }
+
+export class IngredientListEvent extends IngredientEvent {}

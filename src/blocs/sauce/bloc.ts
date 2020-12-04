@@ -1,9 +1,15 @@
 import { Bloc } from "@felangel/bloc";
-import { SauceEvent, SauceGetEvent, SauceSetEvent } from "./event";
+import {
+  SauceEvent,
+  SauceGetEvent,
+  SauceListEvent,
+  SauceSetEvent,
+} from "./event";
 import {
   SauceErrorState,
   SauceGetState,
   SauceInitialState,
+  SauceListState,
   SauceLoadingState,
   SauceSetState,
   SauceState,
@@ -27,6 +33,8 @@ export class SauceBloc extends Bloc<SauceEvent, SauceState> {
       yield* this.get(event);
     } else if (event instanceof SauceSetEvent) {
       yield* this.set(event);
+    } else if (event instanceof SauceListEvent) {
+      yield* this.list(event);
     }
   }
 
@@ -51,6 +59,16 @@ export class SauceBloc extends Bloc<SauceEvent, SauceState> {
       await this.repository.set(sauce);
 
       yield new SauceSetState(sauce);
+    } catch (e) {
+      yield new SauceErrorState();
+    }
+  }
+
+  async *list(event: SauceListEvent) {
+    try {
+      const sauces = await this.repository.list();
+
+      yield new SauceListState(sauces);
     } catch (e) {
       yield new SauceErrorState();
     }
