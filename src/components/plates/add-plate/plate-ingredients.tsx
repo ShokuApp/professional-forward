@@ -1,5 +1,11 @@
 import React, { FC, SetStateAction } from "react";
-import { View, StyleSheet, Text, Alert, InteractionManager } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Text,
+  Alert,
+  InteractionManager,
+} from "react-native";
 import { Icon } from "react-native-elements";
 import { Ingredient } from "../../../models/ingredient";
 import CategoryTitle from "../../common/category-title";
@@ -7,7 +13,6 @@ import CategoryText from "../../common/category-text";
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 10,
     marginTop: 42,
   },
 });

@@ -3,8 +3,19 @@ import { View, StyleSheet, Text } from "react-native";
 import { Ingredient } from "../../models/ingredient";
 import { Sauce } from "../../models/sauce";
 import PlateName from "../../components/plates/add-plate/plate-name";
+import PlateType from "../../components/plates/add-plate/plate-type";
 import PlateIngredients from "../../components/plates/add-plate/plate-ingredients";
 import PlateSauces from "../../components/plates/add-plate/plate-sauces";
+import PlatePrice from "../../components/plates/add-plate/plate-price";
+
+const styles = StyleSheet.create({
+  container: {
+    width: "100%",
+    height: "100%",
+    backgroundColor: "white",
+    paddingHorizontal: 10,
+  },
+});
 
 const testIngredients: Ingredient[] = [
   {
@@ -70,15 +81,19 @@ const AddPlate: FC = () => {
   const [plateName, setPlateName] = React.useState("");
   const [ingredients, setIngredients] = React.useState(testIngredients);
   const [sauces, setSauces] = React.useState(testSauces);
+  const [price, setPrice] = React.useState("");
+  const [plateType, setPlateType] = React.useState("plate");
 
   return (
-    <View>
+    <View style={styles.container}>
       <PlateName name={plateName} setName={setPlateName} />
+      <PlateType type={plateType} setType={setPlateType} />
       <PlateIngredients
         ingredients={ingredients}
         setIngredients={setIngredients}
       />
       <PlateSauces sauces={sauces} setSauces={setSauces} />
+      <PlatePrice setPrice={setPrice} />
     </View>
   );
 };
