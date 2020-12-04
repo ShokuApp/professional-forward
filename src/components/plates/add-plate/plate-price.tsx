@@ -44,7 +44,7 @@ const PlatePrice: FC<PlatePriceProps> = ({ setPrice }: PlatePriceProps) => {
       style={styles.container}
       onPress={Keyboard.dismiss}
     >
-      <CategoryTitle label="Prix:" />
+      <CategoryTitle label="Prix :" />
       <View style={styles.price}>
         <View style={styles.inputBox}>
           <TextInput
