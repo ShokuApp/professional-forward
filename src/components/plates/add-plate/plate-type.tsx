@@ -25,7 +25,7 @@ type PlateTypeProps = {
 const PlateType: FC<PlateTypeProps> = ({ type, setType }: PlateTypeProps) => {
   return (
     <View style={styles.container}>
-      <CategoryTitle label="Type du plat:" />
+      <CategoryTitle label="Type du plat :" />
       <DropDownPicker
         items={[
           { label: "Entrée", value: "starter" },
