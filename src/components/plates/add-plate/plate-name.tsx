@@ -5,7 +5,6 @@ import { Icon } from "react-native-elements";
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 10,
     marginTop: 42,
   },
   input: {
