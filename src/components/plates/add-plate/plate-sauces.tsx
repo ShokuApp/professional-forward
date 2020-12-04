@@ -55,7 +55,7 @@ const PlateSauces: FC<PlateSaucesProps> = ({
             <View style={styles.sauceIngredients}>
               {sauce.ingredients.map((ingredient) => {
                 return (
-                  <View style={styles.sauceItem}>
+                  <View style={styles.sauceItem} key={ingredient.id}>
                     <Text>{ingredient.name}</Text>
                   </View>
                 );
