@@ -49,7 +49,7 @@ const CARD_CATEGORY: CardCategoryProps[] = [
 ];
 
 const CardPage: FC = () => {
-  const id = "004d8d6c-ecf5-4e90-98ca-92720510a857";
+  const id = "a2773326-417f-4510-a390-54b875850cf9";
   const cardBloc = new CardBloc(new CardRepository());
 
   cardBloc.add(new CardGetEvent(id));
