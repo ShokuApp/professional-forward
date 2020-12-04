@@ -1,145 +1,198 @@
 [
     {
         "id": "ca4a4490-dd10-462d-9892-a6121b6cb6c7",
-        "name": "Menu 1",
-        "price": "26",
+        "name": "Menu Découverte",
+        "price": "36",
         "dishes": [
-            "a974d42a-56e9-4d2e-a7c6-339386dcfe83"
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+            "178da1f7-9bb7-4ef9-a035-ef44a7611531"
         ]
     },
     {
         "id": "3e2919ba-fe5f-4834-afe8-c146b7c79d1d",
-        "name": "Menu 2",
-        "price": "40",
+        "name": "Menu Fraicheur",
+        "price": "28",
         "dishes": [
-            "ce684b5d-d50a-433c-9c8d-413ca2ae24f3"
+            "4a80c7db-5252-4d0c-b832-45b732c2fbc9",
+            "3fcf4def-280f-4b98-975f-cde668f45774",
+            "3c3a12e4-1a0d-434a-bf4f-0b1deba4236f",
+            "0d30c66c-d932-4377-ae2f-bfbb53afd911",
+            "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+            "a3561d52-ad15-43ca-9fae-6f47cd02eaa0",
+            "8185fdf5-3b2e-4295-b23a-5d00899d588a"
         ]
     },
     {
         "id": "b5ce3fd6-4e1d-4a43-b5df-f426fed7d1b4",
-        "name": "Menu 3",
-        "price": "26",
+        "name": "Menu Tradition",
+        "price": "39",
         "dishes": [
-            "ef07cb0a-4fa8-468e-839e-2a9407e3e584",
-            "971d0814-86df-461e-8e54-10e36f453991"
+            "ed378895-baca-4673-8d18-0a30bf81dd74",
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "834d1f59-e6c7-4796-ad44-efe9382b6298",
+            "de51f742-bf08-4464-ade9-6f59a9fbb672",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055",
+            "178da1f7-9bb7-4ef9-a035-ef44a7611531"
         ]
     },
     {
         "id": "c7ca73c4-eb50-4e0a-886a-7b9cac04176e",
-        "name": "Menu 4",
+        "name": "Menu Terroir",
         "price": "43",
         "dishes": [
-            "09717d78-64d0-4ad3-a38a-5ea40ab1553a",
-            "48e3e703-3444-4c9a-8dd0-33a975437dab",
-            "bbeac257-8c78-4f81-9de9-860197392a41"
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "806ec7a6-87b7-4f8c-ae90-8e2913e74c92",
+            "083f3e79-90b6-4711-ac5d-a75768e8e889"
         ]
     },
     {
         "id": "46ea0b4e-b738-445a-a5c9-67dc31a77dc5",
-        "name": "Menu 5",
-        "price": "14",
+        "name": "Menu Passion",
+        "price": "24",
         "dishes": [
-            "64983345-7e85-43bc-8e77-deea2cefbaf2"
+            "4a80c7db-5252-4d0c-b832-45b732c2fbc9",
+            "badbd0b4-970f-4579-bfbc-de5a6b75d5b5",
+            "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+            "0d30c66c-d932-4377-ae2f-bfbb53afd911",
+            "083f3e79-90b6-4711-ac5d-a75768e8e889",
+            "967d7555-859f-4102-a100-559faf352000"
         ]
     },
     {
         "id": "98a68e2e-e473-458b-ac44-9a7bf95e1824",
-        "name": "Menu 6",
-        "price": "14",
+        "name": "Menu Enfant",
+        "price": "15",
         "dishes": [
-            "06f36ffe-1030-4609-9ea7-f43d508b5b29"
+            "4a80c7db-5252-4d0c-b832-45b732c2fbc9",
+            "badbd0b4-970f-4579-bfbc-de5a6b75d5b5",
+            "0d30c66c-d932-4377-ae2f-bfbb53afd911",
+            "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+            "8185fdf5-3b2e-4295-b23a-5d00899d588a",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055"
         ]
     },
     {
         "id": "66ba7216-369d-463e-8b5f-40396ac4a465",
-        "name": "Menu 7",
-        "price": "31",
+        "name": "Menu Végétarien",
+        "price": "18",
         "dishes": [
-            "385c7169-9986-452e-bc48-bcb2c1c9ab29"
+            "badbd0b4-970f-4579-bfbc-de5a6b75d5b5",
+            "3c3a12e4-1a0d-434a-bf4f-0b1deba4236f",
+            "178da1f7-9bb7-4ef9-a035-ef44a7611531",
+            "083f3e79-90b6-4711-ac5d-a75768e8e889"
         ]
     },
     {
         "id": "814c2956-abe7-4a42-85d6-d9c9c796f2ac",
-        "name": "Menu 8",
-        "price": "35",
+        "name": "Menu Escapade",
+        "price": "34",
         "dishes": [
-            "86be7ee3-ea84-49c5-8802-a5f36f94978b"
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "badbd0b4-970f-4579-bfbc-de5a6b75d5b5",
+            "0d30c66c-d932-4377-ae2f-bfbb53afd911",
+            "fdc442ad-41cc-4b96-be42-fcecfa9d4640",
+            "967d7555-859f-4102-a100-559faf352000",
+            "178da1f7-9bb7-4ef9-a035-ef44a7611531"
         ]
     },
     {
         "id": "f7b9f85e-993a-4f6e-9090-cdb93ad3c704",
-        "name": "Menu 9",
-        "price": "11",
+        "name": "Menu Montagne",
+        "price": "38",
         "dishes": [
-            "5c97a7d3-01b3-406a-a0dd-b7d06b34ca2b",
-            "de5f96cf-dae3-4270-add8-795acc4b3240",
-            "385c7169-9986-452e-bc48-bcb2c1c9ab29"
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "ed378895-baca-4673-8d18-0a30bf81dd74",
+            "806ec7a6-87b7-4f8c-ae90-8e2913e74c92",
+            "834d1f59-e6c7-4796-ad44-efe9382b6298",
+            "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+            "de51f742-bf08-4464-ade9-6f59a9fbb672",
+            "178da1f7-9bb7-4ef9-a035-ef44a7611531",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055"
         ]
     },
     {
         "id": "61e05702-8626-4047-9fe0-ad72c37e9516",
-        "name": "Menu 10",
-        "price": "11",
+        "name": "Menu Festif",
+        "price": "29",
         "dishes": [
-            "10ca2817-e985-4ae7-98f4-7a28a84a6b42",
-            "e5a2f5c0-6002-4e82-8514-3471dadd97ea"
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "fdc442ad-41cc-4b96-be42-fcecfa9d4640",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055"
         ]
     },
     {
         "id": "6cd36b0d-a374-4ba0-aed2-3273dbf8cbc0",
-        "name": "Menu 11",
-        "price": "40",
+        "name": "Menu à partager",
+        "price": "39",
         "dishes": [
-            "7a8f605f-90df-44d4-9ff6-930ee3f59fd3",
-            "86be7ee3-ea84-49c5-8802-a5f36f94978b",
-            "28a051cb-7970-4eac-89f8-b1d18d9b2928"
+            "ed378895-baca-4673-8d18-0a30bf81dd74",
+            "834d1f59-e6c7-4796-ad44-efe9382b6298",
+            "178da1f7-9bb7-4ef9-a035-ef44a7611531"
         ]
     },
     {
         "id": "ff21520c-acde-48f1-9a2f-319012f11871",
-        "name": "Menu 12",
-        "price": "22",
+        "name": "Menu du Chef",
+        "price": "33",
         "dishes": [
-            "de5f96cf-dae3-4270-add8-795acc4b3240",
-            "ac0af416-c63c-4053-84da-07d04430e282",
-            "971d0814-86df-461e-8e54-10e36f453991"
+            "3fcf4def-280f-4b98-975f-cde668f45774",
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "806ec7a6-87b7-4f8c-ae90-8e2913e74c92",
+            "a3561d52-ad15-43ca-9fae-6f47cd02eaa0",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055"
         ]
     },
     {
         "id": "8b29b9b9-b361-4f55-87ef-a1c1c40369bd",
-        "name": "Menu 13",
-        "price": "48",
+        "name": "Menu 4 Saisons",
+        "price": "42",
         "dishes": [
-            "408d96f4-7890-46b6-9e42-1f00ca366d30"
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "3fcf4def-280f-4b98-975f-cde668f45774",
+            "3c3a12e4-1a0d-434a-bf4f-0b1deba4236f",
+            "ed378895-baca-4673-8d18-0a30bf81dd74",
+            "de51f742-bf08-4464-ade9-6f59a9fbb672",
+            "0d30c66c-d932-4377-ae2f-bfbb53afd911",
+            "fdc442ad-41cc-4b96-be42-fcecfa9d4640",
+            "806ec7a6-87b7-4f8c-ae90-8e2913e74c92",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055",
+            "8185fdf5-3b2e-4295-b23a-5d00899d588a",
+            "083f3e79-90b6-4711-ac5d-a75768e8e889",
+            "178da1f7-9bb7-4ef9-a035-ef44a7611531"
         ]
     },
     {
         "id": "d6c5bb1d-37fe-4078-8ac7-2ac8199df2bc",
-        "name": "Menu 14",
+        "name": "Menu Plaisir",
         "price": "30",
         "dishes": [
-            "ebec59b1-fbef-41db-9a55-08e1062c1248",
-            "d65fd03b-201d-48dd-949b-a4bd7cd32f28",
-            "2267afe8-78d5-4ff9-b9f3-c35e65eec2a7"
+            "3fcf4def-280f-4b98-975f-cde668f45774",
+            "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+            "a3561d52-ad15-43ca-9fae-6f47cd02eaa0"
         ]
     },
     {
         "id": "26296ee5-865e-4136-a50e-c2232828ba79",
-        "name": "Menu 15",
-        "price": "46",
+        "name": "Menu Grosse Faim",
+        "price": "38",
         "dishes": [
-            "a536e90c-b296-4518-8207-ba9671937f9f",
-            "f060cba9-425a-4c1e-874d-fc722ff8672c"
+            "ed378895-baca-4673-8d18-0a30bf81dd74",
+            "834d1f59-e6c7-4796-ad44-efe9382b6298",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055"
         ]
     },
     {
         "id": "6d7ff948-b7fa-4ced-8280-7273078ee2b9",
-        "name": "Menu 16",
-        "price": "29",
+        "name": "Menu Terre",
+        "price": "32",
         "dishes": [
-            "408d96f4-7890-46b6-9e42-1f00ca366d30",
-            "aa765801-d5c1-42ec-bca3-3b4d37ad690e",
-            "f060cba9-425a-4c1e-874d-fc722ff8672c"
+            "b0863fd0-7618-4072-87e4-715fdb8d9452",
+            "3fcf4def-280f-4b98-975f-cde668f45774",
+            "fdc442ad-41cc-4b96-be42-fcecfa9d4640",
+            "806ec7a6-87b7-4f8c-ae90-8e2913e74c92",
+            "8185fdf5-3b2e-4295-b23a-5d00899d588a",
+            "a3561d52-ad15-43ca-9fae-6f47cd02eaa0"
         ]
     }
 ]
