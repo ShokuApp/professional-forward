@@ -12,7 +12,8 @@
             "37ebf37d-918a-4426-a413-df2546cd2b8e",
             "262bc49e-b935-4aea-bdb8-d91099e96ea3"
         ],
-        "sauces": []
+        "sauces": [],
+        "is_adaptable": "true"
     },
     {
         "id": "806ec7a6-87b7-4f8c-ae90-8e2913e74c92",
@@ -33,7 +34,8 @@
             "7021643b-2791-432c-b145-c35de0b8b151",
             "d2011a02-8220-4eb7-b9e9-fae9a5448ebf",
             "4b7ae32a-90da-42d0-ab45-a25e30c0a96a"
-        ]
+        ],
+        "is_adaptable": "true"
     },
     {
         "id": "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055",
@@ -47,7 +49,8 @@
             "c7c8937e-3f03-4286-898a-415f8ea9c350",
             "088d68f2-ba21-4ca1-b714-62204a412b09"
         ],
-        "sauces": []
+        "sauces": [],
+        "is_adaptable": "true"
     },
     {
         "id": "b0863fd0-7618-4072-87e4-715fdb8d9452",
@@ -63,7 +66,8 @@
             "15bc47b2-f22b-4feb-89e3-92fdec59e629",
             "83e98047-145a-47f5-ae63-bc352444e217"
         ],
-        "sauces": []
+        "sauces": [],
+        "is_adaptable": "false"
     },
     {
         "id": "fdc442ad-41cc-4b96-be42-fcecfa9d4640",
@@ -81,7 +85,8 @@
         "sauces": [
             "43b10dfd-8466-4449-a072-c8fcd764cf56",
             "ba82e1a5-41b8-4053-8da4-29ce90314edd"
-        ]
+        ],
+        "is_adaptable": "false"
     },
     {
         "id": "8185fdf5-3b2e-4295-b23a-5d00899d588a",
@@ -98,7 +103,8 @@
             "941f0df0-d35d-46f0-a9f9-10a32afb9106",
             "c38a0e43-3bec-422a-ba30-9432732ff2dc"
         ],
-        "sauces": []
+        "sauces": [],
+        "is_adaptable": "false"
     },
     {
         "id": "3fcf4def-280f-4b98-975f-cde668f45774",
@@ -113,7 +119,8 @@
             "4e3be63a-b1ef-4a84-8b22-195f7561abae",
             "7de2bdba-3881-471c-9311-477959b2f288"
         ],
-        "sauces": []
+        "sauces": [],
+        "is_adaptable": "true"
     },
     {
         "id": "0d30c66c-d932-4377-ae2f-bfbb53afd911",
@@ -135,7 +142,8 @@
             "73b6da6d-493b-42c6-a495-1767fdf71d80",
             "262bc49e-b935-4aea-bdb8-d91099e96ea3"
         ],
-        "sauces": []
+        "sauces": [],
+        "is_adaptable": "false"
     },
     {
         "id": "967d7555-859f-4102-a100-559faf352000",
@@ -151,7 +159,8 @@
             "7bf73095-6359-46c5-bc8b-9b3a1a65ba24",
             "722c924c-da15-4d60-945a-a6731c619f0c"
         ],
-        "sauces": []
+        "sauces": [],
+        "is_adaptable": "false"
     },
     {
         "id": "3c3a12e4-1a0d-434a-bf4f-0b1deba4236f",
@@ -164,7 +173,8 @@
             "41ad5aad-5b4b-45bb-9bde-dd2ed64edeab",
             "cd002746-cf62-4be0-b934-f99c9bd8b5a9"
         ],
-        "sauces": []
+        "sauces": [],
+        "is_adaptable": "false"
     },
     {
         "id": "de51f742-bf08-4464-ade9-6f59a9fbb672",
@@ -181,7 +191,8 @@
             "a41a5636-8e67-4be9-a3e6-084e7b925242",
             "262bc49e-b935-4aea-bdb8-d91099e96ea3"
         ],
-        "sauces": []
+        "sauces": [],
+        "is_adaptable": "false"
     },
     {
         "id": "083f3e79-90b6-4711-ac5d-a75768e8e889",
@@ -196,7 +207,8 @@
             "a0148b26-9e35-449c-97ad-2acba737413d",
             "722c924c-da15-4d60-945a-a6731c619f0c"
         ],
-        "sauces": []
+        "sauces": [],
+        "is_adaptable": "false"
     },
     {
         "id": "ed378895-baca-4673-8d18-0a30bf81dd74",
@@ -214,7 +226,8 @@
             "0f82393c-ee3f-487d-a16f-d81c4787f9da",
             "5e6fd33b-104e-402b-a086-5d94a3bb974e"
         ],
-        "sauces": []
+        "sauces": [],
+        "is_adaptable": "false"
     },
     {
         "id": "834d1f59-e6c7-4796-ad44-efe9382b6298",
@@ -230,7 +243,8 @@
             "c6cae453-f61c-4354-a96e-e132c6fa5d34",
             "53668e09-2559-4ddb-afa5-8402f4dfca79"
         ],
-        "sauces": []
+        "sauces": [],
+        "is_adaptable": "true"
     },
     {
         "id": "178da1f7-9bb7-4ef9-a035-ef44a7611531",
@@ -245,7 +259,8 @@
             "c5e98656-2ecb-4647-b6db-558b68d4dead",
             "c7e33582-f7a9-41f5-b776-2f8689352070"
         ],
-        "sauces": []
+        "sauces": [],
+        "is_adaptable": "false"
     },
     {
         "id": "badbd0b4-970f-4579-bfbc-de5a6b75d5b5",
@@ -257,7 +272,8 @@
             "80ca5159-7ab0-4a24-b0ab-4c5188b51dc1",
             "f7ed90ee-7f23-49de-9788-f57e4c6a6ea3"
         ],
-        "sauces": []
+        "sauces": [],
+        "is_adaptable": "true"
     },
     {
         "id": "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
@@ -276,7 +292,8 @@
             "9684f555-c9fa-4f1b-8076-3009bf6eaabd",
             "4e3be63a-b1ef-4a84-8b22-195f7561abae"
         ],
-        "sauces": []
+        "sauces": [],
+        "is_adaptable": "true"
     },
     {
         "id": "a3561d52-ad15-43ca-9fae-6f47cd02eaa0",
@@ -293,6 +310,7 @@
             "f67e2e6c-70a4-4e42-8208-7f4174ac77fb",
             "5360a315-924a-495b-8d43-32daf5e356b2"
         ],
-        "sauces": []
+        "sauces": [],
+        "is_adaptable": "false"
     }
 ]
