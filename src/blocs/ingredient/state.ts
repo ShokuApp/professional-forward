@@ -13,7 +13,15 @@ export class IngredientGetState extends IngredientState {
 
   constructor(ingredient: Ingredient) {
     super();
-
     this.ingredient = ingredient;
+  }
+}
+
+export class IngredientListState extends IngredientState {
+  ingredients: Ingredient[];
+
+  constructor(ingredients: Ingredient[]) {
+    super();
+    this.ingredients = ingredients;
   }
 }

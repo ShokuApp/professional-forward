@@ -7,7 +7,6 @@ export class DishGetEvent extends DishEvent {
 
   constructor(id: string) {
     super();
-
     this.id = id;
   }
 }
@@ -23,3 +22,5 @@ export class DishSetEvent extends DishEvent {
     this.dish = dish;
   }
 }
+
+export class DishListEvent extends DishEvent {}

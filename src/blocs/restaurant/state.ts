@@ -13,17 +13,15 @@ export class RestaurantGetState extends RestaurantState {
 
   constructor(restaurant: Restaurant) {
     super();
-
     this.restaurant = restaurant;
   }
 }
 
-export class RestaurantSetState extends RestaurantState {
-  restaurant: Restaurant;
+export class RestaurantListState extends RestaurantState {
+  restaurants: Restaurant[];
 
-  constructor(restaurant: Restaurant) {
+  constructor(restaurants: Restaurant[]) {
     super();
-
-    this.restaurant = restaurant;
+    this.restaurants = restaurants;
   }
 }

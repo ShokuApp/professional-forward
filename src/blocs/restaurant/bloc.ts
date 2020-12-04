@@ -2,18 +2,17 @@ import { Bloc } from "@felangel/bloc";
 import {
   RestaurantEvent,
   RestaurantGetEvent,
-  RestaurantSetEvent,
+  RestaurantListEvent,
 } from "./event";
 import {
   RestaurantErrorState,
   RestaurantGetState,
   RestaurantInitialState,
+  RestaurantListState,
   RestaurantLoadingState,
-  RestaurantSetState,
   RestaurantState,
 } from "./state";
 import { RestaurantRepository } from "../../repositories";
-import { Restaurant } from "../../models";
 
 export class RestaurantBloc extends Bloc<RestaurantEvent, RestaurantState> {
   private repository: RestaurantRepository;
@@ -31,8 +30,8 @@ export class RestaurantBloc extends Bloc<RestaurantEvent, RestaurantState> {
 
     if (event instanceof RestaurantGetEvent) {
       yield* this.get(event);
-    } else if (event instanceof RestaurantSetEvent) {
-      yield* this.set(event);
+    } else if (event instanceof RestaurantListEvent) {
+      yield* this.list(event);
     }
   }
 
@@ -46,17 +45,11 @@ export class RestaurantBloc extends Bloc<RestaurantEvent, RestaurantState> {
     }
   }
 
-  async *set(event: RestaurantSetEvent) {
+  async *list(event: RestaurantListEvent) {
     try {
-      const originalRestaurant = await this.repository.get(event.id);
-      const restaurant: Restaurant = {
-        ...originalRestaurant,
-        ...event.restaurant,
-      };
+      const restaurants = await this.repository.list();
 
-      await this.repository.set(restaurant);
-
-      yield new RestaurantSetState(restaurant);
+      yield new RestaurantListState(restaurants);
     } catch (e) {
       yield new RestaurantErrorState();
     }
