@@ -15,7 +15,7 @@ import {
 import { DishRepository } from "../../repositories";
 import { BlocBuilder } from "@felangel/react-bloc";
 import { ScrollView } from "react-native-gesture-handler";
-import { createStackNavigator } from "@react-navigation/stack";
+import { useIsFocused } from "@react-navigation/native";
 
 const styles = StyleSheet.create({
   container: {
@@ -42,6 +42,8 @@ const getPlatesIds: () => string[] = () => {
 
 const PlatesPage: FC = () => {
   const ids: string[] = getPlatesIds();
+  const isFocused = useIsFocused();
+
   return (
     <ScrollView>
       <View style={styles.container}>
