@@ -1,6 +1,5 @@
 import React, { FC, SetStateAction } from "react";
 import { View, StyleSheet, Text } from "react-native";
-import CategoryTitle from "../../common/category-title";
 import { CheckBox } from "react-native-elements";
 
 const styles = StyleSheet.create({

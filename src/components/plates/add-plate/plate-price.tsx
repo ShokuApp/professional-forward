@@ -1,11 +1,5 @@
 import React, { FC, SetStateAction } from "react";
-import {
-  View,
-  StyleSheet,
-  Text,
-  Keyboard,
-  KeyboardAvoidingView,
-} from "react-native";
+import { View, StyleSheet, Text, Keyboard } from "react-native";
 import {
   TextInput,
   TouchableWithoutFeedback,

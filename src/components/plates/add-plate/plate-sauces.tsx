@@ -1,9 +1,5 @@
 import React, { FC, SetStateAction } from "react";
-import {
-  View,
-  StyleSheet,
-  Text,
-} from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import { Icon } from "react-native-elements";
 import { Sauce } from "../../../models/sauce";
 import CategoryTitle from "../../common/category-title";
@@ -30,7 +26,7 @@ type PlateSaucesProps = {
   setSauces: React.Dispatch<SetStateAction<Sauce[]>>;
 };
 
-const PlateSauces: FC<PlateSaucesProps> = ({
+export const PlateSauces: FC<PlateSaucesProps> = ({
   sauces,
   setSauces,
 }: PlateSaucesProps) => {
@@ -66,5 +62,3 @@ const PlateSauces: FC<PlateSaucesProps> = ({
     </View>
   );
 };
-
-export default PlateSauces;

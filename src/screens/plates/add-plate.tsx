@@ -1,15 +1,15 @@
 import React, { FC } from "react";
-import { View, StyleSheet, Text, KeyboardAvoidingView } from "react-native";
+import { StyleSheet, KeyboardAvoidingView } from "react-native";
 import { Ingredient } from "../../models/ingredient";
 import { Sauce } from "../../models/sauce";
-import PlateName from "../../components/plates/add-plate/plate-name";
-import PlateType from "../../components/plates/add-plate/plate-type";
-import PlateIngredients from "../../components/plates/add-plate/plate-ingredients";
-import PlateSauces from "../../components/plates/add-plate/plate-sauces";
+import { PlateName } from "../../components/plates/add-plate/plate-name";
+import { PlateType } from "../../components/plates/add-plate/plate-type";
+import { PlateIngredients } from "../../components/plates/add-plate/plate-ingredients";
+import { PlateSauces } from "../../components/plates/add-plate/plate-sauces";
 import { PlatePrice } from "../../components/plates/add-plate/plate-price";
 import { PlateAdaptable } from "../../components/plates/add-plate/plate-adaptable";
 import { ScrollView } from "react-native-gesture-handler";
-import PlateCreate from "../../components/plates/add-plate/plate-create";
+import { PlateCreate } from "../../components/plates/add-plate/plate-create";
 
 const styles = StyleSheet.create({
   container: {

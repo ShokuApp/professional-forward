@@ -1,11 +1,5 @@
 import React, { FC, SetStateAction } from "react";
-import {
-  View,
-  StyleSheet,
-  Text,
-  Alert,
-  InteractionManager,
-} from "react-native";
+import { View, StyleSheet, Alert } from "react-native";
 import { Icon } from "react-native-elements";
 import { Ingredient } from "../../../models/ingredient";
 import CategoryTitle from "../../common/category-title";
@@ -22,7 +16,7 @@ type PlateIngredientsProps = {
   setIngredients: React.Dispatch<SetStateAction<Ingredient[]>>;
 };
 
-const PlateIngredients: FC<PlateIngredientsProps> = ({
+export const PlateIngredients: FC<PlateIngredientsProps> = ({
   ingredients,
   setIngredients,
 }: PlateIngredientsProps) => {
@@ -75,5 +69,3 @@ const PlateIngredients: FC<PlateIngredientsProps> = ({
     </View>
   );
 };
-
-export default PlateIngredients;

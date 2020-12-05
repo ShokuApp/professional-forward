@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const CreatePlate: FC = () => {
+export const PlateCreate: FC = () => {
   return (
     <View style={styles.container}>
       <View style={styles.button}>
@@ -24,5 +24,3 @@ const CreatePlate: FC = () => {
     </View>
   );
 };
-
-export default CreatePlate;
