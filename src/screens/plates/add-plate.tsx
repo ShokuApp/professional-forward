@@ -6,7 +6,7 @@ import PlateName from "../../components/plates/add-plate/plate-name";
 import PlateType from "../../components/plates/add-plate/plate-type";
 import PlateIngredients from "../../components/plates/add-plate/plate-ingredients";
 import PlateSauces from "../../components/plates/add-plate/plate-sauces";
-import PlatePrice from "../../components/plates/add-plate/plate-price";
+import { PlatePrice } from "../../components/plates/add-plate/plate-price";
 import { PlateAdaptable } from "../../components/plates/add-plate/plate-adaptable";
 import { ScrollView } from "react-native-gesture-handler";
 
@@ -106,7 +106,7 @@ const AddPlate: FC = () => {
         />
         <PlateSauces sauces={sauces} setSauces={setSauces} />
 
-        <PlatePrice setPrice={setPrice} />
+        <PlatePrice price={price} setPrice={setPrice} />
 
         <PlateAdaptable isAdaptable={isAdaptable} setAdaptable={setAdaptable} />
       </ScrollView>
