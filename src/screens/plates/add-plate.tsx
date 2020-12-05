@@ -9,6 +9,7 @@ import PlateSauces from "../../components/plates/add-plate/plate-sauces";
 import { PlatePrice } from "../../components/plates/add-plate/plate-price";
 import { PlateAdaptable } from "../../components/plates/add-plate/plate-adaptable";
 import { ScrollView } from "react-native-gesture-handler";
+import PlateCreate from "../../components/plates/add-plate/plate-create";
 
 const styles = StyleSheet.create({
   container: {
@@ -109,6 +110,7 @@ const AddPlate: FC = () => {
         <PlatePrice price={price} setPrice={setPrice} />
 
         <PlateAdaptable isAdaptable={isAdaptable} setAdaptable={setAdaptable} />
+        <PlateCreate />
       </ScrollView>
     </KeyboardAvoidingView>
   );
