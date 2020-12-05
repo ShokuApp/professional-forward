@@ -7,6 +7,7 @@ import PlateType from "../../components/plates/add-plate/plate-type";
 import PlateIngredients from "../../components/plates/add-plate/plate-ingredients";
 import PlateSauces from "../../components/plates/add-plate/plate-sauces";
 import PlatePrice from "../../components/plates/add-plate/plate-price";
+import PlateCreate from "../../components/plates/add-plate/plate-create";
 
 const styles = StyleSheet.create({
   container: {
@@ -94,6 +95,7 @@ const AddPlate: FC = () => {
       />
       <PlateSauces sauces={sauces} setSauces={setSauces} />
       <PlatePrice setPrice={setPrice} />
+      <PlateCreate />
     </View>
   );
 };
