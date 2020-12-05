@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   }
 })
 
-const ButtonGeneration: FC = () => {
+export const ButtonGeneration: FC = () => {
   return (
     <TouchableOpacity onPress={() => alert("TODO")}>
       <View style={styles.button}>
@@ -23,5 +23,3 @@ const ButtonGeneration: FC = () => {
     </TouchableOpacity>
   );
 };
-
-export default ButtonGeneration;

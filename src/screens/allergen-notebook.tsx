@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { View, StyleSheet, Text } from "react-native";
-import ButtonGeneration from "../components/allergen-notebook/button_generation";
+import {ButtonGeneration} from "../components/allergen-notebook/button_generation";
 
 const styles = StyleSheet.create({
   container: {
