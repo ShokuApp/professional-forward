@@ -7,7 +7,7 @@ import PlateType from "../../components/plates/add-plate/plate-type";
 import PlateIngredients from "../../components/plates/add-plate/plate-ingredients";
 import PlateSauces from "../../components/plates/add-plate/plate-sauces";
 import PlatePrice from "../../components/plates/add-plate/plate-price";
-import PlateAdaptable from "../../components/plates/add-plate/plate-adaptable";
+import { PlateAdaptable } from "../../components/plates/add-plate/plate-adaptable";
 import { ScrollView } from "react-native-gesture-handler";
 
 const styles = StyleSheet.create({
