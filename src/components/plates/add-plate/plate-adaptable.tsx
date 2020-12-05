@@ -1,7 +1,7 @@
 import React, { FC, SetStateAction } from "react";
 import { View, StyleSheet, Text } from "react-native";
-import { Checkbox } from "react-native-paper";
 import CategoryTitle from "../../common/category-title";
+import CheckBox from "@react-native-community/checkbox";
 
 const styles = StyleSheet.create({
   container: {
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   },
   checkbox: {
     paddingBottom: 10,
-  }
+  },
 });
 
 type PlateAdaptableProps = {

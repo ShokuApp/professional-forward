@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, KeyboardAvoidingView } from "react-native";
 import { Ingredient } from "../../models/ingredient";
 import { Sauce } from "../../models/sauce";
 import PlateName from "../../components/plates/add-plate/plate-name";
@@ -16,6 +16,9 @@ const styles = StyleSheet.create({
     height: "100%",
     backgroundColor: "white",
     paddingHorizontal: 10,
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "center",
   },
 });
 
@@ -88,17 +91,26 @@ const AddPlate: FC = () => {
   const [isAdaptable, setAdaptable] = React.useState(false);
 
   return (
-    <ScrollView style={styles.container}>
-      <PlateName name={plateName} setName={setPlateName} />
-      <PlateType type={plateType} setType={setPlateType} />
-      <PlateIngredients
-        ingredients={ingredients}
-        setIngredients={setIngredients}
-      />
-      <PlateSauces sauces={sauces} setSauces={setSauces} />
-      <PlatePrice setPrice={setPrice} />
-      <PlateAdaptable isAdaptable={isAdaptable} setAdaptable={setAdaptable} />
-    </ScrollView>
+    <KeyboardAvoidingView
+      behavior="padding"
+      keyboardVerticalOffset={120}
+      style={styles.container}
+    >
+      <ScrollView>
+        <PlateName name={plateName} setName={setPlateName} />
+
+        <PlateType type={plateType} setType={setPlateType} />
+        <PlateIngredients
+          ingredients={ingredients}
+          setIngredients={setIngredients}
+        />
+        <PlateSauces sauces={sauces} setSauces={setSauces} />
+
+        <PlatePrice setPrice={setPrice} />
+
+        <PlateAdaptable isAdaptable={isAdaptable} setAdaptable={setAdaptable} />
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 };
 
