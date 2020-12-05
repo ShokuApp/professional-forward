@@ -123,9 +123,9 @@ const addNewPlate: (param: newPlateParam) => Dish | undefined = ({
         type: plateType,
         description: "",
         price: priceVal,
-        ingredients: ingredients,
-        sauces: sauces,
-        isAdaptable: isAdaptable,
+        ingredients,
+        sauces,
+        isAdaptable,
       };
       return newPlate;
     }
