@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { View, StyleSheet, Text } from "react-native";
+import { ButtonGeneration } from "../components/allergen-notebook/button_generation";
 
 const styles = StyleSheet.create({
   container: {
@@ -15,7 +16,8 @@ const styles = StyleSheet.create({
     color: "#C4C4C4",
     maxWidth: 210,
     flexWrap: "wrap",
-    textAlign: "center"
+    textAlign: "center",
+    marginBottom: 20
   }
 })
 
@@ -23,6 +25,7 @@ const AllergenNotebookPage: FC = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Vous n'avez pas de cahier d'allergènes</Text>
+      <ButtonGeneration/>
     </View>
   );
 };
