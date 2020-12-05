@@ -2,7 +2,6 @@ import React, { FC } from "react";
 import { View, StyleSheet, Text } from "react-native";
 import PlateDescription from "../../components/plates/plates-description";
 import SearchBar from "../../components/plates/search-bar";
-import Data from "../../../data/dishes/data.json";
 import {
   DishBloc,
   DishGetEvent,
@@ -11,6 +10,8 @@ import {
   DishLoadingState,
   DishInitialState,
   DishGetState,
+  DishListEvent,
+  DishListState,
 } from "../../blocs";
 import { DishRepository } from "../../repositories";
 import { BlocBuilder } from "@felangel/react-bloc";
@@ -30,50 +31,38 @@ const styles = StyleSheet.create({
   },
 });
 
-const getPlatesIds: () => string[] = () => {
-  const ids: string[] = [];
-
-  Data.map((dish) => {
-    ids.push(dish.id);
-  });
-
-  return ids;
-};
-
 const PlatesPage: FC = () => {
-  const ids: string[] = getPlatesIds();
+  const dishBloc = new DishBloc(new DishRepository());
   const isFocused = useIsFocused();
+
+  dishBloc.add(new DishListEvent());
 
   return (
     <ScrollView>
       <View style={styles.container}>
         <SearchBar />
-        {ids.map((id) => {
-          const dishBloc = new DishBloc(new DishRepository());
-
-          dishBloc.add(new DishGetEvent(id));
-          return (
-            <View key={id}>
-              <BlocBuilder
-                bloc={dishBloc}
-                builder={(state: DishState) => {
-                  if (state instanceof DishErrorState) {
-                    return <Text>Error</Text>;
-                  }
-                  if (state instanceof DishInitialState) {
-                    return <Text>Loading</Text>;
-                  }
-                  if (state instanceof DishLoadingState) {
-                    return <Text>Loading</Text>;
-                  }
-                  return (
-                    <PlateDescription dish={(state as DishGetState).dish} />
-                  );
-                }}
-              />
-            </View>
-          );
-        })}
+        <BlocBuilder
+          bloc={dishBloc}
+          builder={(state: DishState) => {
+            if (state instanceof DishErrorState) {
+              return <Text>Error</Text>;
+            }
+            if (state instanceof DishListState) {
+              return (
+                <View>
+                  {state.dishes.map((dish) => {
+                    return (
+                      <View key={dish.id}>
+                        <PlateDescription dish={dish} />
+                      </View>
+                    );
+                  })}
+                </View>
+              );
+            }
+            return <Text>Loading</Text>;
+          }}
+        />
       </View>
     </ScrollView>
   );
