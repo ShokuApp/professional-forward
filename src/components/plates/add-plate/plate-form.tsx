@@ -115,8 +115,8 @@ const addNewPlate: (param: newPlateParam) => Dish | undefined = ({
 }: newPlateParam) => {
   if (plateName && ingredients.length !== 0 && price && plateType) {
     const priceStr = price;
-    const priceVal = parseFloat(priceStr.replace(",", "."));
-    if (priceVal !== NaN || priceVal !== 0) {
+    const priceVal = Number(priceStr.replace(/\,/g, "."));
+    if (!Number.isNaN(priceVal) || priceVal !== 0) {
       const newPlate: Dish = {
         id: uuidv4(),
         name: plateName,
