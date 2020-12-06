@@ -1,11 +1,5 @@
 import React, { FC, useState, useEffect } from "react";
-import {
-  View,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from "react-native";
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { TableComponent } from "../components/allergen-notebook/table";
 import { BlocBuilder } from "@felangel/react-bloc";
 import {
@@ -18,7 +12,6 @@ import {
   CardInitialState,
 } from "../blocs";
 import { CardRepository } from "../repositories";
-import { Table } from "react-native-table-component";
 
 const styles = StyleSheet.create({
   container: {
