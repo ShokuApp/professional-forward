@@ -89,12 +89,12 @@ export const TableComponent: FC<TableComponentProps> = ({
     Mollusques: 14,
   };
   const tableData = [];
-  card.dishes.map((dish) => {
-    let rowData = [];
+  card.dishes.forEach((dish) => {
+    const rowData = [];
     rowData.push(dish.name);
     for (let i = 0; i < 14; i++) rowData.push("O");
-    dish.ingredients.map((ingredient) => {
-      ingredient.allergens?.map((allergen) => {
+    dish.ingredients.forEach((ingredient) => {
+      ingredient.allergens?.forEach((allergen) => {
         rowData[dict[allergen.name]] = "X";
       });
     });
