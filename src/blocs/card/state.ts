@@ -8,6 +8,8 @@ export class CardLoadingState extends CardState {}
 
 export class CardErrorState extends CardState {}
 
+export class CardCreateState extends CardState {}
+
 export class CardGetState extends CardState {
   card: Card;
 
