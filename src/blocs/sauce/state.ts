@@ -8,6 +8,8 @@ export class SauceLoadingState extends SauceState {}
 
 export class SauceErrorState extends SauceState {}
 
+export class SauceCreateState extends SauceState {}
+
 export class SauceGetState extends SauceState {
   sauce: Sauce;
 
