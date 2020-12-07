@@ -1,5 +1,11 @@
 import React, { FC, useState } from "react";
-import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import {
+  SafeAreaView,
+  View,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+} from "react-native";
 import { TableComponent } from "../components/allergen-notebook/table";
 import { BlocBuilder } from "@felangel/react-bloc";
 import {
@@ -67,7 +73,7 @@ const AllergenNotebookPage: FC = () => {
 
   cardBloc.add(new CardGetEvent(id));
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {!generation ? (
         <View style={styles.generation}>
           <Text style={styles.text}>
@@ -103,7 +109,7 @@ const AllergenNotebookPage: FC = () => {
           }}
         />
       )}
-    </View>
+    </SafeAreaView>
   );
 };
 
