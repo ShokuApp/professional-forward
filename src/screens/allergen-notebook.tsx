@@ -53,6 +53,11 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 17,
   },
+  generation: {
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "column",
+  },
 });
 
 const AllergenNotebookPage: FC = () => {
@@ -64,7 +69,18 @@ const AllergenNotebookPage: FC = () => {
   return (
     <View style={styles.container}>
       {!generation ? (
-        <Text style={styles.text}>Vous n'avez pas de cahier d'allergènes</Text>
+        <View style={styles.generation}>
+          <Text style={styles.text}>
+            Vous n'avez pas de cahier d'allergènes
+          </Text>
+          <TouchableOpacity onPress={() => setGeneration(true)}>
+            <View style={styles.button}>
+              <Text style={styles.textButton}>
+                Générer mon cahier d'allergènes
+              </Text>
+            </View>
+          </TouchableOpacity>
+        </View>
       ) : (
         <BlocBuilder
           bloc={cardBloc}
@@ -87,11 +103,6 @@ const AllergenNotebookPage: FC = () => {
           }}
         />
       )}
-      <TouchableOpacity onPress={() => setGeneration(true)}>
-        <View style={styles.button}>
-          <Text style={styles.textButton}>Générer mon cahier d'allergènes</Text>
-        </View>
-      </TouchableOpacity>
     </View>
   );
 };

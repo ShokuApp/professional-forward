@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { View, StyleSheet, ScrollView, Text } from "react-native";
-import { Table, Row } from "react-native-table-component";
+import { Table, Row, Col, TableWrapper } from "react-native-table-component";
 import { Icon } from "react-native-elements";
 import { CardBloc, CardSetEvent } from "../../blocs";
 import { Card } from "../../models";
@@ -103,7 +103,7 @@ export const TableComponent: FC<TableComponentProps> = ({
     90,
     90,
   ];
-  const dict = {
+  const dict: { [id: string]: number } = {
     Gluten: 1,
     Crustacés: 2,
     Oeufs: 3,
@@ -119,9 +119,10 @@ export const TableComponent: FC<TableComponentProps> = ({
     Lupin: 13,
     Mollusques: 14,
   };
-  const tableData = [];
+  const tableData: string[][] = [];
+
   card.dishes.forEach((dish) => {
-    const rowData = [];
+    const rowData: string[] = [];
     rowData.push(dish.name);
     for (let i = 0; i < 14; i++) rowData.push(" ");
     dish.ingredients.forEach((ingredient) => {
@@ -131,6 +132,7 @@ export const TableComponent: FC<TableComponentProps> = ({
     });
     tableData.push(rowData);
   });
+
   return (
     <View style={styles.container}>
       <ScrollView horizontal={true}>
