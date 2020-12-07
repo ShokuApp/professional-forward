@@ -54,8 +54,6 @@ export const PlateSaucesToAdd: FC<PlateSaucesToAddProps> = ({
     );
   };
 
-  console.log("les sauces :", sauces);
-
   return (
     <View style={styles.container}>
       <CategoryTitle label="Sauces à ajouter:" />
