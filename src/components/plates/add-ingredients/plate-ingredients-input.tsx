@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, {FC, useState} from "react";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import Autocomplete from "react-native-autocomplete-input";
 import { Ingredient } from "../../../models";
@@ -30,10 +30,10 @@ export const PlateIngredientInput: FC<PlateIngredientsInputProps> = ({
   availableIngredients,
   addIngredient,
 }: PlateIngredientsInputProps) => {
-  const [listIngredients, setListIngredients] = React.useState<Ingredient[]>(
+  const [listIngredients, setListIngredients] = useState<Ingredient[]>(
     []
   );
-  const [selectedValue, setSelectedValue] = React.useState({});
+  const [selectedValue, setSelectedValue] = useState({});
   const [text, setText] = React.useState("");
 
   const findIngredient = (query: string) => {

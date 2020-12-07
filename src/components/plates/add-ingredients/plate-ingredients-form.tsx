@@ -8,7 +8,7 @@ import {
   ScrollView,
   LogBox,
 } from "react-native";
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { Ingredient } from "../../../models";
 import { RouteProp, useNavigation } from "@react-navigation/native";
 
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
 type RootStackParamList = {
   AddIngredientsPage: {
     onGoBack: (ingredients: Ingredient[]) => void;
-    ingredientsReceipe: Ingredient[];
+    ingredientsRecipe: Ingredient[];
   };
 };
 
@@ -50,14 +50,14 @@ type Props = {
 
 const filteredList: (
   availableList: Ingredient[],
-  receipeList: Ingredient[],
+  recipeList: Ingredient[],
   ingredientsToAdd: Ingredient[]
-) => Ingredient[] = (availableList, receipeList, ingredientsToAdd) => {
+) => Ingredient[] = (availableList, recipeList, ingredientsToAdd) => {
   const list = availableList;
 
   for (let i = list.length - 1; i >= 0; i--) {
-    for (let j = 0; j < receipeList.length; j++) {
-      if (list[i] && list[i].id === receipeList[j].id) {
+    for (let j = 0; j < recipeList.length; j++) {
+      if (list[i] && list[i].id === recipeList[j].id) {
         list.splice(i, 1);
       }
     }
@@ -71,16 +71,14 @@ export const PlateIngredientsForm: FC<Props> = ({
   availableIngredients,
   route,
 }) => {
-  const [ingredientsToAdd, setIngredientsToAdd] = React.useState<Ingredient[]>(
-    []
-  );
+  const [ingredientsToAdd, setIngredientsToAdd] = useState<Ingredient[]>([]);
   const navigation = useNavigation();
   const addIngredient = (item: Ingredient) => {
     setIngredientsToAdd([...ingredientsToAdd, item]);
   };
   const availableList = filteredList(
     availableIngredients,
-    route.params.ingredientsReceipe,
+    route.params.ingredientsRecipe,
     ingredientsToAdd
   );
 

@@ -36,23 +36,6 @@ const styles = StyleSheet.create({
   },
 });
 
-const testIngredients: Ingredient[] = [
-  {
-    id: "a0148b26-9e35-449c-97ad-2acba737413d",
-    name: "Ingredient 1",
-    image: "https://source.unsplash.com/random",
-    allergens: [],
-    diets: [],
-  },
-  {
-    id: "15bc47b2-f22b-4feb-89e3-92fdec59e629",
-    name: "Ingredient 2",
-    image: "https://source.unsplash.com/random",
-    allergens: [],
-    diets: [],
-  },
-];
-
 const testSauces: Sauce[] = [
   {
     id: "ba82e1a5-41b8-4053-8da4-29ce90314edd",
@@ -139,7 +122,7 @@ type PlateFormProps = {
 
 export const PlateForm: FC<PlateFormProps> = ({ callback }: PlateFormProps) => {
   const [plateName, setPlateName] = React.useState("");
-  const [ingredients, setIngredients] = React.useState(testIngredients);
+  const [ingredients, setIngredients] = React.useState(new Array<Ingredient>());
   const [sauces, setSauces] = React.useState(testSauces);
   const [price, setPrice] = React.useState("");
   const [plateType, setPlateType] = React.useState("plate");
