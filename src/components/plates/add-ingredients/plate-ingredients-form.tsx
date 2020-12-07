@@ -1,7 +1,6 @@
 import { PlateIngredientInput } from "./plate-ingredients-input";
 import { PlateIngredientsToAdd } from "./plate-ingredients-to-add";
 import {
-  Button,
   SafeAreaView,
   StyleSheet,
   View,
@@ -11,6 +10,7 @@ import {
 import React, { FC, useEffect, useState } from "react";
 import { Ingredient } from "../../../models";
 import { RouteProp, useNavigation } from "@react-navigation/native";
+import { Button } from "../../common/button";
 
 const styles = StyleSheet.create({
   container: {
@@ -20,14 +20,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   button: {
-    backgroundColor: "#2196F3",
-    width: 175,
-    height: 40,
-    borderRadius: 20,
-    marginTop: 42,
-    display: "flex",
-    flexDirection: "column",
-    alignSelf: "center",
+    position: "absolute",
+    left: 0,
+    right: 0,
+    bottom: 30,
   },
 });
 
@@ -55,13 +51,16 @@ const filteredList: (
 ) => Ingredient[] = (availableList, recipeList, ingredientsToAdd) => {
   const list = availableList;
 
-  for (let i = list.length - 1; i >= 0; i--) {
-    for (let j = 0; j < recipeList.length; j++) {
-      if (list[i] && list[i].id === recipeList[j].id) {
-        list.splice(i, 1);
+  if (recipeList) {
+    for (let i = list.length - 1; i >= 0; i--) {
+      for (let j = 0; j < recipeList.length; j++) {
+        if (list[i] && list[i].id === recipeList[j].id) {
+          list.splice(i, 1);
+        }
       }
     }
   }
+
   return list.filter((elem) => {
     return !ingredientsToAdd.includes(elem);
   });
@@ -97,17 +96,16 @@ export const PlateIngredientsForm: FC<Props> = ({
           ingredients={ingredientsToAdd}
           setIngredients={setIngredientsToAdd}
         />
-        <View style={styles.button}>
-          <Button
-            title="Créer"
-            color="white"
-            onPress={() => {
-              route.params.onGoBack(ingredientsToAdd);
-              navigation.goBack();
-            }}
-          />
-        </View>
       </ScrollView>
+      <View style={styles.button}>
+        <Button
+          label="Créer"
+          onPress={() => {
+            route.params.onGoBack(ingredientsToAdd);
+            navigation.goBack();
+          }}
+        />
+      </View>
     </SafeAreaView>
   );
 };
