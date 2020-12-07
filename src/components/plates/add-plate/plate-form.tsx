@@ -122,7 +122,7 @@ type PlateFormProps = {
 
 export const PlateForm: FC<PlateFormProps> = ({ callback }: PlateFormProps) => {
   const [plateName, setPlateName] = useState("");
-  const [ingredients, setIngredients] = useState(new Array<Ingredient>());
+  const [ingredients, setIngredients] = useState<Ingredient[]>([]);
   const [sauces, setSauces] = useState(testSauces);
   const [price, setPrice] = useState("");
   const [plateType, setPlateType] = useState("plate");
