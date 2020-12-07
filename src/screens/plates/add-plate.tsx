@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { Ingredient } from "../../models/ingredient";
 import { Sauce } from "../../models/sauce";
 import PlateName from "../../components/plates/add-plate/plate-name";
@@ -20,14 +20,14 @@ const styles = StyleSheet.create({
 const testIngredients: Ingredient[] = [
   {
     id: "9eac69a2-21e9-4d16-968a-db5d40513baa",
-    name: "Pates",
+    name: "Ingredient 1",
     image: "https://source.unsplash.com/random",
     allergens: [],
     diets: [],
   },
   {
     id: "c1f92648-3b47-4db5-baa9-0f0533a97d7f",
-    name: "Carottes",
+    name: "Ingredient 2",
     image: "https://source.unsplash.com/random",
     allergens: [],
     diets: [],
@@ -83,12 +83,11 @@ const AddPlate: FC = () => {
   const [sauces, setSauces] = React.useState(testSauces);
   const [price, setPrice] = React.useState("");
   const [plateType, setPlateType] = React.useState("plate");
-  const [newIngredients, setNewIngredients] = React.useState("");
 
   const refreshIngredients: (newIngredientsTab: Ingredient[]) => void = (
     newIngredientsTab
   ) => {
-    console.log(newIngredientsTab);
+    setIngredients(ingredients.concat(newIngredientsTab));
   };
 
   return (

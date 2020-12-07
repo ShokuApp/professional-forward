@@ -55,6 +55,7 @@ const AddIngredientButton: FC<IngredientButtonProps> = ({
       onGoBack: (ingredients: Ingredient[]) => {
         callback(ingredients);
       },
+      ingredientsReceipe: ingredients,
     });
   };
   return (
