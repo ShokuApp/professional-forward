@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    paddingTop: 20,
     backgroundColor: "white",
   },
   text: {
@@ -60,6 +59,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
   },
   generation: {
+    marginTop: 42,
     display: "flex",
     alignItems: "center",
     flexDirection: "column",
