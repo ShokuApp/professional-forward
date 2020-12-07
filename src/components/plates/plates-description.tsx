@@ -30,12 +30,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     paddingHorizontal: 10,
-    height: 33,
+    minHeight: 33,
     alignItems: "center",
+    paddingVertical: 2
+  },
+  titleContainer: {
+    maxWidth: (65 * width) / 100,
   },
   label: {
     fontSize: 17,
     color: "white",
+    textAlign: "center"
   },
   composition: {
     display: "flex",
@@ -56,7 +61,9 @@ const PlateDescription: FC<Props> = ({ dish }: Props) => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text> </Text>
-        <Text style={styles.label}>{dish.name}</Text>
+        <View style={styles.titleContainer}>
+          <Text style={styles.label}>{dish.name}</Text>
+        </View>
         <SimpleLineIcons name="pencil" size={16} color="white" />
       </View>
       <View style={styles.composition}>
