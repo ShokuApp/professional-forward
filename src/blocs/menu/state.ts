@@ -8,6 +8,8 @@ export class MenuLoadingState extends MenuState {}
 
 export class MenuErrorState extends MenuState {}
 
+export class MenuCreateState extends MenuState {}
+
 export class MenuGetState extends MenuState {
   menu: Menu;
 
