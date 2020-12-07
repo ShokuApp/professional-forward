@@ -1,4 +1,4 @@
-import React, {FC, useState} from "react";
+import React, { FC, useState } from "react";
 import { View, Button, KeyboardAvoidingView, StyleSheet } from "react-native";
 import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
@@ -134,6 +134,10 @@ export const PlateForm: FC<PlateFormProps> = ({ callback }: PlateFormProps) => {
     setIngredients(ingredients.concat(newIngredientsTab));
   };
 
+  const refreshSauces: (newSaucesTab: Sauce[]) => void = (newSaucesTab) => {
+    setSauces(sauces.concat(newSaucesTab));
+  };
+
   return (
     <KeyboardAvoidingView
       behavior="padding"
@@ -149,7 +153,11 @@ export const PlateForm: FC<PlateFormProps> = ({ callback }: PlateFormProps) => {
           setIngredients={setIngredients}
           callback={refreshIngredients}
         />
-        <PlateSauces sauces={sauces} setSauces={setSauces} />
+        <PlateSauces
+          sauces={sauces}
+          setSauces={setSauces}
+          callback={refreshSauces}
+        />
 
         <PlatePrice price={price} setPrice={setPrice} />
 
