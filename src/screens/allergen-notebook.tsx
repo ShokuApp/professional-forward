@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState } from "react";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { TableComponent } from "../components/allergen-notebook/table";
 import { BlocBuilder } from "@felangel/react-bloc";

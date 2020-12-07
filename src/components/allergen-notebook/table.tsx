@@ -1,8 +1,7 @@
 import React, { FC } from "react";
-import { View, StyleSheet, ScrollView, Text } from "react-native";
-import { Table, Row, Col, TableWrapper } from "react-native-table-component";
-import { Icon } from "react-native-elements";
-import { CardBloc, CardSetEvent } from "../../blocs";
+import { View, StyleSheet, ScrollView } from "react-native";
+import { Table, Row } from "react-native-table-component";
+import { CardBloc } from "../../blocs";
 import { Card } from "../../models";
 import { AllergenName } from "./allergen-name";
 
