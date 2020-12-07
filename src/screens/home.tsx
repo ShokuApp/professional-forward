@@ -8,6 +8,7 @@ import PlatePage from "./plates/plates";
 import CardPage from "./card-page";
 import { Icon } from "react-native-elements";
 import AddPlate from "./plates/add-plate";
+import AddIngredients from "./plates/add-ingredients";
 
 const styles = StyleSheet.create({
   container: {
@@ -118,6 +119,21 @@ const Home: FC = () => {
           component={AddPlate}
           options={{
             title: "Nouveau plat",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="AddIngredientsPage"
+          component={AddIngredients}
+          options={{
+            title: "Ajouter des ingrédients",
             headerBackImage: () => (
               <Icon
                 type="antdesign"
