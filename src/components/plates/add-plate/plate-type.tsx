@@ -1,8 +1,7 @@
 import React, { FC, SetStateAction } from "react";
-import { View, StyleSheet, Picker, ActionSheetIOS, Button } from "react-native";
+import { View, StyleSheet } from "react-native";
 import CategoryTitle from "../../common/category-title";
 import DropDownPicker from "react-native-dropdown-picker";
-import Icon from "react-native-vector-icons/Feather";
 
 const styles = StyleSheet.create({
   container: {
@@ -30,7 +29,10 @@ type PlateTypeProps = {
   setType: React.Dispatch<SetStateAction<string>>;
 };
 
-const PlateType: FC<PlateTypeProps> = ({ type, setType }: PlateTypeProps) => {
+export const PlateType: FC<PlateTypeProps> = ({
+  type,
+  setType,
+}: PlateTypeProps) => {
   return (
     <View style={styles.container}>
       <CategoryTitle label="Type du plat :" />
@@ -51,5 +53,3 @@ const PlateType: FC<PlateTypeProps> = ({ type, setType }: PlateTypeProps) => {
     </View>
   );
 };
-
-export default PlateType;

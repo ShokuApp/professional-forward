@@ -4,7 +4,6 @@ import {
   StyleSheet,
   Text,
   Alert,
-  InteractionManager,
   TouchableOpacity,
 } from "react-native";
 import { Icon } from "react-native-elements";
@@ -70,7 +69,7 @@ const AddIngredientButton: FC<IngredientButtonProps> = ({
   );
 };
 
-const PlateIngredients: FC<PlateIngredientsProps> = ({
+export const PlateIngredients: FC<PlateIngredientsProps> = ({
   ingredients,
   setIngredients,
   callback,
@@ -125,5 +124,3 @@ const PlateIngredients: FC<PlateIngredientsProps> = ({
     </View>
   );
 };
-
-export default PlateIngredients;

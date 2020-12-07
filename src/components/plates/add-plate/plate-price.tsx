@@ -35,10 +35,14 @@ const styles = StyleSheet.create({
 });
 
 type PlatePriceProps = {
+  price: string;
   setPrice: React.Dispatch<SetStateAction<string>>;
 };
 
-const PlatePrice: FC<PlatePriceProps> = ({ setPrice }: PlatePriceProps) => {
+export const PlatePrice: FC<PlatePriceProps> = ({
+  price,
+  setPrice,
+}: PlatePriceProps) => {
   return (
     <TouchableWithoutFeedback
       style={styles.container}
@@ -49,8 +53,9 @@ const PlatePrice: FC<PlatePriceProps> = ({ setPrice }: PlatePriceProps) => {
         <View style={styles.inputBox}>
           <TextInput
             style={styles.input}
+            value={price.toString()}
             keyboardType="decimal-pad"
-            onChangeText={(price) => setPrice(price)}
+            onChangeText={(newPrice) => setPrice(newPrice)}
           />
         </View>
         <View style={styles.eurosContainer}>
@@ -60,5 +65,3 @@ const PlatePrice: FC<PlatePriceProps> = ({ setPrice }: PlatePriceProps) => {
     </TouchableWithoutFeedback>
   );
 };
-
-export default PlatePrice;

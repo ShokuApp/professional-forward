@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import json
+import os
 import random
 import uuid
 from datetime import datetime
@@ -327,22 +328,52 @@ def main():
     street_names = get_street_names()
     postal_codes = get_postal_codes()
 
-    pictogram_data = pictogram_list(random.randint(5, 100))
+    if os.path.exists("./data/pictograms/initial-data.json"):
+        file = open("./data/pictograms/initial-data.json")
+        pictogram_data = json.load(file)
+        file.close()
+    else:
+        pictogram_data = pictogram_list(random.randint(5, 100))
     save_to_file(pictogram_data, "./data/pictograms/data.json")
 
-    ingredient_data = ingredient_list(random.randint(5, 100), pictogram_data)
+    if os.path.exists("./data/ingredients/initial-data.json"):
+        file = open("./data/ingredients/initial-data.json")
+        ingredient_data = json.load(file)
+        file.close()
+    else:
+        ingredient_data = ingredient_list(random.randint(5, 100), pictogram_data)
     save_to_file(ingredient_data, "./data/ingredients/data.json")
 
-    sauce_data = sauce_list(random.randint(5, 100), ingredient_data)
+    if os.path.exists("./data/sauces/initial-data.json"):
+        file = open("./data/sauces/initial-data.json")
+        sauce_data = json.load(file)
+        file.close()
+    else:
+        sauce_data = sauce_list(random.randint(5, 100), ingredient_data)
     save_to_file(sauce_data, "./data/sauces/data.json")
 
-    dish_data = dish_list(random.randint(5, 100), ingredient_data, sauce_data)
+    if os.path.exists("./data/dishes/initial-data.json"):
+        file = open("./data/dishes/initial-data.json")
+        dish_data = json.load(file)
+        file.close()
+    else:
+        dish_data = dish_list(random.randint(5, 100), ingredient_data, sauce_data)
     save_to_file(dish_data, "./data/dishes/data.json")
 
-    menu_data = menu_list(random.randint(5, 100), dish_data)
+    if os.path.exists("./data/menus/initial-data.json"):
+        file = open("./data/menus/initial-data.json")
+        menu_data = json.load(file)
+        file.close()
+    else:
+        menu_data = menu_list(random.randint(5, 100), dish_data)
     save_to_file(menu_data, "./data/menus/data.json")
 
-    card_data = card_list(random.randint(5, 100), dish_data, menu_data)
+    if os.path.exists("./data/cards/initial-data.json"):
+        file = open("./data/cards/initial-data.json")
+        card_data = json.load(file)
+        file.close()
+    else:
+        card_data = card_list(random.randint(5, 100), dish_data, menu_data)
     save_to_file(card_data, "./data/cards/data.json")
 
     restaurant_data = restaurant_list(random.randint(5, 100), restaurant_names, street_names, postal_codes, card_data,

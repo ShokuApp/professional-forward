@@ -1,7 +1,6 @@
 import React, { FC, SetStateAction } from "react";
 import { View, StyleSheet, TextInput } from "react-native";
 import CategoryTitle from "../../common/category-title";
-import { Icon } from "react-native-elements";
 
 const styles = StyleSheet.create({
   container: {
@@ -31,7 +30,10 @@ type PlateNameProps = {
   setName: React.Dispatch<SetStateAction<string>>;
 };
 
-const PlateName: FC<PlateNameProps> = ({ name, setName }: PlateNameProps) => {
+export const PlateName: FC<PlateNameProps> = ({
+  name,
+  setName,
+}: PlateNameProps) => {
   return (
     <View style={styles.container}>
       <CategoryTitle label="Nom du plat :" />
@@ -48,5 +50,3 @@ const PlateName: FC<PlateNameProps> = ({ name, setName }: PlateNameProps) => {
     </View>
   );
 };
-
-export default PlateName;
