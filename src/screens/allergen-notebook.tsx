@@ -1,10 +1,10 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState } from "react";
 import {
+  SafeAreaView,
   View,
   StyleSheet,
   Text,
   TouchableOpacity,
-  ScrollView,
 } from "react-native";
 import { TableComponent } from "../components/allergen-notebook/table";
 import { BlocBuilder } from "@felangel/react-bloc";
@@ -18,7 +18,6 @@ import {
   CardInitialState,
 } from "../blocs";
 import { CardRepository } from "../repositories";
-import { Table } from "react-native-table-component";
 
 const styles = StyleSheet.create({
   container: {
@@ -60,6 +59,11 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 17,
   },
+  generation: {
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "column",
+  },
 });
 
 const AllergenNotebookPage: FC = () => {
@@ -69,9 +73,20 @@ const AllergenNotebookPage: FC = () => {
 
   cardBloc.add(new CardGetEvent(id));
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {!generation ? (
-        <Text style={styles.text}>Vous n'avez pas de cahier d'allergènes</Text>
+        <View style={styles.generation}>
+          <Text style={styles.text}>
+            Vous n'avez pas de cahier d'allergènes
+          </Text>
+          <TouchableOpacity onPress={() => setGeneration(true)}>
+            <View style={styles.button}>
+              <Text style={styles.textButton}>
+                Générer mon cahier d'allergènes
+              </Text>
+            </View>
+          </TouchableOpacity>
+        </View>
       ) : (
         <BlocBuilder
           bloc={cardBloc}
@@ -94,12 +109,7 @@ const AllergenNotebookPage: FC = () => {
           }}
         />
       )}
-      <TouchableOpacity onPress={() => setGeneration(true)}>
-        <View style={styles.button}>
-          <Text style={styles.textButton}>Générer mon cahier d'allergènes</Text>
-        </View>
-      </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 
