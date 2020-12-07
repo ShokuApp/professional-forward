@@ -1,4 +1,5 @@
 import { Dish } from "../../models";
+import { CardState } from "../card";
 
 export abstract class DishState {}
 
@@ -7,6 +8,8 @@ export class DishInitialState extends DishState {}
 export class DishLoadingState extends DishState {}
 
 export class DishErrorState extends DishState {}
+
+export class DishCreateState extends CardState {}
 
 export class DishGetState extends DishState {
   dish: Dish;

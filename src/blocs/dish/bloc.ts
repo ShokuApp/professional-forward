@@ -1,6 +1,13 @@
 import { Bloc } from "@felangel/bloc";
-import { DishEvent, DishGetEvent, DishListEvent, DishSetEvent } from "./event";
 import {
+  DishCreateEvent,
+  DishEvent,
+  DishGetEvent,
+  DishListEvent,
+  DishSetEvent,
+} from "./event";
+import {
+  DishCreateState,
   DishErrorState,
   DishGetState,
   DishInitialState,
@@ -24,12 +31,24 @@ export class DishBloc extends Bloc<DishEvent, DishState> {
   async *mapEventToState(event: DishEvent): AsyncIterableIterator<DishState> {
     yield new DishLoadingState();
 
-    if (event instanceof DishGetEvent) {
+    if (event instanceof DishCreateEvent) {
+      yield* this.create(event);
+    } else if (event instanceof DishGetEvent) {
       yield* this.get(event);
     } else if (event instanceof DishSetEvent) {
       yield* this.set(event);
     } else if (event instanceof DishListEvent) {
       yield* this.list(event);
+    }
+  }
+
+  async *create(event: DishCreateEvent) {
+    try {
+      await this.repository.set(event.dish);
+
+      yield new DishCreateState();
+    } catch (e) {
+      yield new DishErrorState();
     }
   }
 
@@ -48,7 +67,7 @@ export class DishBloc extends Bloc<DishEvent, DishState> {
       const originalDish = await this.repository.get(event.id);
       const dish: Dish = {
         ...originalDish,
-        ...event.dish,
+        ...event.dish as Dish,
       };
 
       await this.repository.set(dish);

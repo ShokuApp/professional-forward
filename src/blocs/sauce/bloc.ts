@@ -1,11 +1,13 @@
 import { Bloc } from "@felangel/bloc";
 import {
+  SauceCreateEvent,
   SauceEvent,
   SauceGetEvent,
   SauceListEvent,
   SauceSetEvent,
 } from "./event";
 import {
+  SauceCreateState,
   SauceErrorState,
   SauceGetState,
   SauceInitialState,
@@ -29,12 +31,24 @@ export class SauceBloc extends Bloc<SauceEvent, SauceState> {
   async *mapEventToState(event: SauceEvent): AsyncIterableIterator<SauceState> {
     yield new SauceLoadingState();
 
-    if (event instanceof SauceGetEvent) {
+    if (event instanceof SauceCreateEvent) {
+      yield* this.create(event);
+    } else if (event instanceof SauceGetEvent) {
       yield* this.get(event);
     } else if (event instanceof SauceSetEvent) {
       yield* this.set(event);
     } else if (event instanceof SauceListEvent) {
       yield* this.list(event);
+    }
+  }
+
+  async *create(event: SauceCreateEvent) {
+    try {
+      await this.repository.set(event.sauce);
+
+      yield new SauceCreateState();
+    } catch (e) {
+      yield new SauceErrorState();
     }
   }
 
