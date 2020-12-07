@@ -95,23 +95,9 @@ export const TableComponent: FC<TableComponentProps> = ({
     const value = imageMap[key];
     tableHead.push(<AllergenName label={value[0]} path={value[1]} />);
   }
-  const widthArr = [
-    200,
-    90,
-    90,
-    90,
-    90,
-    90,
-    90,
-    90,
-    90,
-    90,
-    90,
-    90,
-    90,
-    90,
-    90,
-  ];
+  const widthArr: number[] = new Array(14);
+  widthArr.fill(90);
+  widthArr.unshift(200);
   const dict: { [id: string]: number } = {
     Gluten: 1,
     Crustacés: 2,
