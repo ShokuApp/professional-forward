@@ -7,6 +7,7 @@ import Button, { ButtonProps } from "../components/home/button";
 import PlatePage from "../screens/plates";
 import CardPage from "./card-page";
 import { Icon } from "react-native-elements";
+import RestaurantPage from "./restaurant-page";
 
 const styles = StyleSheet.create({
   container: {
@@ -81,6 +82,21 @@ const Home: FC = () => {
           }}
         />
         <Stack.Screen
+          name="myRestaurant"
+          component={RestaurantPage}
+          options={{
+            title: "Mon restaurant",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
           name="CardPage"
           component={CardPage}
           options={{
@@ -113,10 +129,10 @@ const Home: FC = () => {
                 type="antdesign"
                 name="plus"
                 size={25}
-                onPress={() => alert('TODO')}
+                onPress={() => alert("TODO")}
                 style={styles.plus}
               />
-            )
+            ),
           }}
         />
       </Stack.Navigator>

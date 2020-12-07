@@ -8,6 +8,7 @@ import {
   Image,
 } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const { height } = Dimensions.get("window");
 
@@ -33,11 +34,12 @@ const styles = StyleSheet.create({
 });
 
 const RestaurantButton = () => {
+  const { navigate } = useNavigation();
   return (
     <TouchableOpacity
       activeOpacity={1}
       style={styles.restaurantButton}
-      onPress={() => alert("Todo!")}
+      onPress={() => navigate("myRestaurant")}
     >
       <View style={{ flexDirection: "row", alignItems: "center" }}>
         <Image
