@@ -1,6 +1,11 @@
 import React, { FC } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { DishBloc, DishSetEvent, DishSetState, DishState } from "../../blocs";
+import {
+  DishBloc,
+  DishCreateEvent,
+  DishCreateState,
+  DishState,
+} from "../../blocs";
 import { DishRepository } from "../../repositories";
 import { Dish } from "../../models";
 import { BlocBuilder } from "@felangel/react-bloc";
@@ -11,14 +16,14 @@ const AddPlate: FC = () => {
   const navigation = useNavigation();
 
   const pushDish = (dish: Dish) => {
-    dishBloc.add(new DishSetEvent(dish.id, dish));
+    dishBloc.add(new DishCreateEvent(dish));
   };
 
   return (
     <BlocBuilder
       bloc={dishBloc}
       condition={(_, currentState) => {
-        if (currentState instanceof DishSetState) {
+        if (currentState instanceof DishCreateState) {
           navigation.goBack();
           return false;
         }

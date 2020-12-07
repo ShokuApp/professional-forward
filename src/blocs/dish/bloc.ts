@@ -64,10 +64,10 @@ export class DishBloc extends Bloc<DishEvent, DishState> {
 
   async *set(event: DishSetEvent) {
     try {
-      // const originalDish = await this.repository.get(event.id);
+      const originalDish = await this.repository.get(event.id);
       const dish: Dish = {
-        // ...originalDish,
-        ...(event.dish as Dish),
+        ...originalDish,
+        ...event.dish as Dish,
       };
 
       await this.repository.set(dish);
