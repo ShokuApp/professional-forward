@@ -34,7 +34,7 @@ export const PlateIngredientInput: FC<PlateIngredientsInputProps> = ({
     []
   );
   const [selectedValue, setSelectedValue] = useState({});
-  const [text, setText] = React.useState("");
+  const [text, setText] = useState("");
 
   const findIngredient = (query: string) => {
     setText(query);

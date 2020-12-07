@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, {FC, useState} from "react";
 import { View, Button, KeyboardAvoidingView, StyleSheet } from "react-native";
 import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
@@ -121,12 +121,12 @@ type PlateFormProps = {
 };
 
 export const PlateForm: FC<PlateFormProps> = ({ callback }: PlateFormProps) => {
-  const [plateName, setPlateName] = React.useState("");
-  const [ingredients, setIngredients] = React.useState(new Array<Ingredient>());
-  const [sauces, setSauces] = React.useState(testSauces);
-  const [price, setPrice] = React.useState("");
-  const [plateType, setPlateType] = React.useState("plate");
-  const [isAdaptable, setAdaptable] = React.useState(false);
+  const [plateName, setPlateName] = useState("");
+  const [ingredients, setIngredients] = useState(new Array<Ingredient>());
+  const [sauces, setSauces] = useState(testSauces);
+  const [price, setPrice] = useState("");
+  const [plateType, setPlateType] = useState("plate");
+  const [isAdaptable, setAdaptable] = useState(false);
 
   const refreshIngredients: (newIngredientsTab: Ingredient[]) => void = (
     newIngredientsTab
