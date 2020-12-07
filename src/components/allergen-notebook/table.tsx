@@ -1,5 +1,10 @@
 import React, { FC } from "react";
-import { View, StyleSheet, ScrollView } from "react-native";
+import {
+  View,
+  StyleSheet,
+  ScrollView,
+  ImageSourcePropType,
+} from "react-native";
 import { Table, Row } from "react-native-table-component";
 import { CardBloc } from "../../blocs";
 import { Card } from "../../models";
@@ -37,7 +42,12 @@ type TableComponentProps = {
   card: Card;
 };
 
-export const imageMap: { [id: string]: any[] } = {
+type imageMapProps = {
+  label: string;
+  image: ImageSourcePropType;
+};
+
+export const imageMap: { [id: string]: imageMapProps[] } = {
   gluten: ["Gluten", require("../../../assets/images/allergens/gluten.png")],
   crustacés: [
     "Crustacés",
