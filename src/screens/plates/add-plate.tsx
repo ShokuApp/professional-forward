@@ -20,14 +20,14 @@ const styles = StyleSheet.create({
 const testIngredients: Ingredient[] = [
   {
     id: "9eac69a2-21e9-4d16-968a-db5d40513baa",
-    name: "Ingredient 1",
+    name: "Pates",
     image: "https://source.unsplash.com/random",
     allergens: [],
     diets: [],
   },
   {
     id: "c1f92648-3b47-4db5-baa9-0f0533a97d7f",
-    name: "Ingredient 2",
+    name: "Carottes",
     image: "https://source.unsplash.com/random",
     allergens: [],
     diets: [],
@@ -83,6 +83,13 @@ const AddPlate: FC = () => {
   const [sauces, setSauces] = React.useState(testSauces);
   const [price, setPrice] = React.useState("");
   const [plateType, setPlateType] = React.useState("plate");
+  const [newIngredients, setNewIngredients] = React.useState("");
+
+  const refreshIngredients: (newIngredientsTab: Ingredient[]) => void = (
+    newIngredientsTab
+  ) => {
+    console.log(newIngredientsTab);
+  };
 
   return (
     <View style={styles.container}>
@@ -91,6 +98,7 @@ const AddPlate: FC = () => {
       <PlateIngredients
         ingredients={ingredients}
         setIngredients={setIngredients}
+        callback={refreshIngredients}
       />
       <PlateSauces sauces={sauces} setSauces={setSauces} />
       <PlatePrice setPrice={setPrice} />
