@@ -3,6 +3,7 @@ import { View } from "react-native";
 import { Banner } from "./banner";
 import { Restaurant } from "../../models/restaurant";
 import { Input } from "./input";
+import { ScheduleButton } from "./schedule-button";
 
 type DetailsProps = {
   restaurant: Restaurant;
@@ -50,6 +51,7 @@ export const Details: FC<DetailsProps> = ({ restaurant }: DetailsProps) => {
         label={"Numéro de téléphone :"}
         isPhone={true}
       />
+      <ScheduleButton />
     </View>
   );
 };
