@@ -9,8 +9,9 @@ import {
 } from "react-native";
 import React, { FC, useEffect, useState } from "react";
 import { Ingredient } from "../../../models";
-import { RouteProp, useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import { Button } from "../../common/button";
+import { AddIngredientScreenRouteProps } from "../../../navigator/navigator-type";
 
 const styles = StyleSheet.create({
   container: {
@@ -26,18 +27,6 @@ const styles = StyleSheet.create({
     bottom: 30,
   },
 });
-
-type RootStackParamList = {
-  AddIngredientsPage: {
-    onGoBack: (ingredients: Ingredient[]) => void;
-    ingredientsRecipe: Ingredient[];
-  };
-};
-
-type AddIngredientScreenRouteProps = RouteProp<
-  RootStackParamList,
-  "AddIngredientsPage"
->;
 
 type Props = {
   availableIngredients: Ingredient[];

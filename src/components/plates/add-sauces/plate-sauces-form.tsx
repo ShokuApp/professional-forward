@@ -9,8 +9,9 @@ import {
 } from "react-native";
 import React, { FC, useEffect, useState } from "react";
 import { Sauce } from "../../../models";
-import { RouteProp, useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import { Button } from "../../common/button";
+import { AddSauceScreenRouteProps } from "../../../navigator/navigator-type";
 
 const styles = StyleSheet.create({
   container: {
@@ -26,15 +27,6 @@ const styles = StyleSheet.create({
     bottom: 30,
   },
 });
-
-type RootStackParamList = {
-  AddSaucesPage: {
-    onGoBack: (sauces: Sauce[]) => void;
-    saucesRecipe: Sauce[];
-  };
-};
-
-type AddSauceScreenRouteProps = RouteProp<RootStackParamList, "AddSaucesPage">;
 
 type Props = {
   availableSauces: Sauce[];
