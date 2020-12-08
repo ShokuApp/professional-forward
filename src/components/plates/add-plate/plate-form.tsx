@@ -1,5 +1,13 @@
 import React, { FC, useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Keyboard,
+  KeyboardAvoidingView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  Platform,
+} from "react-native";
 import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
 import { Dish } from "../../../models";
@@ -102,46 +110,54 @@ export const PlateForm: FC<PlateFormProps> = ({ callback }: PlateFormProps) => {
   };
 
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <PlateName name={plateName} setName={setPlateName} />
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : undefined}
+      keyboardVerticalOffset={120}
+    >
+      <ScrollView>
+        <View style={styles.container}>
+          <PlateName name={plateName} setName={setPlateName} />
 
-        <PlateType type={plateType} setType={setPlateType} />
-        <PlateIngredients
-          ingredients={ingredients}
-          setIngredients={setIngredients}
-          callback={refreshIngredients}
-        />
-        <PlateSauces
-          sauces={sauces}
-          setSauces={setSauces}
-          callback={refreshSauces}
-        />
+          <PlateType type={plateType} setType={setPlateType} />
+          <PlateIngredients
+            ingredients={ingredients}
+            setIngredients={setIngredients}
+            callback={refreshIngredients}
+          />
+          <PlateSauces
+            sauces={sauces}
+            setSauces={setSauces}
+            callback={refreshSauces}
+          />
 
-        <PlatePrice price={price} setPrice={setPrice} />
+          <PlatePrice price={price} setPrice={setPrice} />
 
-        <PlateAdaptable isAdaptable={isAdaptable} setAdaptable={setAdaptable} />
-        <TouchableOpacity
-          style={styles.buttonContainer}
-          onPress={() => {
-            const newDish = addNewPlate({
-              plateName,
-              ingredients,
-              sauces,
-              price,
-              plateType,
-              isAdaptable,
-            });
-            if (newDish) {
-              callback(newDish);
-            }
-          }}
-        >
-          <View style={styles.button}>
-            <Text style={styles.textButton}>Créer</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
-    </ScrollView>
+          <PlateAdaptable
+            isAdaptable={isAdaptable}
+            setAdaptable={setAdaptable}
+          />
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={() => {
+              const newDish = addNewPlate({
+                plateName,
+                ingredients,
+                sauces,
+                price,
+                plateType,
+                isAdaptable,
+              });
+              if (newDish) {
+                callback(newDish);
+              }
+            }}
+          >
+            <View style={styles.button}>
+              <Text style={styles.textButton}>Créer</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 };

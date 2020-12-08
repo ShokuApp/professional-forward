@@ -1,17 +1,21 @@
 import React, { Dispatch, FC, SetStateAction } from "react";
-import { StyleSheet, View } from "react-native";
+import { Platform, StyleSheet, View } from "react-native";
 import CategoryTitle from "../../common/category-title";
 import DropDownPicker from "react-native-dropdown-picker";
 
 const styles = StyleSheet.create({
   container: {
     marginTop: 30,
+    zIndex: Platform.OS === "ios" ? 10 : undefined,
   },
   pickerContainer: {
     marginTop: 5,
   },
   picker: {
     height: 40,
+    backgroundColor: "white",
+  },
+  dropdownPicker: {
     backgroundColor: "white",
   },
   itemPicker: {
@@ -42,6 +46,7 @@ export const PlateType: FC<PlateTypeProps> = ({
           ]}
           defaultValue={type}
           style={styles.picker}
+          dropDownStyle={styles.dropdownPicker}
           itemStyle={styles.itemPicker}
           onChangeItem={(item) => setType(item.value)}
         />

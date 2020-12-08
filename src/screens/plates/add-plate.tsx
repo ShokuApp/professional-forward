@@ -10,6 +10,7 @@ import { DishRepository } from "../../repositories";
 import { Dish } from "../../models";
 import { BlocBuilder } from "@felangel/react-bloc";
 import { PlateForm } from "../../components/plates/add-plate/plate-form";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const AddPlate: FC = () => {
   const dishBloc = new DishBloc(new DishRepository());
