@@ -16,8 +16,17 @@ import {
   CardErrorState,
   CardLoadingState,
   CardInitialState,
+  PictogramBloc,
+  PictogramListEvent,
+  PictogramState,
+  PictogramErrorState,
+  PictogramInitialState,
+  PictogramLoadingState,
+  PictogramListState,
+  CardListState,
 } from "../blocs";
-import { CardRepository } from "../repositories";
+import { CardRepository, PictogramRepository } from "../repositories";
+import { Card } from "../models";
 
 const styles = StyleSheet.create({
   container: {
@@ -54,43 +63,84 @@ const styles = StyleSheet.create({
   },
 });
 
-const AllergenNotebookPage: FC = () => {
-  const [generation, setGeneration] = useState(false);
+type NoAllergenNotebookProps = {
+  setGeneration: (generation: boolean) => void;
+};
+
+const GenerateAllergenNotebook: FC<NoAllergenNotebookProps> = ({
+  setGeneration,
+}: NoAllergenNotebookProps) => {
+  return (
+    <View style={styles.generation}>
+      <Text style={styles.text}>
+        {"Vous n'avez pas de cahier d'allergènes"}
+      </Text>
+      <TouchableOpacity onPress={() => setGeneration(true)}>
+        <View style={styles.button}>
+          <Text style={styles.textButton}>
+            {"Générer mon cahier d'allergènes"}
+          </Text>
+        </View>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+type AllergenFetcherProps = {
+  card: Card;
+};
+
+const AllergenFetcher: FC<AllergenFetcherProps> = ({
+  card,
+}: AllergenFetcherProps) => {
+  const allergenBloc = new PictogramBloc(new PictogramRepository());
+
+  allergenBloc.add(new PictogramListEvent());
+  return (
+    <BlocBuilder
+      bloc={allergenBloc}
+      builder={(state: PictogramState) => {
+        if (state instanceof PictogramErrorState) {
+          return <Text>Error</Text>;
+        }
+        if (state instanceof PictogramListState) {
+          return <TableComponent card={card} allergens={state.pictograms} />;
+        }
+        return <Text>Loading</Text>;
+      }}
+    />
+  );
+};
+
+const DisplayAllergenNotebook: FC = () => {
   const id = "88744501-fb78-41b0-a1e6-bc6a5da00528";
   const cardBloc = new CardBloc(new CardRepository());
 
   cardBloc.add(new CardGetEvent(id));
   return (
+    <BlocBuilder
+      bloc={cardBloc}
+      builder={(state: CardState) => {
+        if (state instanceof CardErrorState) {
+          return <Text>Error</Text>;
+        }
+        if (state instanceof CardGetState) {
+          return <AllergenFetcher card={state.card} />;
+        }
+        return <Text>Loading</Text>;
+      }}
+    />
+  );
+};
+
+const AllergenNotebookPage: FC = () => {
+  const [generation, setGeneration] = useState(false);
+  return (
     <SafeAreaView style={styles.container}>
       {!generation ? (
-        <View style={styles.generation}>
-          <Text style={styles.text}>
-            {"Vous n'avez pas de cahier d'allergènes"}
-          </Text>
-          <TouchableOpacity onPress={() => setGeneration(true)}>
-            <View style={styles.button}>
-              <Text style={styles.textButton}>
-                {"Générer mon cahier d'allergènes"}
-              </Text>
-            </View>
-          </TouchableOpacity>
-        </View>
+        <GenerateAllergenNotebook setGeneration={setGeneration} />
       ) : (
-        <BlocBuilder
-          bloc={cardBloc}
-          builder={(state: CardState) => {
-            if (state instanceof CardErrorState) {
-              return <Text>Error</Text>;
-            }
-            if (state instanceof CardInitialState) {
-              return <Text>Loading</Text>;
-            }
-            if (state instanceof CardLoadingState) {
-              return <Text>Loading</Text>;
-            }
-            return <TableComponent card={(state as CardGetState).card} />;
-          }}
-        />
+        <DisplayAllergenNotebook />
       )}
     </SafeAreaView>
   );
