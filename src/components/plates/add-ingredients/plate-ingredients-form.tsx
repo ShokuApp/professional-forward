@@ -1,11 +1,11 @@
 import { PlateIngredientInput } from "./plate-ingredients-input";
 import { PlateIngredientsToAdd } from "./plate-ingredients-to-add";
 import {
+  LogBox,
   SafeAreaView,
+  ScrollView,
   StyleSheet,
   View,
-  ScrollView,
-  LogBox,
 } from "react-native";
 import React, { FC, useEffect, useState } from "react";
 import { Ingredient } from "../../../models";
@@ -80,7 +80,7 @@ export const PlateIngredientsForm: FC<Props> = ({
 
   return (
     <SafeAreaView>
-      <ScrollView style={styles.container} keyboardShouldPersistTaps="always">
+      <ScrollView style={styles.container} nestedScrollEnabled={true}>
         <PlateIngredientInput
           availableIngredients={availableList}
           addIngredient={addIngredient}

@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Autocomplete from "react-native-autocomplete-input";
 import { Sauce } from "../../../models";
 
@@ -31,7 +31,6 @@ export const PlateSauceInput: FC<PlateSaucesInputProps> = ({
   addSauce,
 }: PlateSaucesInputProps) => {
   const [listSauces, setListSauces] = useState<Sauce[]>([]);
-  const [selectedValue, setSelectedValue] = useState({});
   const [text, setText] = useState("");
 
   const findSauce = (query: string) => {
@@ -52,18 +51,15 @@ export const PlateSauceInput: FC<PlateSaucesInputProps> = ({
     <View style={styles.container}>
       <Autocomplete
         data={listSauces}
-        defaultValue={
-          JSON.stringify(selectedValue) === "{}" ? "" : selectedValue
-        }
         value={text}
         placeholder={"Entrez votre ingrédient"}
         onChangeText={(text: string) => findSauce(text)}
         listStyle={{ maxHeight: 350 }}
-        renderItem={({ item }: Sauce) => {
+        flatListProps={{ nestedScrollEnabled: true }}
+        renderItem={({ item }) => {
           return (
             <TouchableOpacity
               onPress={() => {
-                setSelectedValue(item.name);
                 addSauce(item);
                 setListSauces([]);
                 setText("");

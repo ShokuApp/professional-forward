@@ -1,5 +1,5 @@
-import React, {FC, useState} from "react";
-import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import React, { FC, useState } from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Autocomplete from "react-native-autocomplete-input";
 import { Ingredient } from "../../../models";
 
@@ -30,10 +30,7 @@ export const PlateIngredientInput: FC<PlateIngredientsInputProps> = ({
   availableIngredients,
   addIngredient,
 }: PlateIngredientsInputProps) => {
-  const [listIngredients, setListIngredients] = useState<Ingredient[]>(
-    []
-  );
-  const [selectedValue, setSelectedValue] = useState({});
+  const [listIngredients, setListIngredients] = useState<Ingredient[]>([]);
   const [text, setText] = useState("");
 
   const findIngredient = (query: string) => {
@@ -54,18 +51,15 @@ export const PlateIngredientInput: FC<PlateIngredientsInputProps> = ({
     <View style={styles.container}>
       <Autocomplete
         data={listIngredients}
-        defaultValue={
-          JSON.stringify(selectedValue) === "{}" ? "" : selectedValue
-        }
         value={text}
         placeholder={"Entrez votre ingrédient"}
         onChangeText={(text: string) => findIngredient(text)}
         listStyle={{ maxHeight: 350 }}
-        renderItem={({ item }: Ingredient) => {
+        flatListProps={{ nestedScrollEnabled: true }}
+        renderItem={({ item }) => {
           return (
             <TouchableOpacity
               onPress={() => {
-                setSelectedValue(item.name);
                 addIngredient(item);
                 setListIngredients([]);
                 setText("");

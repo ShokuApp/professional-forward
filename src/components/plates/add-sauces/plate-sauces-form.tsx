@@ -1,11 +1,11 @@
 import { PlateSauceInput } from "./plate-sauces-input";
 import { PlateSaucesToAdd } from "./plate-sauces-to-add";
 import {
+  LogBox,
   SafeAreaView,
+  ScrollView,
   StyleSheet,
   View,
-  ScrollView,
-  LogBox,
 } from "react-native";
 import React, { FC, useEffect, useState } from "react";
 import { Sauce } from "../../../models";
@@ -73,7 +73,11 @@ export const PlateSaucesForm: FC<Props> = ({ availableSauces, route }) => {
 
   return (
     <SafeAreaView>
-      <ScrollView style={styles.container} keyboardShouldPersistTaps="always">
+      <ScrollView
+        style={styles.container}
+        keyboardShouldPersistTaps="always"
+        nestedScrollEnabled={true}
+      >
         <PlateSauceInput availableSauces={availableList} addSauce={addSauce} />
         <PlateSaucesToAdd sauces={saucesToAdd} setSauces={setSaucesToAdd} />
       </ScrollView>
