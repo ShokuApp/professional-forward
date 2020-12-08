@@ -35,14 +35,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginBottom: 20,
-  },
-  button: {
     backgroundColor: "#2196F3",
     width: 175,
     height: 40,
     borderRadius: 20,
-    alignItems: "center",
-    justifyContent: "center",
+    alignSelf: "center",
   },
   textButton: {
     color: "white",
@@ -116,7 +113,6 @@ export const PlateForm: FC<PlateFormProps> = ({ callback }: PlateFormProps) => {
     >
       <ScrollView>
         <PlateName name={plateName} setName={setPlateName} />
-
         <PlateType type={plateType} setType={setPlateType} />
         <PlateIngredients
           ingredients={ingredients}
@@ -128,9 +124,7 @@ export const PlateForm: FC<PlateFormProps> = ({ callback }: PlateFormProps) => {
           setSauces={setSauces}
           callback={refreshSauces}
         />
-
         <PlatePrice price={price} setPrice={setPrice} />
-
         <PlateAdaptable isAdaptable={isAdaptable} setAdaptable={setAdaptable} />
         <TouchableOpacity
           style={styles.buttonContainer}
@@ -148,9 +142,7 @@ export const PlateForm: FC<PlateFormProps> = ({ callback }: PlateFormProps) => {
             }
           }}
         >
-          <View style={styles.button}>
-            <Text style={styles.textButton}>Créer</Text>
-          </View>
+          <Text style={styles.textButton}>Créer</Text>
         </TouchableOpacity>
       </ScrollView>
     </KeyboardAvoidingView>
