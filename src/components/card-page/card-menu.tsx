@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { View, StyleSheet, Text } from "react-native";
-import { Menu } from "../../models/menu";
+import { Menu } from "../../models";
 import CategoryText from "../common/category-text";
 import { Icon } from "react-native-elements";
 
@@ -26,7 +26,14 @@ const CardMenu: FC<MenuProps> = ({ menu }: MenuProps) => {
     <View>
       <CategoryText
         label={menu.name}
-        icon={<Icon type="simple-line-icon" name="pencil" size={15} color="#C6C6C8" />}
+        icon={
+          <Icon
+            type="simple-line-icon"
+            name="pencil"
+            size={15}
+            color="#C6C6C8"
+          />
+        }
       />
       <View style={styles.menuDishes}>
         {menu.dishes.map((dish) => {

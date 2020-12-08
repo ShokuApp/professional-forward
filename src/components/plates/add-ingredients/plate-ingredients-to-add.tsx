@@ -1,7 +1,7 @@
 import React, { FC, SetStateAction } from "react";
 import { View, StyleSheet, Alert } from "react-native";
 import { Icon } from "react-native-elements";
-import { Ingredient } from "../../../models/ingredient";
+import { Ingredient } from "../../../models";
 import CategoryTitle from "../../common/category-title";
 import CategoryText from "../../common/category-text";
 

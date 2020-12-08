@@ -1,11 +1,10 @@
 import React, { FC } from "react";
-import { StyleSheet, View, Text, Dimensions } from "react-native";
+import { Dimensions, StyleSheet, Text, View } from "react-native";
 import { SimpleLineIcons } from "@expo/vector-icons";
 import PlateComposition from "./plates-composition";
-import { Dish } from "../../models/dish";
-import { Sauce } from "../../models/sauce";
+import { Dish } from "../../models";
 
-const { width, height } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   container: {

@@ -1,18 +1,17 @@
 import React, { FC, useState } from "react";
 import {
-  Keyboard,
   KeyboardAvoidingView,
+  Platform,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
-  Platform,
 } from "react-native";
 import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
 import { Dish } from "../../../models";
-import { Ingredient } from "../../../models/ingredient";
-import { Sauce } from "../../../models/sauce";
+import { Ingredient } from "../../../models";
+import { Sauce } from "../../../models";
 import { PlateName } from "./plate-name";
 import { PlateType } from "./plate-type";
 import { PlateIngredients } from "./plate-ingredients";
@@ -69,8 +68,7 @@ const addNewPlate: (param: newPlateParam) => Dish | undefined = ({
   isAdaptable,
 }: newPlateParam) => {
   if (plateName && ingredients.length !== 0 && price && plateType) {
-    const priceStr = price;
-    const priceVal = Number(priceStr.replace(/\,/g, "."));
+    const priceVal = Number(price.replace(/,/g, "."));
     if (!Number.isNaN(priceVal) || priceVal !== 0) {
       const newPlate: Dish = {
         id: uuidv4(),

@@ -23,7 +23,10 @@ type CategoryTextProps = {
   icon: React.ReactElement<Icon<string, string>>;
 };
 
-const CardText: FC<CategoryTextProps> = ({ label, icon }: CategoryTextProps) => {
+const CardText: FC<CategoryTextProps> = ({
+  label,
+  icon,
+}: CategoryTextProps) => {
   return (
     <View style={styles.categoryStyle}>
       <Text style={styles.elementName}>{label}</Text>

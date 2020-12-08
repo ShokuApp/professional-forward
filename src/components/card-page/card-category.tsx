@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { View, StyleSheet, Text, Alert } from "react-native";
+import { Alert, StyleSheet, View } from "react-native";
 import { Card, Dish } from "../../models/";
 import CategoryText from "../common/category-text";
 import AppendCategory from "./append-category";

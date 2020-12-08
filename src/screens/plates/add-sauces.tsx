@@ -9,12 +9,15 @@ import {
   SauceListEvent,
   SauceListState,
   SauceState,
-} from "../../blocs/sauce";
+} from "../../blocs";
 import { SauceRepository } from "../../repositories";
 import { BlocBuilder } from "@felangel/react-bloc";
 
 type RootStackParamList = {
-  AddSaucesPage: { onGoBack: (sauces: Sauce[]) => void };
+  AddSaucesPage: {
+    onGoBack: (sauces: Sauce[]) => void;
+    saucesRecipe: Sauce[];
+  };
 };
 
 type AddSauceScreenRouteProps = RouteProp<RootStackParamList, "AddSaucesPage">;

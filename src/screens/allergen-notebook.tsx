@@ -77,12 +77,12 @@ const AllergenNotebookPage: FC = () => {
       {!generation ? (
         <View style={styles.generation}>
           <Text style={styles.text}>
-            Vous n'avez pas de cahier d'allergènes
+            {"Vous n'avez pas de cahier d'allergènes"}
           </Text>
           <TouchableOpacity onPress={() => setGeneration(true)}>
             <View style={styles.button}>
               <Text style={styles.textButton}>
-                Générer mon cahier d'allergènes
+                {"Générer mon cahier d'allergènes"}
               </Text>
             </View>
           </TouchableOpacity>
@@ -102,7 +102,6 @@ const AllergenNotebookPage: FC = () => {
             }
             return (
               <TableComponent
-                cardBloc={cardBloc}
                 card={(state as CardGetState).card}
               />
             );

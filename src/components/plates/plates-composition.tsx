@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { Ingredient } from "../../models/ingredient";
+import { Ingredient } from "../../models";
 
 const styles = StyleSheet.create({
   ingredients: {

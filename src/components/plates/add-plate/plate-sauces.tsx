@@ -1,7 +1,7 @@
 import React, { FC, SetStateAction } from "react";
 import { View, StyleSheet, Text, Alert, TouchableOpacity } from "react-native";
 import { Icon } from "react-native-elements";
-import { Sauce } from "../../../models/sauce";
+import { Sauce } from "../../../models";
 import CategoryTitle from "../../common/category-title";
 import CategoryText from "../../common/category-text";
 import { useNavigation } from "@react-navigation/native";

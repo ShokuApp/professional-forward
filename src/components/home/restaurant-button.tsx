@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import {
   TouchableOpacity,
   StyleSheet,
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const RestaurantButton = () => {
+const RestaurantButton: FC = () => {
   return (
     <TouchableOpacity
       activeOpacity={1}

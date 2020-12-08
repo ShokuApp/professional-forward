@@ -1,17 +1,13 @@
 import React, { FC } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import PlateDescription from "../../components/plates/plates-description";
 import SearchBar from "../../components/plates/search-bar";
 import {
   DishBloc,
-  DishGetEvent,
-  DishState,
   DishErrorState,
-  DishLoadingState,
-  DishInitialState,
-  DishGetState,
   DishListEvent,
   DishListState,
+  DishState,
 } from "../../blocs";
 import { DishRepository } from "../../repositories";
 import { BlocBuilder } from "@felangel/react-bloc";
@@ -33,7 +29,7 @@ const styles = StyleSheet.create({
 
 const PlatesPage: FC = () => {
   const dishBloc = new DishBloc(new DishRepository());
-  const isFocused = useIsFocused();
+  useIsFocused();
 
   dishBloc.add(new DishListEvent());
 
