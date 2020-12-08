@@ -5,7 +5,7 @@ import CategoryTitle from "../common/category-title";
 const styles = StyleSheet.create({
   container: {
     marginVertical: 15,
-    marginLeft: 10,
+    marginHorizontal: 10,
   },
   input: {
     fontSize: 18,

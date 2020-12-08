@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
-    marginHorizontal: 10,
     marginTop: 15,
     borderBottomWidth: 1,
     borderBottomColor: "#C6C6C8",

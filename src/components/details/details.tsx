@@ -74,7 +74,7 @@ export const Details: FC<DetailsProps> = ({
         data={postalCode}
         setData={setPostalCode}
         label={"Code postal :"}
-        keyboardCategory={"default"}
+        keyboardCategory={"number-pad"}
       />
       <Input
         data={city}
