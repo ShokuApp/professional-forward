@@ -1,4 +1,4 @@
-import React, { FC, SetStateAction } from "react";
+import React, { FC, SetStateAction, Dispatch } from "react";
 import { View, StyleSheet } from "react-native";
 import CategoryTitle from "../../common/category-title";
 import DropDownPicker from "react-native-dropdown-picker";
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
 
 type PlateTypeProps = {
   type: string;
-  setType: React.Dispatch<SetStateAction<string>>;
+  setType: Dispatch<SetStateAction<string>>;
 };
 
 export const PlateType: FC<PlateTypeProps> = ({
