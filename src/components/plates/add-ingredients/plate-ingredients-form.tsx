@@ -80,7 +80,11 @@ export const PlateIngredientsForm: FC<Props> = ({
 
   return (
     <SafeAreaView>
-      <ScrollView style={styles.container} nestedScrollEnabled={true}>
+      <ScrollView
+        style={styles.container}
+        nestedScrollEnabled={true}
+        keyboardShouldPersistTaps="always"
+      >
         <PlateIngredientInput
           availableIngredients={availableList}
           addIngredient={addIngredient}
