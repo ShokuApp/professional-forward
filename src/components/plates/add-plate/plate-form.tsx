@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import { View, Button, KeyboardAvoidingView, StyleSheet } from "react-native";
+import { Button, StyleSheet, View } from "react-native";
 import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
 import { Dish } from "../../../models";
@@ -96,12 +96,8 @@ export const PlateForm: FC<PlateFormProps> = ({ callback }: PlateFormProps) => {
   };
 
   return (
-    <KeyboardAvoidingView
-      behavior="padding"
-      keyboardVerticalOffset={120}
-      style={styles.container}
-    >
-      <ScrollView>
+    <ScrollView>
+      <View style={styles.container}>
         <PlateName name={plateName} setName={setPlateName} />
 
         <PlateType type={plateType} setType={setPlateType} />
@@ -140,7 +136,7 @@ export const PlateForm: FC<PlateFormProps> = ({ callback }: PlateFormProps) => {
             />
           </View>
         </View>
-      </ScrollView>
-    </KeyboardAvoidingView>
+      </View>
+    </ScrollView>
   );
 };
