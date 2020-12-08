@@ -50,11 +50,7 @@ const PlatesPage: FC = () => {
               return (
                 <View>
                   {state.dishes.map((dish) => {
-                    return (
-                      <View key={dish.id}>
-                        <PlateDescription dish={dish} />
-                      </View>
-                    );
+                    return <PlateDescription key={dish.id} dish={dish} />;
                   })}
                 </View>
               );
