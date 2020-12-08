@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     marginTop: 42,
     alignItems: "center",
     justifyContent: "center",
+    marginBottom: 20,
   },
   button: {
     backgroundColor: "#2196F3",
@@ -113,50 +114,46 @@ export const PlateForm: FC<PlateFormProps> = ({ callback }: PlateFormProps) => {
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : undefined}
       keyboardVerticalOffset={120}
+      style={styles.container}
     >
       <ScrollView>
-        <View style={styles.container}>
-          <PlateName name={plateName} setName={setPlateName} />
+        <PlateName name={plateName} setName={setPlateName} />
 
-          <PlateType type={plateType} setType={setPlateType} />
-          <PlateIngredients
-            ingredients={ingredients}
-            setIngredients={setIngredients}
-            callback={refreshIngredients}
-          />
-          <PlateSauces
-            sauces={sauces}
-            setSauces={setSauces}
-            callback={refreshSauces}
-          />
+        <PlateType type={plateType} setType={setPlateType} />
+        <PlateIngredients
+          ingredients={ingredients}
+          setIngredients={setIngredients}
+          callback={refreshIngredients}
+        />
+        <PlateSauces
+          sauces={sauces}
+          setSauces={setSauces}
+          callback={refreshSauces}
+        />
 
-          <PlatePrice price={price} setPrice={setPrice} />
+        <PlatePrice price={price} setPrice={setPrice} />
 
-          <PlateAdaptable
-            isAdaptable={isAdaptable}
-            setAdaptable={setAdaptable}
-          />
-          <TouchableOpacity
-            style={styles.buttonContainer}
-            onPress={() => {
-              const newDish = addNewPlate({
-                plateName,
-                ingredients,
-                sauces,
-                price,
-                plateType,
-                isAdaptable,
-              });
-              if (newDish) {
-                callback(newDish);
-              }
-            }}
-          >
-            <View style={styles.button}>
-              <Text style={styles.textButton}>Créer</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
+        <PlateAdaptable isAdaptable={isAdaptable} setAdaptable={setAdaptable} />
+        <TouchableOpacity
+          style={styles.buttonContainer}
+          onPress={() => {
+            const newDish = addNewPlate({
+              plateName,
+              ingredients,
+              sauces,
+              price,
+              plateType,
+              isAdaptable,
+            });
+            if (newDish) {
+              callback(newDish);
+            }
+          }}
+        >
+          <View style={styles.button}>
+            <Text style={styles.textButton}>Créer</Text>
+          </View>
+        </TouchableOpacity>
       </ScrollView>
     </KeyboardAvoidingView>
   );
