@@ -16,6 +16,9 @@ import { useIsFocused } from "@react-navigation/native";
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: "#FFFFFF",
+  },
+  content: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -34,8 +37,8 @@ const PlatesPage: FC = () => {
   dishBloc.add(new DishListEvent());
 
   return (
-    <ScrollView>
-      <View style={styles.container}>
+    <ScrollView style={styles.container}>
+      <View style={styles.content}>
         <SearchBar />
         <BlocBuilder
           bloc={dishBloc}

@@ -60,20 +60,19 @@ export const PlateSaucesToAdd: FC<PlateSaucesToAddProps> = ({
       {sauces &&
         sauces.map((sauce) => {
           return (
-            <View key={sauce.id}>
-              <CategoryText
-                label={sauce.name}
-                icon={
-                  <Icon
-                    type="antdesign"
-                    name={"close"}
-                    size={18}
-                    color="#C6C6C8"
-                    onPress={() => alertConfirmation(sauce)}
-                  />
-                }
-              />
-            </View>
+            <CategoryText
+              label={sauce.name}
+              icon={
+                <Icon
+                  type="antdesign"
+                  name={"close"}
+                  size={18}
+                  color="#C6C6C8"
+                  onPress={() => alertConfirmation(sauce)}
+                />
+              }
+              key={sauce.id}
+            />
           );
         })}
     </View>
