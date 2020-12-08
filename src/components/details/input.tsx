@@ -4,8 +4,8 @@ import CategoryTitle from "../common/category-title";
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 30,
-    paddingHorizontal: 15,
+    marginVertical: 15,
+    marginLeft: 10,
   },
   input: {
     fontSize: 18,
@@ -21,20 +21,20 @@ type RestaurantTypeProps = {
   data: string;
   setData: Dispatch<React.SetStateAction<string>>;
   label: string;
-  isPhone: boolean;
+  keyboardCategory: string;
 };
 
 export const Input: FC<RestaurantTypeProps> = ({
   data,
   setData,
   label,
-  isPhone,
+  keyboardCategory,
 }: RestaurantTypeProps) => {
   return (
     <View style={styles.container}>
       <CategoryTitle label={label}></CategoryTitle>
       <TextInput
-        keyboardType={{ isPhone } ? "phone-pad" : "default"}
+        keyboardType={keyboardCategory}
         onChangeText={(text) => setData(text)}
         value={data}
         defaultValue={data}
