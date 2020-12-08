@@ -4,7 +4,7 @@ import {
   TextInput,
   TouchableWithoutFeedback,
 } from "react-native-gesture-handler";
-import CategoryTitle from "../../common/category-title";
+import { CategoryTitle } from "../../common/category-title";
 
 const styles = StyleSheet.create({
   container: {

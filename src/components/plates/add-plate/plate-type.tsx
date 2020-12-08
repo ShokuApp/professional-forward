@@ -1,6 +1,6 @@
 import React, { Dispatch, FC, SetStateAction } from "react";
 import { Platform, StyleSheet, View } from "react-native";
-import CategoryTitle from "../../common/category-title";
+import { CategoryTitle } from "../../common/category-title";
 import DropDownPicker from "react-native-dropdown-picker";
 
 const styles = StyleSheet.create({
