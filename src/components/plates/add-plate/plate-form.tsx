@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import { View, Button, KeyboardAvoidingView, StyleSheet } from "react-native";
+import { View, Button, KeyboardAvoidingView, StyleSheet, TouchableOpacity, Text } from "react-native";
 import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
 import { Dish } from "../../../models";
@@ -33,7 +33,13 @@ const styles = StyleSheet.create({
     width: 175,
     height: 40,
     borderRadius: 20,
+    alignItems: "center",
+    justifyContent: "center"
   },
+  textButton: {
+    color: "white",
+    fontSize: 17
+  }
 });
 
 type newPlateParam = {
@@ -119,12 +125,7 @@ export const PlateForm: FC<PlateFormProps> = ({ callback }: PlateFormProps) => {
         <PlatePrice price={price} setPrice={setPrice} />
 
         <PlateAdaptable isAdaptable={isAdaptable} setAdaptable={setAdaptable} />
-        <View style={styles.buttonContainer}>
-          <View style={styles.button}>
-            <Button
-              title="Créer"
-              color="white"
-              onPress={() => {
+        <TouchableOpacity style={styles.buttonContainer} onPress={() => {
                 const newDish = addNewPlate({
                   plateName,
                   ingredients,
@@ -136,10 +137,11 @@ export const PlateForm: FC<PlateFormProps> = ({ callback }: PlateFormProps) => {
                 if (newDish) {
                   callback(newDish);
                 }
-              }}
-            />
+              }}>
+          <View style={styles.button}>
+            <Text style={styles.textButton}>Créer</Text>
           </View>
-        </View>
+        </TouchableOpacity>
       </ScrollView>
     </KeyboardAvoidingView>
   );
