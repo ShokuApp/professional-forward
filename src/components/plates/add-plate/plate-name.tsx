@@ -44,6 +44,8 @@ export const PlateName: FC<PlateNameProps> = ({
             onChangeText={(text) => setName(text)}
             value={name}
             clearButtonMode="always"
+            placeholder="Entrez le nom du plat"
+            placeholderTextColor="#C6C6C8"
           />
         </View>
       </View>

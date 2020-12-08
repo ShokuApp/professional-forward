@@ -53,6 +53,7 @@ export const PlateSauceInput: FC<PlateSaucesInputProps> = ({
         data={listSauces}
         value={text}
         placeholder={"Entrez votre sauce"}
+        placeholderTextColor="#C6C6C8"
         onChangeText={(text: string) => findSauce(text)}
         listStyle={{ maxHeight: 350 }}
         flatListProps={{ nestedScrollEnabled: true }}
