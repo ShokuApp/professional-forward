@@ -1,4 +1,4 @@
-import React, { FC, SetStateAction } from "react";
+import React, { FC, SetStateAction, Dispatch } from "react";
 import { View, StyleSheet, TextInput } from "react-native";
 import { CategoryTitle } from "../../common/category-title";
 
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
 
 type PlateNameProps = {
   name: string;
-  setName: React.Dispatch<SetStateAction<string>>;
+  setName: Dispatch<SetStateAction<string>>;
 };
 
 export const PlateName: FC<PlateNameProps> = ({
