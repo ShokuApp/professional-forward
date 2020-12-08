@@ -58,7 +58,7 @@ export const PlateIngredientsToAdd: FC<PlateIngredientsToAddProps> = ({
 
   return (
     <View style={styles.container}>
-      <CategoryTitle label="Ingrédients à ajouter:" />
+      <CategoryTitle label="Ingrédients à ajouter :" />
       {ingredients &&
         ingredients.map((ingredient) => {
           return (
