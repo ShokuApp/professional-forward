@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Dimensions, StyleSheet, Text, View } from "react-native";
-import { SimpleLineIcons } from "@expo/vector-icons";
+import { Icon } from "react-native-elements";
 import PlateComposition from "./plates-composition";
 import { Dish } from "../../models";
 
@@ -63,12 +63,10 @@ const PlateDescription: FC<Props> = ({ dish }: Props) => {
         <View style={styles.titleContainer}>
           <Text style={styles.label}>{dish.name}</Text>
         </View>
-        <SimpleLineIcons name="pencil" size={16} color="white" />
+        <Icon type="simple-line-icon" name="pencil" size={16} color="white" />
       </View>
       <View style={styles.composition}>
-        <View>
-          <PlateComposition label={"Ingrédients :"} list={dish.ingredients} />
-        </View>
+        <PlateComposition label={"Ingrédients :"} list={dish.ingredients} />
         {dish.sauces.length !== 0 ? (
           <View style={styles.sauce}>
             <PlateComposition
