@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { StyleSheet, View } from "react-native";
 import { Menu } from "../../models";
-import CategoryTitle from "../common/category-title";
+import { CategoryTitle } from "../common/category-title";
 import AppendCategory from "./append-category";
 import CardMenu from "./card-menu";
 

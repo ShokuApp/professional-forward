@@ -23,7 +23,7 @@ type CategoryTextProps = {
   icon: React.ReactElement<Icon<string, string>>;
 };
 
-const CardText: FC<CategoryTextProps> = ({
+export const CategoryText: FC<CategoryTextProps> = ({
   label,
   icon,
 }: CategoryTextProps) => {
@@ -34,5 +34,3 @@ const CardText: FC<CategoryTextProps> = ({
     </View>
   );
 };
-
-export default CardText;

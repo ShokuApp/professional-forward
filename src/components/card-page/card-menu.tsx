@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { Menu } from "../../models";
-import CategoryText from "../common/category-text";
+import { CategoryText } from "../common/category-text";
 import { Icon } from "react-native-elements";
 
 const styles = StyleSheet.create({
