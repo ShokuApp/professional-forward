@@ -1,6 +1,6 @@
 import React, { FC, SetStateAction, Dispatch } from "react";
 import { View, StyleSheet, TextInput } from "react-native";
-import CategoryTitle from "../../common/category-title";
+import { CategoryTitle } from "../../common/category-title";
 
 const styles = StyleSheet.create({
   container: {

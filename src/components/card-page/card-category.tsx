@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import { Alert, StyleSheet, View } from "react-native";
 import { Card, Dish } from "../../models/";
-import CategoryText from "../common/category-text";
+import { CategoryText } from "../common/category-text";
 import AppendCategory from "./append-category";
 import { CardBloc, CardSetEvent } from "../../blocs";
 import { Icon } from "react-native-elements";
-import CategoryTitle from "../common/category-title";
+import { CategoryTitle } from "../common/category-title";
 
 const styles = StyleSheet.create({
   cardCategoryContainer: {

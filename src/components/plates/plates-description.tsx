@@ -59,7 +59,7 @@ const PlateDescription: FC<Props> = ({ dish }: Props) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text> </Text>
+        <View></View>
         <View style={styles.titleContainer}>
           <Text style={styles.label}>{dish.name}</Text>
         </View>

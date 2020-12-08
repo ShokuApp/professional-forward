@@ -1,9 +1,8 @@
 import React, { FC, Dispatch, SetStateAction } from "react";
 import { View, Text, StyleSheet, Alert } from "react-native";
-import CategoryText from "../../common/category-text";
+import { CategoryText } from "../../common/category-text";
 import { Sauce } from "../../../models";
 import { Icon } from "react-native-elements";
-import { alertConfirmation } from "../add-plate/plate-sauces";
 
 const styles = StyleSheet.create({
   container: {
