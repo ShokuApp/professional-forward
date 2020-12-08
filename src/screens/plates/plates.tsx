@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { View, StyleSheet, Text } from "react-native";
-import PlateDescription from "../components/plates/plates-description";
-import SearchBar from "../components/plates/search-bar";
+import PlateDescription from "../../components/plates/plates-description";
+import SearchBar from "../../components/plates/search-bar";
 import {
   DishBloc,
   DishGetEvent,
@@ -12,10 +12,11 @@ import {
   DishGetState,
   DishListEvent,
   DishListState,
-} from "../blocs";
-import { DishRepository } from "../repositories";
+} from "../../blocs";
+import { DishRepository } from "../../repositories";
 import { BlocBuilder } from "@felangel/react-bloc";
 import { ScrollView } from "react-native-gesture-handler";
+import { useIsFocused } from "@react-navigation/native";
 
 const styles = StyleSheet.create({
   container: {
@@ -25,10 +26,14 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "center",
   },
+  arrowLeft: {
+    paddingLeft: 15,
+  },
 });
 
 const PlatesPage: FC = () => {
   const dishBloc = new DishBloc(new DishRepository());
+  const isFocused = useIsFocused();
 
   dishBloc.add(new DishListEvent());
 

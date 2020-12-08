@@ -1,13 +1,16 @@
 import React, { FC } from "react";
 import { View, StyleSheet, Image } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import RestaurantButton from "../components/home/restaurant-button";
 import Button, { ButtonProps } from "../components/home/button";
-import PlatePage from "../screens/plates";
+import PlatePage from "./plates/plates";
 import CardPage from "./card-page";
 import AllergenNotebookPage from "./allergen-notebook";
 import { Icon } from "react-native-elements";
+import AddPlate from "./plates/add-plate";
+import AddIngredients from "./plates/add-ingredients";
+import AddSauces from "./plates/add-sauces";
 
 const styles = StyleSheet.create({
   container: {
@@ -56,6 +59,23 @@ const HomePage: FC = () => {
 };
 
 const Stack = createStackNavigator();
+
+const AddPlateIcon: FC = () => {
+  const navigation = useNavigation();
+
+  const navigateToAddPlate = () => {
+    navigation.navigate("AddPlatePage");
+  };
+  return (
+    <Icon
+      type="antdesign"
+      name="plus"
+      size={25}
+      onPress={navigateToAddPlate}
+      style={styles.plus}
+    />
+  );
+};
 
 const Home: FC = () => {
   return (
@@ -112,6 +132,51 @@ const Home: FC = () => {
           }}
         />
         <Stack.Screen
+          name="AddPlatePage"
+          component={AddPlate}
+          options={{
+            title: "Nouveau plat",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="AddIngredientsPage"
+          component={AddIngredients}
+          options={{
+            title: "Ajouter des ingrédients",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="AddSaucesPage"
+          component={AddSauces}
+          options={{
+            title: "Ajouter des sauces",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
           name="DishesPage"
           component={PlatePage}
           options={{
@@ -124,15 +189,7 @@ const Home: FC = () => {
                 style={styles.arrowLeft}
               />
             ),
-            headerRight: () => (
-              <Icon
-                type="antdesign"
-                name="plus"
-                size={25}
-                onPress={() => alert('TODO')}
-                style={styles.plus}
-              />
-            )
+            headerRight: () => <AddPlateIcon />,
           }}
         />
       </Stack.Navigator>
