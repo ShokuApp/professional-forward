@@ -20,6 +20,7 @@
     "@react-navigation/bottom-tabs": "^5.8.0",
     "@react-navigation/native": "^5.7.3",
     "@react-navigation/stack": "^5.12.8",
+    "@types/react-native-table-component": "^1.2.0",
     "expo": "^39.0.5",
     "expo-asset": "~8.2.0",
     "expo-constants": "~9.2.0",
@@ -41,7 +42,8 @@
     "react-native-safe-area-context": "3.1.4",
     "react-native-screens": "~2.10.1",
     "react-native-web": "~0.13.12",
-    "uuid": "^8.3.1"
+    "uuid": "^8.3.1",
+    "react-native-table-component": "^1.2.1"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",

@@ -6,6 +6,7 @@ import RestaurantButton from "../components/home/restaurant-button";
 import Button, { ButtonProps } from "../components/home/button";
 import PlatePage from "./plates/plates";
 import CardPage from "./card-page";
+import AllergenNotebookPage from "./allergen-notebook";
 import { Icon } from "react-native-elements";
 import AddPlate from "./plates/add-plate";
 import AddIngredients from "./plates/add-ingredients";
@@ -105,6 +106,21 @@ const Home: FC = () => {
           component={CardPage}
           options={{
             title: "Ma carte",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="AllergenNotebookPage"
+          component={AllergenNotebookPage}
+          options={{
+            title: "Cahier d'allergènes",
             headerBackImage: () => (
               <Icon
                 type="antdesign"
