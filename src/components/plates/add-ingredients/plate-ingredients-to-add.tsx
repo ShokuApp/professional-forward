@@ -62,20 +62,19 @@ export const PlateIngredientsToAdd: FC<PlateIngredientsToAddProps> = ({
       {ingredients &&
         ingredients.map((ingredient) => {
           return (
-            <View key={ingredient.id}>
-              <CategoryText
-                label={ingredient.name}
-                icon={
-                  <Icon
-                    type="antdesign"
-                    name={"close"}
-                    size={18}
-                    color="#C6C6C8"
-                    onPress={() => alertConfirmation(ingredient)}
-                  />
-                }
-              />
-            </View>
+            <CategoryText
+              label={ingredient.name}
+              icon={
+                <Icon
+                  type="antdesign"
+                  name={"close"}
+                  size={18}
+                  color="#C6C6C8"
+                  onPress={() => alertConfirmation(ingredient)}
+                />
+              }
+              key={ingredient.id}
+            />
           );
         })}
     </View>
