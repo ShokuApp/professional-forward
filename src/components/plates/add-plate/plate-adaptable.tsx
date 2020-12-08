@@ -1,4 +1,4 @@
-import React, { FC, SetStateAction } from "react";
+import React, { FC, SetStateAction, Dispatch } from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { CheckBox } from "react-native-elements";
 
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
 
 type PlateAdaptableProps = {
   isAdaptable: boolean;
-  setAdaptable: React.Dispatch<SetStateAction<boolean>>;
+  setAdaptable: Dispatch<SetStateAction<boolean>>;
 };
 
 export const PlateAdaptable: FC<PlateAdaptableProps> = ({

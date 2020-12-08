@@ -52,7 +52,7 @@ export const PlateSauceInput: FC<PlateSaucesInputProps> = ({
       <Autocomplete
         data={listSauces}
         value={text}
-        placeholder={"Entrez votre ingrédient"}
+        placeholder={"Entrez votre sauce"}
         onChangeText={(text: string) => findSauce(text)}
         listStyle={{ maxHeight: 350 }}
         flatListProps={{ nestedScrollEnabled: true }}

@@ -1,4 +1,4 @@
-import React, { FC, SetStateAction } from "react";
+import React, { FC, SetStateAction, Dispatch } from "react";
 import { View, StyleSheet } from "react-native";
 import CategoryTitle from "../../common/category-title";
 import DropDownPicker from "react-native-dropdown-picker";
@@ -7,6 +7,10 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 30,
     zIndex: 800000,
+    position: "relative",
+  },
+  dropDownPicker: {
+    zIndex: 80000,
     position: "relative",
   },
   containerPicker: {
@@ -26,7 +30,7 @@ const styles = StyleSheet.create({
 
 type PlateTypeProps = {
   type: string;
-  setType: React.Dispatch<SetStateAction<string>>;
+  setType: Dispatch<SetStateAction<string>>;
 };
 
 export const PlateType: FC<PlateTypeProps> = ({
@@ -36,7 +40,7 @@ export const PlateType: FC<PlateTypeProps> = ({
   return (
     <View style={styles.container}>
       <CategoryTitle label="Type du plat :" />
-      <View style={{ zIndex: 80000, position: "relative" }}>
+      <View style={styles.dropDownPicker}>
         <DropDownPicker
           items={[
             { label: "Entrée", value: "starter" },
