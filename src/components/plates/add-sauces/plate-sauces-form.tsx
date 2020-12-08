@@ -46,17 +46,9 @@ const filteredList: (
   recipeList: Sauce[],
   saucesToAdd: Sauce[]
 ) => Sauce[] = (availableList, recipeList, saucesToAdd) => {
-  const list = availableList;
-
-  if (recipeList) {
-    for (let i = list.length - 1; i >= 0; i--) {
-      for (let j = 0; j < recipeList.length; j++) {
-        if (list[i] && list[i].id === recipeList[j].id) {
-          list.splice(i, 1);
-        }
-      }
-    }
-  }
+  const list = availableList.filter(
+    (sauce) => recipeList.find((item) => item.id === sauce.id) === undefined
+  );
 
   return list.filter((elem) => {
     return !saucesToAdd.includes(elem);
