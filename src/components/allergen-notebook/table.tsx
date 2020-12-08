@@ -117,9 +117,9 @@ export const TableComponent: FC<TableComponentProps> = ({
   const tableData: string[][] = [];
 
   card.dishes.forEach((dish) => {
-    const rowData: string[] = [];
-    rowData.push(dish.name);
-    for (let i = 0; i < 14; i++) rowData.push(" ");
+    const rowData: string[] = new Array(14);
+    rowData.fill(" ");
+    rowData.unshift(dish.name);
     dish.ingredients.forEach((ingredient) => {
       ingredient.allergens?.forEach((allergen) => {
         rowData[dict[allergen.name]] = "X";
@@ -129,37 +129,35 @@ export const TableComponent: FC<TableComponentProps> = ({
   });
 
   return (
-    <View style={styles.container}>
-      <ScrollView horizontal={true}>
-        <View>
+    <ScrollView style={styles.container} horizontal={true}>
+      <View>
+        <Table borderStyle={styles.tableStyle}>
+          <Row
+            data={tableHead}
+            widthArr={widthArr}
+            style={styles.header}
+            textStyle={styles.text}
+          />
+        </Table>
+        <ScrollView style={styles.dataWrapper}>
           <Table borderStyle={styles.tableStyle}>
-            <Row
-              data={tableHead}
-              widthArr={widthArr}
-              style={styles.header}
-              textStyle={styles.text}
-            />
+            {tableData.map((rowData, index) => {
+              return (
+                <Row
+                  key={index}
+                  data={rowData}
+                  widthArr={widthArr}
+                  textStyle={styles.text}
+                  style={[
+                    styles.row,
+                    index % 2 && { backgroundColor: "#E8F5FF" },
+                  ]}
+                />
+              );
+            })}
           </Table>
-          <ScrollView style={styles.dataWrapper}>
-            <Table borderStyle={styles.tableStyle}>
-              {tableData.map((rowData, index) => {
-                return (
-                  <Row
-                    key={index}
-                    data={rowData}
-                    widthArr={widthArr}
-                    textStyle={styles.text}
-                    style={[
-                      styles.row,
-                      index % 2 && { backgroundColor: "#E8F5FF" },
-                    ]}
-                  />
-                );
-              })}
-            </Table>
-          </ScrollView>
-        </View>
-      </ScrollView>
-    </View>
+        </ScrollView>
+      </View>
+    </ScrollView>
   );
 };

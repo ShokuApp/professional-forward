@@ -36,18 +36,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 20,
   },
-  vertical: {
-    width: 1000,
-    height: 2000,
-    paddingHorizontal: 20,
-    backgroundColor: "red",
-    marginBottom: 50,
-  },
-  horizontal: {
-    width: 800,
-    height: 1800,
-    backgroundColor: "yellow",
-  },
   button: {
     borderRadius: 25,
     backgroundColor: "#2196F3",
@@ -100,11 +88,7 @@ const AllergenNotebookPage: FC = () => {
             if (state instanceof CardLoadingState) {
               return <Text>Loading</Text>;
             }
-            return (
-              <TableComponent
-                card={(state as CardGetState).card}
-              />
-            );
+            return <TableComponent card={(state as CardGetState).card} />;
           }}
         />
       )}
