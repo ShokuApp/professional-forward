@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     minHeight: 33,
     alignItems: "center",
-    paddingVertical: 2
+    paddingVertical: 2,
   },
   titleContainer: {
     maxWidth: (65 * width) / 100,
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 17,
     color: "white",
-    textAlign: "center"
+    textAlign: "center",
   },
   composition: {
     display: "flex",
@@ -68,12 +68,12 @@ const PlateDescription: FC<Props> = ({ dish }: Props) => {
       </View>
       <View style={styles.composition}>
         <View>
-          <PlateComposition label={"Ingrédients:"} list={dish.ingredients} />
+          <PlateComposition label={"Ingrédients :"} list={dish.ingredients} />
         </View>
         {dish.sauces.length !== 0 ? (
           <View style={styles.sauce}>
             <PlateComposition
-              label={"Sauces:"}
+              label={"Sauces :"}
               list={dish.sauces[0].ingredients}
             />
           </View>
