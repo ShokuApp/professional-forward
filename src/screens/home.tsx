@@ -9,6 +9,7 @@ import CardPage from "./card-page";
 import AllergenNotebookPage from "./allergen-notebook";
 import { Icon } from "react-native-elements";
 import AddPlate from "./plates/add-plate";
+import ModifyPlate from "./plates/modify-plate";
 import AddIngredients from "./plates/add-ingredients";
 import AddSauces from "./plates/add-sauces";
 
@@ -136,6 +137,21 @@ const Home: FC = () => {
           component={AddPlate}
           options={{
             title: "Nouveau plat",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="ModifyPlatePage"
+          component={ModifyPlate}
+          options={{
+            title: "NModifier un plat",
             headerBackImage: () => (
               <Icon
                 type="antdesign"

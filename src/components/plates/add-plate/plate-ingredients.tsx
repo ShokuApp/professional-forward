@@ -50,7 +50,7 @@ export const PlateIngredients: FC<PlateIngredientsProps> = ({
 
   return (
     <View style={styles.container}>
-      <CategoryTitle label="Ingrédients:" />
+      <CategoryTitle label="Ingrédients :" />
       {ingredients.map((ingredient) => {
         return (
           <View key={ingredient.id}>
