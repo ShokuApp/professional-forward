@@ -15,10 +15,6 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
     margin: 2,
   },
-  autocompleteContainer: {
-    position: "relative",
-    zIndex: 80,
-  },
 });
 
 type PlateSaucesInputProps = {
