@@ -9,6 +9,10 @@ const styles = StyleSheet.create({
     zIndex: 800000,
     position: "relative",
   },
+  dropDownPicker: {
+    zIndex: 80000,
+    position: "relative",
+  },
   containerPicker: {
     height: 40,
   },
@@ -36,7 +40,7 @@ export const PlateType: FC<PlateTypeProps> = ({
   return (
     <View style={styles.container}>
       <CategoryTitle label="Type du plat :" />
-      <View style={{ zIndex: 80000, position: "relative" }}>
+      <View style={styles.dropDownPicker}>
         <DropDownPicker
           items={[
             { label: "Entrée", value: "starter" },
