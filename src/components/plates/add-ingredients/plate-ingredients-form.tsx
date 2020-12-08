@@ -1,11 +1,11 @@
 import { PlateIngredientInput } from "./plate-ingredients-input";
 import { PlateIngredientsToAdd } from "./plate-ingredients-to-add";
 import {
+  LogBox,
   SafeAreaView,
+  ScrollView,
   StyleSheet,
   View,
-  ScrollView,
-  LogBox,
 } from "react-native";
 import React, { FC, useEffect, useState } from "react";
 import { Ingredient } from "../../../models";
@@ -49,17 +49,10 @@ const filteredList: (
   recipeList: Ingredient[],
   ingredientsToAdd: Ingredient[]
 ) => Ingredient[] = (availableList, recipeList, ingredientsToAdd) => {
-  const list = availableList;
-
-  if (recipeList) {
-    for (let i = list.length - 1; i >= 0; i--) {
-      for (let j = 0; j < recipeList.length; j++) {
-        if (list[i] && list[i].id === recipeList[j].id) {
-          list.splice(i, 1);
-        }
-      }
-    }
-  }
+  const list = availableList.filter(
+    (ingredient) =>
+      recipeList.find((item) => item.id === ingredient.id) === undefined
+  );
 
   return list.filter((elem) => {
     return !ingredientsToAdd.includes(elem);
@@ -87,7 +80,11 @@ export const PlateIngredientsForm: FC<Props> = ({
 
   return (
     <SafeAreaView>
-      <ScrollView style={styles.container} keyboardShouldPersistTaps="always">
+      <ScrollView
+        style={styles.container}
+        nestedScrollEnabled={true}
+        keyboardShouldPersistTaps="always"
+      >
         <PlateIngredientInput
           availableIngredients={availableList}
           addIngredient={addIngredient}

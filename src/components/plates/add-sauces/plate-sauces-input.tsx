@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Autocomplete from "react-native-autocomplete-input";
-import { Ingredient } from "../../../models";
+import { Sauce } from "../../../models";
 
 const styles = StyleSheet.create({
   container: {
@@ -21,47 +21,47 @@ const styles = StyleSheet.create({
   },
 });
 
-type PlateIngredientsInputProps = {
-  availableIngredients: Ingredient[];
-  addIngredient: (item: Ingredient) => void;
+type PlateSaucesInputProps = {
+  availableSauces: Sauce[];
+  addSauce: (item: Sauce) => void;
 };
 
-export const PlateIngredientInput: FC<PlateIngredientsInputProps> = ({
-  availableIngredients,
-  addIngredient,
-}: PlateIngredientsInputProps) => {
-  const [listIngredients, setListIngredients] = useState<Ingredient[]>([]);
+export const PlateSauceInput: FC<PlateSaucesInputProps> = ({
+  availableSauces,
+  addSauce,
+}: PlateSaucesInputProps) => {
+  const [listSauces, setListSauces] = useState<Sauce[]>([]);
   const [text, setText] = useState("");
 
-  const findIngredient = (query: string) => {
+  const findSauce = (query: string) => {
     setText(query);
     if (query) {
       const regex = new RegExp(`${query.trim()}`, "i");
-      setListIngredients(
-        availableIngredients.filter(
-          (listIngredients) => listIngredients.name.search(regex) >= 0
+      setListSauces(
+        availableSauces.filter(
+          (listSauces) => listSauces.name.search(regex) >= 0
         )
       );
     } else {
-      setListIngredients([]);
+      setListSauces([]);
     }
   };
 
   return (
     <View style={styles.container}>
       <Autocomplete
-        data={listIngredients}
+        data={listSauces}
         value={text}
         placeholder={"Entrez votre ingrédient"}
-        onChangeText={(text: string) => findIngredient(text)}
+        onChangeText={(text: string) => findSauce(text)}
         listStyle={{ maxHeight: 350 }}
         flatListProps={{ nestedScrollEnabled: true }}
         renderItem={({ item }) => {
           return (
             <TouchableOpacity
               onPress={() => {
-                addIngredient(item);
-                setListIngredients([]);
+                addSauce(item);
+                setListSauces([]);
                 setText("");
               }}
               delayPressIn={0}

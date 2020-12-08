@@ -1,4 +1,4 @@
-import React, {FC, useState} from "react";
+import React, { FC, useState } from "react";
 import { View, Button, KeyboardAvoidingView, StyleSheet } from "react-native";
 import "react-native-get-random-values";
 import { v4 as uuidv4 } from "uuid";
@@ -35,49 +35,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
 });
-
-const testSauces: Sauce[] = [
-  {
-    id: "ba82e1a5-41b8-4053-8da4-29ce90314edd",
-    name: "Sauce 1",
-    ingredients: [
-      {
-        id: "b2165eb5-9202-44b7-a70b-b910f89b69da",
-        name: "Ingredient 3",
-        image: "https://source.unsplash.com/random",
-        allergens: [],
-        diets: [],
-      },
-      {
-        id: "e1026388-7ea4-4d0e-b3e4-cbc7a91bafd6",
-        name: "Ingredient 4",
-        image: "https://source.unsplash.com/random",
-        allergens: [],
-        diets: [],
-      },
-    ],
-  },
-  {
-    id: "7021643b-2791-432c-b145-c35de0b8b151",
-    name: "Sauce 2",
-    ingredients: [
-      {
-        id: "b2165eb5-9202-44b7-a70b-b910f89b69da",
-        name: "Ingredient 5",
-        image: "https://source.unsplash.com/random",
-        allergens: [],
-        diets: [],
-      },
-      {
-        id: "897f359d-8a5f-47de-8cb8-38770fe15715",
-        name: "Ingredient 6",
-        image: "https://source.unsplash.com/random",
-        allergens: [],
-        diets: [],
-      },
-    ],
-  },
-];
 
 type newPlateParam = {
   plateName: string;
@@ -123,7 +80,7 @@ type PlateFormProps = {
 export const PlateForm: FC<PlateFormProps> = ({ callback }: PlateFormProps) => {
   const [plateName, setPlateName] = useState("");
   const [ingredients, setIngredients] = useState<Ingredient[]>([]);
-  const [sauces, setSauces] = useState(testSauces);
+  const [sauces, setSauces] = useState<Sauce[]>([]);
   const [price, setPrice] = useState("");
   const [plateType, setPlateType] = useState("plate");
   const [isAdaptable, setAdaptable] = useState(false);
@@ -132,6 +89,10 @@ export const PlateForm: FC<PlateFormProps> = ({ callback }: PlateFormProps) => {
     newIngredientsTab
   ) => {
     setIngredients(ingredients.concat(newIngredientsTab));
+  };
+
+  const refreshSauces: (newSaucesTab: Sauce[]) => void = (newSaucesTab) => {
+    setSauces(sauces.concat(newSaucesTab));
   };
 
   return (
@@ -149,7 +110,11 @@ export const PlateForm: FC<PlateFormProps> = ({ callback }: PlateFormProps) => {
           setIngredients={setIngredients}
           callback={refreshIngredients}
         />
-        <PlateSauces sauces={sauces} setSauces={setSauces} />
+        <PlateSauces
+          sauces={sauces}
+          setSauces={setSauces}
+          callback={refreshSauces}
+        />
 
         <PlatePrice price={price} setPrice={setPrice} />
 
