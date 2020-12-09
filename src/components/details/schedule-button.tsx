@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { StyleSheet, TouchableOpacity, View, Text } from "react-native";
+import { StyleSheet, TouchableOpacity, Text } from "react-native";
 import { Icon } from "react-native-elements";
 
 const styles = StyleSheet.create({

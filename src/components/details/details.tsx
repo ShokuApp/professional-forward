@@ -10,7 +10,6 @@ import { Banner } from "./banner";
 import { Restaurant } from "../../models/restaurant";
 import { Input } from "./input";
 import { ScheduleButton } from "./schedule-button";
-import { add, call } from "react-native-reanimated";
 
 const styles = StyleSheet.create({
   container: {

@@ -1,5 +1,5 @@
-import React, { FC, useState } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import React, { FC } from "react";
+import { Text } from "react-native";
 import { RestaurantRepository } from "../repositories";
 import { BlocBuilder } from "@felangel/react-bloc";
 import {
