@@ -1,6 +1,8 @@
 import React, { FC } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { TouchableOpacity, StyleSheet, Text } from "react-native";
 import { Icon } from "react-native-elements";
+import { useNavigation } from "@react-navigation/native";
+import { Card } from "../../models";
 
 const styles = StyleSheet.create({
   categoryAppend: {
@@ -18,16 +20,34 @@ const styles = StyleSheet.create({
 
 type AppendCategoryProps = {
   label: string;
+  type: string;
+  card: Card;
 };
 
 const AppendCategory: FC<AppendCategoryProps> = ({
   label,
+  type,
+  card,
 }: AppendCategoryProps) => {
+  const navigation = useNavigation();
+
+  const navigateToAddCardPlates = (type: string, card: Card) => {
+    navigation.navigate("AddCardPlatePage", {
+      type: type,
+      card: card,
+    });
+  };
+
   return (
-    <View style={styles.categoryAppend}>
+    <TouchableOpacity
+      style={styles.categoryAppend}
+      onPress={() =>
+        type ? navigateToAddCardPlates(type, card) : alert("Todo")
+      }
+    >
       <Icon type="antdesign" name="plus" size={20} color="#2196F3" />
       <Text style={styles.textAdd}>Ajouter {label}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 

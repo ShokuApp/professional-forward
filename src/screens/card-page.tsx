@@ -16,6 +16,7 @@ import {
   CardInitialState,
 } from "../blocs";
 import { CardRepository } from "../repositories";
+import {useIsFocused} from "@react-navigation/native";
 
 const styles = StyleSheet.create({
   container: {
@@ -51,6 +52,7 @@ const CARD_CATEGORY: CardCategoryProps[] = [
 const CardPage: FC = () => {
   const id = "46087e3d-1943-4e57-9ced-2af2291e1f91";
   const cardBloc = new CardBloc(new CardRepository());
+  const isFocused = useIsFocused();
 
   cardBloc.add(new CardGetEvent(id));
 

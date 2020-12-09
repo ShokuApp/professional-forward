@@ -74,7 +74,7 @@ const CardCategory: FC<Props> = ({ cardBloc, props, card }: Props) => {
             </View>
           );
         })}
-      <AppendCategory label={props.category} />
+      <AppendCategory label={props.category} type={props.type} card={card} />
     </View>
   );
 };
