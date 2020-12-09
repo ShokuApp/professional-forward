@@ -6,8 +6,10 @@ const styles = StyleSheet.create({
   checkbox: {
     borderWidth: 0,
     backgroundColor: "white",
-    paddingHorizontal: 0,
-    marginHorizontal: 0,
+    paddingLeft: 10,
+    margin: 0,
+    paddingVertical: 0,
+    paddingRight: 0,
   },
   checkboxTitle: {
     fontWeight: "normal",

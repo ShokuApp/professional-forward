@@ -1,8 +1,8 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
 import { Restaurant } from "../../../models/restaurant";
 import { TimePicker } from "../../common/time-picker";
-
+import { DayPickers } from "./day-pickers";
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
@@ -36,8 +36,28 @@ export const ChangeSchedule: FC<ChangeScheduleProps> = ({
   restaurant,
   callback,
 }: ChangeScheduleProps) => {
+  const [days, setDays] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
+  const date = [
+    "Lundi",
+    "Mardi",
+    "Mercredi",
+    "Jeudi",
+    "Vendredi",
+    "Samedi",
+    "Dimanche",
+  ];
+
   return (
     <View style={styles.container}>
+      <DayPickers days={days} setDays={setDays} date={date} />
       <TouchableOpacity
         style={styles.buttonContainer}
         onPress={() => {
@@ -47,7 +67,7 @@ export const ChangeSchedule: FC<ChangeScheduleProps> = ({
         }}
       >
         <View style={styles.button}>
-          <Text style={styles.textButton}>Sauvegarder</Text>
+          <Text style={styles.textButton}>Appliquer</Text>
         </View>
       </TouchableOpacity>
     </View>
