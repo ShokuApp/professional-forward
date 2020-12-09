@@ -109,11 +109,14 @@ export const Details: FC<DetailsProps> = ({
             phone: phoneNumber,
             url: website,
             address: {
-              streetNumber: parseInt(address.substr(0, address.indexOf(" "))),
+              streetNumber: parseInt(
+                address.substr(0, address.indexOf(" ")),
+                10
+              ),
               street: address.substr(address.indexOf(" ") + 1),
-              postalCode: postalCode,
-              city: city,
-              country: country,
+              postalCode,
+              city,
+              country,
             },
           });
         }}
