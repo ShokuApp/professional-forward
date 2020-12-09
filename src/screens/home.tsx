@@ -172,9 +172,7 @@ const Home: FC = () => {
                 type="antdesign"
                 name="arrowleft"
                 size={25}
-                style={styles.arrowleft}
-              />
-            ),
+                style={styles.arrowLeft}
               />
             ),
           }}
