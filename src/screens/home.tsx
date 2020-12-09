@@ -8,10 +8,12 @@ import PlatePage from "./plates/plates";
 import CardPage from "./card-page";
 import AllergenNotebookPage from "./allergen-notebook";
 import { Icon } from "react-native-elements";
-import RestaurantPage from "./restaurant-page";
+import RestaurantPage from "./details/restaurant-page";
 import AddPlate from "./plates/add-plate";
 import AddIngredients from "./plates/add-ingredients";
 import AddSauces from "./plates/add-sauces";
+import SchedulePage from "./details/schedule-page";
+import { ChangeScheduleIcon } from "./details/change-schedule-icon";
 
 const styles = StyleSheet.create({
   container: {
@@ -115,6 +117,22 @@ const Home: FC = () => {
                 style={styles.arrowLeft}
               />
             ),
+          }}
+        />
+        <Stack.Screen
+          name="mySchedule"
+          component={SchedulePage}
+          options={{
+            title: "Mes horaires",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
+            headerRight: () => <ChangeScheduleIcon />,
           }}
         />
         <Stack.Screen
