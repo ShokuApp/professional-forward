@@ -6,6 +6,7 @@ import {
   Image,
   ImageSourcePropType,
 } from "react-native";
+import { Pictogram } from "../../models";
 
 const styles = StyleSheet.create({
   container: {
@@ -24,19 +25,15 @@ const styles = StyleSheet.create({
   },
 });
 
-type AllergenNameProps = {
-  label: string;
-  path: ImageSourcePropType;
+type AllergenProps = {
+  allergen: Pictogram;
 };
 
-export const AllergenName: FC<AllergenNameProps> = ({
-  label,
-  path,
-}: AllergenNameProps) => {
+export const Allergen: FC<AllergenProps> = ({ allergen }: AllergenProps) => {
   return (
     <View style={styles.container}>
-      <Image style={styles.pictogram} source={path} />
-      <Text style={styles.name}>{label}</Text>
+      <Image style={styles.pictogram} source={{ uri: allergen.image }} />
+      <Text style={styles.name}>{allergen.name}</Text>
     </View>
   );
 };

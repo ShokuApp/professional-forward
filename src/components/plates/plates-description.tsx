@@ -1,11 +1,11 @@
 import React, { FC } from "react";
-import { StyleSheet, View, Text, Dimensions } from "react-native";
-import { SimpleLineIcons } from "@expo/vector-icons";
+import { Dimensions, StyleSheet, Text, View } from "react-native";
+import { Icon } from "react-native-elements";
 import PlateComposition from "./plates-composition";
-import { Dish } from "../../models/dish";
-import { Sauce } from "../../models/sauce";
+import { Dish } from "../../models";
+import { useNavigation } from "@react-navigation/native";
 
-const { width, height } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   container: {
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     minHeight: 33,
     alignItems: "center",
-    paddingVertical: 2
+    paddingVertical: 2,
   },
   titleContainer: {
     maxWidth: (65 * width) / 100,
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 17,
     color: "white",
-    textAlign: "center"
+    textAlign: "center",
   },
   composition: {
     display: "flex",
@@ -57,23 +57,31 @@ type Props = {
 };
 
 const PlateDescription: FC<Props> = ({ dish }: Props) => {
+  const { navigate } = useNavigation();
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text> </Text>
+        <View></View>
         <View style={styles.titleContainer}>
           <Text style={styles.label}>{dish.name}</Text>
         </View>
-        <SimpleLineIcons name="pencil" size={16} color="white" />
+        <Icon
+          type="simple-line-icon"
+          name="pencil"
+          size={16}
+          color="white"
+          onPress={() => {
+            navigate("ModifyPlatePage", { dish });
+          }}
+        />
       </View>
       <View style={styles.composition}>
-        <View>
-          <PlateComposition label={"Ingrédients:"} list={dish.ingredients} />
-        </View>
+        <PlateComposition label={"Ingrédients :"} list={dish.ingredients} />
         {dish.sauces.length !== 0 ? (
           <View style={styles.sauce}>
             <PlateComposition
-              label={"Sauces:"}
+              label={"Sauces :"}
               list={dish.sauces[0].ingredients}
             />
           </View>

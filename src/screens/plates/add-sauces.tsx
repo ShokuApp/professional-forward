@@ -1,7 +1,5 @@
 import React, { FC, useEffect } from "react";
 import { LogBox, Text } from "react-native";
-import { Sauce } from "../../models/";
-import { RouteProp } from "@react-navigation/native";
 import { PlateSaucesForm } from "../../components/plates/add-sauces/plate-sauces-form";
 import {
   SauceBloc,
@@ -9,15 +7,10 @@ import {
   SauceListEvent,
   SauceListState,
   SauceState,
-} from "../../blocs/sauce";
+} from "../../blocs";
 import { SauceRepository } from "../../repositories";
 import { BlocBuilder } from "@felangel/react-bloc";
-
-type RootStackParamList = {
-  AddSaucesPage: { onGoBack: (sauces: Sauce[]) => void };
-};
-
-type AddSauceScreenRouteProps = RouteProp<RootStackParamList, "AddSaucesPage">;
+import { AddSauceScreenRouteProps } from "../../navigator/navigator-type";
 
 type Props = {
   route: AddSauceScreenRouteProps;

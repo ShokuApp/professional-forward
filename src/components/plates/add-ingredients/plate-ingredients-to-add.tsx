@@ -1,9 +1,9 @@
 import React, { FC, SetStateAction } from "react";
 import { View, StyleSheet, Alert } from "react-native";
 import { Icon } from "react-native-elements";
-import { Ingredient } from "../../../models/ingredient";
-import CategoryTitle from "../../common/category-title";
-import CategoryText from "../../common/category-text";
+import { Ingredient } from "../../../models";
+import { CategoryTitle } from "../../common/category-title";
+import { CategoryText } from "../../common/category-text";
 
 const styles = StyleSheet.create({
   container: {
@@ -58,24 +58,23 @@ export const PlateIngredientsToAdd: FC<PlateIngredientsToAddProps> = ({
 
   return (
     <View style={styles.container}>
-      <CategoryTitle label="Ingrédients à ajouter:" />
+      <CategoryTitle label="Ingrédients à ajouter :" />
       {ingredients &&
         ingredients.map((ingredient) => {
           return (
-            <View key={ingredient.id}>
-              <CategoryText
-                label={ingredient.name}
-                icon={
-                  <Icon
-                    type="antdesign"
-                    name={"close"}
-                    size={18}
-                    color="#C6C6C8"
-                    onPress={() => alertConfirmation(ingredient)}
-                  />
-                }
-              />
-            </View>
+            <CategoryText
+              label={ingredient.name}
+              icon={
+                <Icon
+                  type="antdesign"
+                  name={"close"}
+                  size={18}
+                  color="#C6C6C8"
+                  onPress={() => alertConfirmation(ingredient)}
+                />
+              }
+              key={ingredient.id}
+            />
           );
         })}
     </View>

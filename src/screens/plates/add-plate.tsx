@@ -1,16 +1,10 @@
 import React, { FC } from "react";
 import { useNavigation } from "@react-navigation/native";
-import {
-  DishBloc,
-  DishCreateEvent,
-  DishCreateState,
-  DishState,
-} from "../../blocs";
+import { DishBloc, DishCreateEvent, DishCreateState } from "../../blocs";
 import { DishRepository } from "../../repositories";
 import { Dish } from "../../models";
 import { BlocBuilder } from "@felangel/react-bloc";
 import { PlateForm } from "../../components/plates/add-plate/plate-form";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 const AddPlate: FC = () => {
   const dishBloc = new DishBloc(new DishRepository());
@@ -30,7 +24,7 @@ const AddPlate: FC = () => {
         }
         return true;
       }}
-      builder={(_: DishState) => {
+      builder={() => {
         return <PlateForm callback={pushDish} />;
       }}
     />

@@ -1,7 +1,5 @@
 import React, { FC, useEffect } from "react";
 import { LogBox, Text } from "react-native";
-import { Ingredient } from "../../models/ingredient";
-import { RouteProp } from "@react-navigation/native";
 import { PlateIngredientsForm } from "../../components/plates/add-ingredients/plate-ingredients-form";
 import {
   IngredientBloc,
@@ -9,18 +7,10 @@ import {
   IngredientListEvent,
   IngredientListState,
   IngredientState,
-} from "../../blocs/ingredient";
+} from "../../blocs";
 import { IngredientRepository } from "../../repositories";
 import { BlocBuilder } from "@felangel/react-bloc";
-
-type RootStackParamList = {
-  AddIngredientsPage: { onGoBack: (ingredients: Ingredient[]) => void };
-};
-
-type AddIngredientScreenRouteProps = RouteProp<
-  RootStackParamList,
-  "AddIngredientsPage"
->;
+import { AddIngredientScreenRouteProps } from "../../navigator/navigator-type";
 
 type Props = {
   route: AddIngredientScreenRouteProps;

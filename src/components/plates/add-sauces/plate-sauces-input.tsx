@@ -15,10 +15,6 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
     margin: 2,
   },
-  autocompleteContainer: {
-    position: "relative",
-    zIndex: 80,
-  },
 });
 
 type PlateSaucesInputProps = {
@@ -53,6 +49,7 @@ export const PlateSauceInput: FC<PlateSaucesInputProps> = ({
         data={listSauces}
         value={text}
         placeholder={"Entrez votre sauce"}
+        placeholderTextColor="#C6C6C8"
         onChangeText={(text: string) => findSauce(text)}
         listStyle={{ maxHeight: 350 }}
         flatListProps={{ nestedScrollEnabled: true }}

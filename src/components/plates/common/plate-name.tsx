@@ -1,6 +1,6 @@
-import React, { FC, SetStateAction } from "react";
+import React, { FC, SetStateAction, Dispatch } from "react";
 import { View, StyleSheet, TextInput } from "react-native";
-import CategoryTitle from "../../common/category-title";
+import { CategoryTitle } from "../../common/category-title";
 
 const styles = StyleSheet.create({
   container: {
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
 
 type PlateNameProps = {
   name: string;
-  setName: React.Dispatch<SetStateAction<string>>;
+  setName: Dispatch<SetStateAction<string>>;
 };
 
 export const PlateName: FC<PlateNameProps> = ({
@@ -44,6 +44,8 @@ export const PlateName: FC<PlateNameProps> = ({
             onChangeText={(text) => setName(text)}
             value={name}
             clearButtonMode="always"
+            placeholder="Entrez le nom du plat"
+            placeholderTextColor="#C6C6C8"
           />
         </View>
       </View>
