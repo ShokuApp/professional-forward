@@ -72,7 +72,7 @@ const PlateDescription: FC<Props> = ({ dish }: Props) => {
           size={16}
           color="white"
           onPress={() => {
-            navigate("ModifyPlatePage", { dish: dish });
+            navigate("ModifyPlatePage", { dish });
           }}
         />
       </View>
