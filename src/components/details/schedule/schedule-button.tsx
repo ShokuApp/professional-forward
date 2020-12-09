@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 import { StyleSheet, TouchableOpacity, Text } from "react-native";
 import { Icon } from "react-native-elements";
+import { useNavigation } from "@react-navigation/native";
+import SchedulePage from "../../../screens/details/schedule-page";
 
 const styles = StyleSheet.create({
   container: {
@@ -20,10 +22,11 @@ const styles = StyleSheet.create({
 });
 
 export const ScheduleButton: FC = () => {
+  const { navigate } = useNavigation();
   return (
     <TouchableOpacity
       style={styles.container}
-      onPress={() => alert("Antho fdp")}
+      onPress={() => navigate("mySchedule")}
     >
       <Text style={styles.text}>Mes horaires</Text>
       <Icon type="antdesign" name="right" size={20} color="#AAAAAA" />

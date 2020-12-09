@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Text } from "react-native";
-import { RestaurantRepository } from "../repositories";
+import { RestaurantRepository } from "../../repositories";
 import { BlocBuilder } from "@felangel/react-bloc";
 import {
   RestaurantBloc,
@@ -11,9 +11,9 @@ import {
   RestaurantLoadingState,
   RestaurantInitialState,
   RestaurantSetEvent,
-} from "../blocs";
-import { Details } from "../components/details/details";
-import { Restaurant } from "../models";
+} from "../../blocs";
+import { Details } from "../../components/details/details";
+import { Restaurant } from "../../models";
 
 const RestaurantPage: FC = () => {
   const id = "999db654-b612-4ddd-a6de-1b1c7f745350";

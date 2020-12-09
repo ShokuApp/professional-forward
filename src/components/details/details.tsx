@@ -9,7 +9,7 @@ import {
 import { Banner } from "./banner";
 import { Restaurant } from "../../models/restaurant";
 import { Input } from "./input";
-import { ScheduleButton } from "./schedule-button";
+import { ScheduleButton } from "./schedule/schedule-button";
 
 const styles = StyleSheet.create({
   container: {
