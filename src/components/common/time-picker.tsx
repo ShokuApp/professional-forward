@@ -48,7 +48,7 @@ export const TimePicker: FC<Props> = (props) => {
       text = text.substr(text.length - 2);
     }
 
-    if (parseInt(text) > maxValue) {
+    if (parseInt(text, 10) > maxValue) {
       text = "0" + text.charAt(text.length - 1);
     }
 
