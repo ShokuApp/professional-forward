@@ -1,5 +1,5 @@
 import { RouteProp } from "@react-navigation/native";
-import { Sauce, Ingredient } from "../models";
+import { Sauce, Ingredient, Dish } from "../models";
 
 type RootStackParamList = {
   AddSaucesPage: {
@@ -9,6 +9,9 @@ type RootStackParamList = {
   AddIngredientsPage: {
     onGoBack: (ingredients: Ingredient[]) => void;
     ingredientsRecipe: Ingredient[];
+  };
+  ModifyPlatePage: {
+    dish: Dish;
   };
 };
 
@@ -20,4 +23,9 @@ export type AddIngredientScreenRouteProps = RouteProp<
 export type AddSauceScreenRouteProps = RouteProp<
   RootStackParamList,
   "AddSaucesPage"
+>;
+
+export type ModifyPlateScreenRouteProps = RouteProp<
+  RootStackParamList,
+  "ModifyPlatePage"
 >;
