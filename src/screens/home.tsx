@@ -8,6 +8,7 @@ import PlatePage from "./plates/plates";
 import CardPage from "./card-page";
 import AllergenNotebookPage from "./allergen-notebook";
 import { Icon } from "react-native-elements";
+import RestaurantPage from "./restaurant-page";
 import AddPlate from "./plates/add-plate";
 import AddIngredients from "./plates/add-ingredients";
 import AddSauces from "./plates/add-sauces";
@@ -97,6 +98,21 @@ const Home: FC = () => {
               <Image
                 source={require("../../assets/images/Shoku.png")}
                 style={{ width: 135, height: 36 }}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="myRestaurant"
+          component={RestaurantPage}
+          options={{
+            title: "Mon restaurant",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
               />
             ),
           }}
