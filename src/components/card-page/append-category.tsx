@@ -33,8 +33,8 @@ const AppendCategory: FC<AppendCategoryProps> = ({
 
   const navigateToAddCardPlates = (type: string, card: Card) => {
     navigation.navigate("AddCardPlatePage", {
-      type: type,
-      card: card,
+      type,
+      card,
     });
   };
 
