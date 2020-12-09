@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { View, StyleSheet, Text } from "react-native";
-import { Menu } from "../../models/menu";
-import CardText from "./card-text";
+import { Menu } from "../../models";
+import { CategoryText } from "../common/category-text";
 import { Icon } from "react-native-elements";
 
 const styles = StyleSheet.create({
@@ -24,10 +24,16 @@ type MenuProps = {
 const CardMenu: FC<MenuProps> = ({ menu }: MenuProps) => {
   return (
     <View>
-      <CardText
+      <CategoryText
         label={menu.name}
-        id={menu.id}
-        icon={<Icon type="simple-line-icon" name="pencil" size={15} color="#C6C6C8" />}
+        icon={
+          <Icon
+            type="simple-line-icon"
+            name="pencil"
+            size={15}
+            color="#C6C6C8"
+          />
+        }
       />
       <View style={styles.menuDishes}>
         {menu.dishes.map((dish) => {

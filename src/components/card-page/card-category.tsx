@@ -1,11 +1,11 @@
 import React, { FC } from "react";
-import { View, StyleSheet, Text, Alert } from "react-native";
+import { Alert, StyleSheet, View } from "react-native";
 import { Card, Dish } from "../../models/";
-import CardText from "./card-text";
+import { CategoryText } from "../common/category-text";
 import AppendCategory from "./append-category";
 import { CardBloc, CardSetEvent } from "../../blocs";
 import { Icon } from "react-native-elements";
-import CategoryTitle from "../common/category-title";
+import { CategoryTitle } from "../common/category-title";
 
 const styles = StyleSheet.create({
   cardCategoryContainer: {
@@ -59,9 +59,8 @@ const CardCategory: FC<Props> = ({ cardBloc, props, card }: Props) => {
         .map((dish) => {
           return (
             <View key={dish.id}>
-              <CardText
+              <CategoryText
                 label={dish.name}
-                id={dish.id}
                 icon={
                   <Icon
                     type="antdesign"

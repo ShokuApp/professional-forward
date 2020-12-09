@@ -1,40 +1,44 @@
 import React, { FC } from "react";
-import { View, StyleSheet, Text } from "react-native";
-import PlateDescription from "../components/plates/plates-description";
-import SearchBar from "../components/plates/search-bar";
+import { StyleSheet, Text, View } from "react-native";
+import PlateDescription from "../../components/plates/plates-description";
+import SearchBar from "../../components/plates/search-bar";
 import {
   DishBloc,
-  DishGetEvent,
-  DishState,
   DishErrorState,
-  DishLoadingState,
-  DishInitialState,
-  DishGetState,
   DishListEvent,
   DishListState,
-} from "../blocs";
-import { DishRepository } from "../repositories";
+  DishState,
+} from "../../blocs";
+import { DishRepository } from "../../repositories";
 import { BlocBuilder } from "@felangel/react-bloc";
 import { ScrollView } from "react-native-gesture-handler";
+import { useIsFocused } from "@react-navigation/native";
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: "#FFFFFF",
+  },
+  content: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     width: "100%",
     justifyContent: "center",
   },
+  arrowLeft: {
+    paddingLeft: 15,
+  },
 });
 
 const PlatesPage: FC = () => {
   const dishBloc = new DishBloc(new DishRepository());
+  useIsFocused();
 
   dishBloc.add(new DishListEvent());
 
   return (
-    <ScrollView>
-      <View style={styles.container}>
+    <ScrollView style={styles.container}>
+      <View style={styles.content}>
         <SearchBar />
         <BlocBuilder
           bloc={dishBloc}
@@ -46,11 +50,7 @@ const PlatesPage: FC = () => {
               return (
                 <View>
                   {state.dishes.map((dish) => {
-                    return (
-                      <View key={dish.id}>
-                        <PlateDescription dish={dish} />
-                      </View>
-                    );
+                    return <PlateDescription key={dish.id} dish={dish} />;
                   })}
                 </View>
               );

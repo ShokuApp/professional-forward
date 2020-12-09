@@ -13,10 +13,8 @@ type CategoryTitleProps = {
   label: string;
 };
 
-const CategoryTitle: FC<CategoryTitleProps> = ({ label }: CategoryTitleProps) => {
-  return (
-    <Text style={styles.categoryTitle}>{label}</Text>
-  );
+export const CategoryTitle: FC<CategoryTitleProps> = ({
+  label,
+}: CategoryTitleProps) => {
+  return <Text style={styles.categoryTitle}>{label}</Text>;
 };
-
-export default CategoryTitle;
