@@ -151,7 +151,7 @@ const Home: FC = () => {
           name="ModifyPlatePage"
           component={ModifyPlate}
           options={{
-            title: "NModifier un plat",
+            title: "Modifier un plat",
             headerBackImage: () => (
               <Icon
                 type="antdesign"
