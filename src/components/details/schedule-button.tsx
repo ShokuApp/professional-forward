@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
     borderBottomWidth: 1,
     borderBottomColor: "#C6C6C8",
+    marginHorizontal: 10,
   },
   text: {
     fontSize: 17,
