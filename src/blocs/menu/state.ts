@@ -8,6 +8,8 @@ export class MenuLoadingState extends MenuState {}
 
 export class MenuErrorState extends MenuState {}
 
+export class MenuCreateState extends MenuState {}
+
 export class MenuGetState extends MenuState {
   menu: Menu;
 
@@ -25,5 +27,14 @@ export class MenuSetState extends MenuState {
     super();
 
     this.menu = menu;
+  }
+}
+
+export class MenuListState extends MenuState {
+  menus: Menu[];
+
+  constructor(menus: Menu[]) {
+    super();
+    this.menus = menus;
   }
 }

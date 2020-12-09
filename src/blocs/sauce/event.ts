@@ -2,6 +2,16 @@ import { Sauce } from "../../models";
 
 export abstract class SauceEvent {}
 
+export class SauceCreateEvent extends SauceEvent {
+  sauce: Sauce;
+
+  constructor(sauce: Sauce) {
+    super();
+
+    this.sauce = sauce;
+  }
+}
+
 export class SauceGetEvent extends SauceEvent {
   id: string;
 
@@ -23,3 +33,5 @@ export class SauceSetEvent extends SauceEvent {
     this.sauce = sauce;
   }
 }
+
+export class SauceListEvent extends SauceEvent {}

@@ -1,0 +1,92 @@
+[
+    {
+        "id": "69867a11-eb0f-41b0-b615-10855290be4f",
+        "name": "Gluten",
+        "image": "https://source.unsplash.com/random"
+    },
+    {
+        "id": "e8eb7fed-514b-4084-b4f6-816417394b06",
+        "name": "Crustacés",
+        "image": "https://source.unsplash.com/random"
+    },
+    {
+        "id": "fa054b5b-dcf0-4b6b-b11b-85b98bba3e45",
+        "name": "Oeufs",
+        "image": "https://source.unsplash.com/random"
+    },
+    {
+        "id": "2d755541-3aa2-48b0-a973-9c1502cac7ce",
+        "name": "Poissons",
+        "image": "https://source.unsplash.com/random"
+    },
+    {
+        "id": "7f327c05-cee1-420d-be1d-a01ba5c5e35e",
+        "name": "Arachides",
+        "image": "https://source.unsplash.com/random"
+    },
+    {
+        "id": "7897889a-db46-4cc8-abdc-a62e60bb842d",
+        "name": "Soja",
+        "image": "https://source.unsplash.com/random"
+    },
+    {
+        "id": "958b643a-cec4-4e8b-9016-f06fd5eefca8",
+        "name": "Lait",
+        "image": "https://source.unsplash.com/random"
+    },
+    {
+        "id": "914afdde-bb2b-4e11-8792-c091ff5537b4",
+        "name": "Fruits à coque",
+        "image": "https://source.unsplash.com/random"
+    },
+    {
+        "id": "9da56ebc-2298-4249-a63d-0ad590a333d6",
+        "name": "Céleri",
+        "image": "https://source.unsplash.com/random"
+    },
+    {
+        "id": "f2585ede-2a8d-44ef-9cdb-e41abb477196",
+        "name": "Moutarde",
+        "image": "https://source.unsplash.com/random"
+    },
+    {
+        "id": "64338002-d796-4548-be20-0362293856c7",
+        "name": "Graines de sésame",
+        "image": "https://source.unsplash.com/random"
+    },
+    {
+        "id": "c3480f58-ee41-4ae1-84b1-06a5725ca4c9",
+        "name": "Anhydride sulfureux et sulfites",
+        "image": "https://source.unsplash.com/random"
+    },
+    {
+        "id": "8e769dfe-5188-449c-a6a3-6162c5913f0f",
+        "name": "Lupin",
+        "image": "https://source.unsplash.com/random"
+    },
+    {
+        "id": "98408d34-dd9e-4b6a-a415-0ec9d06f6160",
+        "name": "Mollusques",
+        "image": "https://source.unsplash.com/random"
+    },
+    {
+        "id": "d34d5667-a48a-4c10-bcb3-66044800bc84",
+        "name": "Végétarien",
+        "image": "https://source.unsplash.com/random"
+    },
+    {
+        "id": "7c8ff128-c23d-443c-ace2-7b96f5417adc",
+        "name": "Vegan",
+        "image": "https://source.unsplash.com/random"
+    },
+    {
+        "id": "7fb21b99-29df-4c8c-ad37-e9104db96892",
+        "name": "Paléo",
+        "image": "https://source.unsplash.com/random"
+    },
+    {
+        "id": "72b94464-a362-43b6-bb53-c2372442bb91",
+        "name": "KETO",
+        "image": "https://source.unsplash.com/random"
+    }
+]

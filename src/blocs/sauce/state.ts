@@ -8,6 +8,8 @@ export class SauceLoadingState extends SauceState {}
 
 export class SauceErrorState extends SauceState {}
 
+export class SauceCreateState extends SauceState {}
+
 export class SauceGetState extends SauceState {
   sauce: Sauce;
 
@@ -25,5 +27,14 @@ export class SauceSetState extends SauceState {
     super();
 
     this.sauce = sauce;
+  }
+}
+
+export class SauceListState extends SauceState {
+  sauces: Sauce[];
+
+  constructor(sauces: Sauce[]) {
+    super();
+    this.sauces = sauces;
   }
 }

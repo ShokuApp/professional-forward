@@ -1,16 +1,27 @@
 import React, { FC } from "react";
 import { View, StyleSheet, Image } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import RestaurantButton from "../components/home/restaurant-button";
 import Button, { ButtonProps } from "../components/home/button";
+import PlatePage from "./plates/plates";
 import CardPage from "./card-page";
-import { AntDesign } from "@expo/vector-icons";
+import AllergenNotebookPage from "./allergen-notebook";
+import { Icon } from "react-native-elements";
+import AddPlate from "./plates/add-plate";
+import AddIngredients from "./plates/add-ingredients";
+import AddSauces from "./plates/add-sauces";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
+  },
+  arrowLeft: {
+    paddingLeft: 15,
+  },
+  plus: {
+    paddingRight: 15,
   },
 });
 
@@ -49,6 +60,23 @@ const HomePage: FC = () => {
 
 const Stack = createStackNavigator();
 
+const AddPlateIcon: FC = () => {
+  const navigation = useNavigation();
+
+  const navigateToAddPlate = () => {
+    navigation.navigate("AddPlatePage");
+  };
+  return (
+    <Icon
+      type="antdesign"
+      name="plus"
+      size={25}
+      onPress={navigateToAddPlate}
+      style={styles.plus}
+    />
+  );
+};
+
 const Home: FC = () => {
   return (
     <NavigationContainer>
@@ -79,12 +107,89 @@ const Home: FC = () => {
           options={{
             title: "Ma carte",
             headerBackImage: () => (
-              <AntDesign
+              <Icon
+                type="antdesign"
                 name="arrowleft"
                 size={25}
-                style={{ paddingLeft: 15 }}
+                style={styles.arrowLeft}
               />
             ),
+          }}
+        />
+        <Stack.Screen
+          name="AllergenNotebookPage"
+          component={AllergenNotebookPage}
+          options={{
+            title: "Cahier d'allergènes",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="AddPlatePage"
+          component={AddPlate}
+          options={{
+            title: "Nouveau plat",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="AddIngredientsPage"
+          component={AddIngredients}
+          options={{
+            title: "Ajouter des ingrédients",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="AddSaucesPage"
+          component={AddSauces}
+          options={{
+            title: "Ajouter des sauces",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="DishesPage"
+          component={PlatePage}
+          options={{
+            title: "Mes plats",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
+            headerRight: () => <AddPlateIcon />,
           }}
         />
       </Stack.Navigator>

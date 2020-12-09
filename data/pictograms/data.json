@@ -1,122 +1,92 @@
 [
     {
         "id": "69867a11-eb0f-41b0-b615-10855290be4f",
-        "name": "Pictogram 1",
-        "image": "https://source.unsplash.com/random"
+        "name": "Gluten",
+        "image": "https://images.shoku.app/allergens/gluten.png"
     },
     {
         "id": "e8eb7fed-514b-4084-b4f6-816417394b06",
-        "name": "Pictogram 2",
-        "image": "https://source.unsplash.com/random"
+        "name": "Crustacés",
+        "image": "https://images.shoku.app/allergens/crustaces.png"
     },
     {
         "id": "fa054b5b-dcf0-4b6b-b11b-85b98bba3e45",
-        "name": "Pictogram 3",
-        "image": "https://source.unsplash.com/random"
+        "name": "Oeufs",
+        "image": "https://images.shoku.app/allergens/oeufs.png"
     },
     {
         "id": "2d755541-3aa2-48b0-a973-9c1502cac7ce",
-        "name": "Pictogram 4",
-        "image": "https://source.unsplash.com/random"
+        "name": "Poissons",
+        "image": "https://images.shoku.app/allergens/poissons.png"
     },
     {
         "id": "7f327c05-cee1-420d-be1d-a01ba5c5e35e",
-        "name": "Pictogram 5",
-        "image": "https://source.unsplash.com/random"
+        "name": "Arachides",
+        "image": "https://images.shoku.app/allergens/arachides.png"
     },
     {
         "id": "7897889a-db46-4cc8-abdc-a62e60bb842d",
-        "name": "Pictogram 6",
-        "image": "https://source.unsplash.com/random"
+        "name": "Soja",
+        "image": "https://images.shoku.app/allergens/soja.png"
     },
     {
         "id": "958b643a-cec4-4e8b-9016-f06fd5eefca8",
-        "name": "Pictogram 7",
-        "image": "https://source.unsplash.com/random"
+        "name": "Lait",
+        "image": "https://images.shoku.app/allergens/lait.png"
     },
     {
         "id": "914afdde-bb2b-4e11-8792-c091ff5537b4",
-        "name": "Pictogram 8",
-        "image": "https://source.unsplash.com/random"
+        "name": "Fruits à coque",
+        "image": "https://images.shoku.app/allergens/fruit-a-coque.png"
     },
     {
         "id": "9da56ebc-2298-4249-a63d-0ad590a333d6",
-        "name": "Pictogram 9",
-        "image": "https://source.unsplash.com/random"
+        "name": "Céleri",
+        "image": "https://images.shoku.app/allergens/celeri.png"
     },
     {
         "id": "f2585ede-2a8d-44ef-9cdb-e41abb477196",
-        "name": "Pictogram 10",
-        "image": "https://source.unsplash.com/random"
+        "name": "Moutarde",
+        "image": "https://images.shoku.app/allergens/moutarde.png"
     },
     {
         "id": "64338002-d796-4548-be20-0362293856c7",
-        "name": "Pictogram 11",
-        "image": "https://source.unsplash.com/random"
+        "name": "Graines de sésame",
+        "image": "https://images.shoku.app/allergens/sesame.png"
     },
     {
         "id": "c3480f58-ee41-4ae1-84b1-06a5725ca4c9",
-        "name": "Pictogram 12",
-        "image": "https://source.unsplash.com/random"
+        "name": "Anhydride sulfureux et sulfites",
+        "image": "https://images.shoku.app/allergens/sulfites.png"
     },
     {
         "id": "8e769dfe-5188-449c-a6a3-6162c5913f0f",
-        "name": "Pictogram 13",
-        "image": "https://source.unsplash.com/random"
+        "name": "Lupin",
+        "image": "https://images.shoku.app/allergens/lupin.png"
     },
     {
         "id": "98408d34-dd9e-4b6a-a415-0ec9d06f6160",
-        "name": "Pictogram 14",
+        "name": "Mollusques",
+        "image": "https://images.shoku.app/allergens/mollusques.png"
+    },
+    {
+        "id": "d34d5667-a48a-4c10-bcb3-66044800bc84",
+        "name": "Végétarien",
         "image": "https://source.unsplash.com/random"
     },
     {
-        "id": "5c4bd07b-adb4-4a1b-b056-a0532a21261c",
-        "name": "Pictogram 15",
+        "id": "7c8ff128-c23d-443c-ace2-7b96f5417adc",
+        "name": "Vegan",
         "image": "https://source.unsplash.com/random"
     },
     {
-        "id": "26196966-278c-4c4b-955f-04b7eb801601",
-        "name": "Pictogram 16",
+        "id": "7fb21b99-29df-4c8c-ad37-e9104db96892",
+        "name": "Paléo",
         "image": "https://source.unsplash.com/random"
     },
     {
-        "id": "bbaa27ad-eedb-43ff-be7e-e597fbc9e7b5",
-        "name": "Pictogram 17",
-        "image": "https://source.unsplash.com/random"
-    },
-    {
-        "id": "35f9bc70-f4bd-4572-ac9c-1a7ea511f81b",
-        "name": "Pictogram 18",
-        "image": "https://source.unsplash.com/random"
-    },
-    {
-        "id": "870ca4e7-d1c0-4cbd-9507-a6712ff7682c",
-        "name": "Pictogram 19",
-        "image": "https://source.unsplash.com/random"
-    },
-    {
-        "id": "36af9ec4-f412-4f79-8963-aae7dd2de230",
-        "name": "Pictogram 20",
-        "image": "https://source.unsplash.com/random"
-    },
-    {
-        "id": "1db33cb2-837e-41aa-8dca-8abbed3bcbe0",
-        "name": "Pictogram 21",
-        "image": "https://source.unsplash.com/random"
-    },
-    {
-        "id": "2c35b2bc-d557-424a-9755-9cd728db0921",
-        "name": "Pictogram 22",
-        "image": "https://source.unsplash.com/random"
-    },
-    {
-        "id": "4396b7c4-c965-4ebb-85b2-f56fbc0a1cdf",
-        "name": "Pictogram 23",
-        "image": "https://source.unsplash.com/random"
-    },
-    {
-        "id": "25173984-2676-4ca9-aca7-47abf2489eb6",
-        "name": "Pictogram 24",
+        "id": "72b94464-a362-43b6-bb53-c2372442bb91",
+        "name": "KETO",
         "image": "https://source.unsplash.com/random"
     }
 ]

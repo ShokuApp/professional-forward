@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import { View, StyleSheet, Text } from "react-native";
-import { SimpleLineIcons } from "@expo/vector-icons";
-import { Menu } from "../../models/menu";
-import CardText from "./card-text";
+import { Menu } from "../../models";
+import { CategoryText } from "../common/category-text";
+import { Icon } from "react-native-elements";
 
 const styles = StyleSheet.create({
   menuDishes: {
@@ -24,10 +24,16 @@ type MenuProps = {
 const CardMenu: FC<MenuProps> = ({ menu }: MenuProps) => {
   return (
     <View>
-      <CardText
+      <CategoryText
         label={menu.name}
-        id={menu.id}
-        icon={<SimpleLineIcons name="pencil" size={15} color="#C6C6C8" />}
+        icon={
+          <Icon
+            type="simple-line-icon"
+            name="pencil"
+            size={15}
+            color="#C6C6C8"
+          />
+        }
       />
       <View style={styles.menuDishes}>
         {menu.dishes.map((dish) => {

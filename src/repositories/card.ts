@@ -1,11 +1,34 @@
 import { Repository } from "./repository";
-import { Card } from "../models";
+import { Card, Dish, Menu } from "../models";
+
 import cards from "../../data/cards/data.json";
 import { MenuRepository } from "./menu";
 import { DishRepository } from "./dish";
 
 const dishRepository = new DishRepository();
 const menuRepository = new MenuRepository();
+
+// deepcode ignore no-any: JSON
+async function fromJSON(cardJson: any): Promise<Card> {
+  const dishes: Dish[] = await Promise.all(
+    cardJson.dishes.map(async (id: string) => {
+      return dishRepository.get(id);
+    })
+  );
+
+  const menus: Menu[] = await Promise.all(
+    cardJson.menus.map(async (id: string) => {
+      return menuRepository.get(id);
+    })
+  );
+
+  return {
+    id: cardJson.id,
+    name: cardJson.name,
+    dishes,
+    menus,
+  };
+}
 
 export class CardRepository implements Repository<Card> {
   async get(id: string): Promise<Card> {
@@ -15,24 +38,7 @@ export class CardRepository implements Repository<Card> {
       throw Error("Card not found");
     }
 
-    const dishes = await Promise.all(
-      cardJson.dishes.map(async (id) => {
-        return dishRepository.get(id);
-      })
-    );
-
-    const menus = await Promise.all(
-      cardJson.menus.map(async (id) => {
-        return menuRepository.get(id);
-      })
-    );
-
-    return {
-      id: cardJson.id,
-      name: cardJson.name,
-      dishes,
-      menus,
-    };
+    return fromJSON(cardJson);
   }
 
   async set(card: Card): Promise<void> {
@@ -49,5 +55,13 @@ export class CardRepository implements Repository<Card> {
     } else {
       cards.push(cardJson);
     }
+  }
+
+  async list(): Promise<Card[]> {
+    return Promise.all(
+      cards.map((cardJson) => {
+        return fromJSON(cardJson);
+      })
+    );
   }
 }

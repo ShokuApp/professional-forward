@@ -8,6 +8,8 @@ export class CardLoadingState extends CardState {}
 
 export class CardErrorState extends CardState {}
 
+export class CardCreateState extends CardState {}
+
 export class CardGetState extends CardState {
   card: Card;
 
@@ -25,5 +27,14 @@ export class CardSetState extends CardState {
     super();
 
     this.card = card;
+  }
+}
+
+export class CardListState extends CardState {
+  cards: Card[];
+
+  constructor(cards: Card[]) {
+    super();
+    this.cards = cards;
   }
 }
