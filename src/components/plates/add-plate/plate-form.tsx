@@ -11,12 +11,12 @@ import { v4 as uuidv4 } from "uuid";
 import { Dish } from "../../../models";
 import { Ingredient } from "../../../models";
 import { Sauce } from "../../../models";
-import { PlateName } from "./plate-name";
-import { PlateType } from "./plate-type";
-import { PlateIngredients } from "./plate-ingredients";
-import { PlateSauces } from "./plate-sauces";
-import { PlatePrice } from "./plate-price";
-import { PlateAdaptable } from "./plate-adaptable";
+import { PlateName } from "../common/plate-name";
+import { PlateType } from "../common/plate-type";
+import { PlateIngredients } from "../common/plate-ingredients";
+import { PlateSauces } from "../common/plate-sauces";
+import { PlatePrice } from "../common/plate-price";
+import { PlateAdaptable } from "../common/plate-adaptable";
 import { ScrollView } from "react-native-gesture-handler";
 
 const styles = StyleSheet.create({

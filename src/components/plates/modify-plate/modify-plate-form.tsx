@@ -9,12 +9,12 @@ import {
 import { Dish } from "../../../models";
 import { Ingredient } from "../../../models";
 import { Sauce } from "../../../models";
-import { PlateName } from "../add-plate/plate-name";
-import { PlateType } from "../add-plate/plate-type";
-import { PlateIngredients } from "../add-plate/plate-ingredients";
-import { PlateSauces } from "../add-plate/plate-sauces";
-import { PlatePrice } from "../add-plate/plate-price";
-import { PlateAdaptable } from "../add-plate/plate-adaptable";
+import { PlateName } from "../common/plate-name";
+import { PlateType } from "../common/plate-type";
+import { PlateIngredients } from "../common/plate-ingredients";
+import { PlateSauces } from "../common/plate-sauces";
+import { PlatePrice } from "../common/plate-price";
+import { PlateAdaptable } from "../common/plate-adaptable";
 import { ScrollView } from "react-native-gesture-handler";
 
 const styles = StyleSheet.create({
