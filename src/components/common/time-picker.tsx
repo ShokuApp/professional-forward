@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   closedText: {
     color: "#9A9A9A",
     fontSize: 24,
-  }
+  },
 });
 
 type Props = {
@@ -84,7 +84,11 @@ export const TimePicker: FC<Props> = (props) => {
     <View style={props.closed ? styles.closedContainer : styles.container}>
       <TextInput
         keyboardType={"number-pad"}
-        style={[styles.input, styles.hourInput, props.closed ? styles.closedText : styles.text]}
+        style={[
+          styles.input,
+          styles.hourInput,
+          props.closed ? styles.closedText : styles.text,
+        ]}
         selectionColor={props.closed ? "#9A9A9A" : "#2196F3"}
         value={hours}
         editable={props.closed ? false : true}
@@ -103,7 +107,11 @@ export const TimePicker: FC<Props> = (props) => {
       <TextInput
         ref={minuteRef}
         keyboardType={"number-pad"}
-        style={[styles.input, styles.minuteInput, props.closed ? styles.closedText : styles.text]}
+        style={[
+          styles.input,
+          styles.minuteInput,
+          props.closed ? styles.closedText : styles.text,
+        ]}
         selectionColor={props.closed ? "#9A9A9A" : "#2196F3"}
         value={minutes}
         editable={props.closed ? false : true}

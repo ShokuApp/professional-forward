@@ -54,7 +54,11 @@ export const ChooseTimePicker: FC<ChooseTimePickerProps> = ({
           closed={closed}
         />
         <Text style={styles.timeSelector}>à</Text>
-        <TimePicker onMinutesChange={setMinEnd} onHoursChange={setHourEnd} closed={closed} />
+        <TimePicker
+          onMinutesChange={setMinEnd}
+          onHoursChange={setHourEnd}
+          closed={closed}
+        />
       </View>
     </View>
   );
