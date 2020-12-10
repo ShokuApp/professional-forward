@@ -148,7 +148,6 @@ export const ChangeSchedule: FC<ChangeScheduleProps> = ({
       <TouchableOpacity
         style={styles.buttonContainer}
         onPress={() => {
-          restaurant.openingTime;
           callback(restaurant.id, {
             openingTime: changeOpeningTime({
               days,
