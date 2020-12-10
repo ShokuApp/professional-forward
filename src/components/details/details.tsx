@@ -5,6 +5,8 @@ import {
   TouchableOpacity,
   Text,
   View,
+  KeyboardAvoidingView,
+  Platform,
 } from "react-native";
 import { Banner } from "./banner";
 import { Restaurant } from "../../models";
@@ -55,75 +57,81 @@ export const Details: FC<DetailsProps> = ({
   const [website, setWebsite] = useState(restaurant.url);
 
   return (
-    <ScrollView style={styles.container}>
-      <Banner imageURL={restaurant.image} />
-      <Input
-        data={restaurantName}
-        setData={setRestaurantName}
-        label={"Nom du restaurant :"}
-        keyboardCategory={"default"}
-      />
-      <Input
-        data={address}
-        setData={setAddress}
-        label={"Addresse :"}
-        keyboardCategory={"default"}
-      />
-      <Input
-        data={postalCode}
-        setData={setPostalCode}
-        label={"Code postal :"}
-        keyboardCategory={"number-pad"}
-      />
-      <Input
-        data={city}
-        setData={setCity}
-        label={"Ville :"}
-        keyboardCategory={"default"}
-      />
-      <Input
-        data={country}
-        setData={setCountry}
-        label={"Pays :"}
-        keyboardCategory={"default"}
-      />
-      <Input
-        data={phoneNumber}
-        setData={setPhoneNumber}
-        label={"Numéro de téléphone :"}
-        keyboardCategory={"phone-pad"}
-      />
-      <Input
-        data={website}
-        setData={setWebsite}
-        label={"Site web (facultatif) :"}
-        keyboardCategory={"default"}
-      />
-      <ScheduleButton />
-      <TouchableOpacity
-        style={styles.buttonContainer}
-        onPress={() => {
-          callback(restaurant.id, {
-            name: restaurantName,
-            phone: phoneNumber,
-            url: website,
-            address: {
-              streetNumber: parseInt(
-                address.substr(0, address.indexOf(" ")),
-                10
-              ),
-              street: address.substr(address.indexOf(" ") + 1),
-              postalCode,
-              city,
-              country,
-            },
-          });
-        }}
-      >
-        <View style={styles.button}>
-          <Text style={styles.textButton}>Sauvegarder</Text>
-        </View>
-      </TouchableOpacity>
-    </ScrollView>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : undefined}
+      keyboardVerticalOffset={120}
+      style={styles.container}
+    >
+      <ScrollView>
+        <Banner imageURL={restaurant.image} />
+        <Input
+          data={restaurantName}
+          setData={setRestaurantName}
+          label={"Nom du restaurant :"}
+          keyboardCategory={"default"}
+        />
+        <Input
+          data={address}
+          setData={setAddress}
+          label={"Addresse :"}
+          keyboardCategory={"default"}
+        />
+        <Input
+          data={postalCode}
+          setData={setPostalCode}
+          label={"Code postal :"}
+          keyboardCategory={"number-pad"}
+        />
+        <Input
+          data={city}
+          setData={setCity}
+          label={"Ville :"}
+          keyboardCategory={"default"}
+        />
+        <Input
+          data={country}
+          setData={setCountry}
+          label={"Pays :"}
+          keyboardCategory={"default"}
+        />
+        <Input
+          data={phoneNumber}
+          setData={setPhoneNumber}
+          label={"Numéro de téléphone :"}
+          keyboardCategory={"phone-pad"}
+        />
+        <Input
+          data={website}
+          setData={setWebsite}
+          label={"Site web (facultatif) :"}
+          keyboardCategory={"default"}
+        />
+        <ScheduleButton />
+        <TouchableOpacity
+          style={styles.buttonContainer}
+          onPress={() => {
+            callback(restaurant.id, {
+              name: restaurantName,
+              phone: phoneNumber,
+              url: website,
+              address: {
+                streetNumber: parseInt(
+                  address.substr(0, address.indexOf(" ")),
+                  10
+                ),
+                street: address.substr(address.indexOf(" ") + 1),
+                postalCode,
+                city,
+                country,
+              },
+            });
+          }}
+        >
+          <View style={styles.button}>
+            <Text style={styles.textButton}>Sauvegarder</Text>
+          </View>
+        </TouchableOpacity>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 };
