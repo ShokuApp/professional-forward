@@ -8,7 +8,6 @@ import {
   RestaurantErrorState,
   RestaurantLoadingState,
   RestaurantInitialState,
-  RestaurantSetEvent,
 } from "../../blocs";
 import { RestaurantRepository } from "../../repositories";
 import { BlocBuilder } from "@felangel/react-bloc";
@@ -28,7 +27,7 @@ const styles = StyleSheet.create({
 const SchedulePage: FC = () => {
   const id = "999db654-b612-4ddd-a6de-1b1c7f745350";
   const restaurantBloc = new RestaurantBloc(new RestaurantRepository());
-  const isFocused = useIsFocused();
+  useIsFocused();
   restaurantBloc.add(new RestaurantGetEvent(id));
   return (
     <View style={styles.container}>

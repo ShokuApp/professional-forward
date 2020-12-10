@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import { View, StyleSheet, Text } from "react-native";
-import { TimeRange } from "../../../models";
 import { DayPickerItem } from "./day-picker-item";
 
 const styles = StyleSheet.create({

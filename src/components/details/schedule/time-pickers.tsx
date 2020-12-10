@@ -1,11 +1,6 @@
 import React, { FC } from "react";
-import { StyleSheet, View, Text } from "react-native";
-import { TimePicker } from "../../common/time-picker";
+import { StyleSheet, View } from "react-native";
 import { ChooseTimePicker } from "./choose-time-picker";
-
-const styles = StyleSheet.create({
-  container: {},
-});
 
 type TimePickersProps = {
   setMinStartMidDay: (min: string) => void;

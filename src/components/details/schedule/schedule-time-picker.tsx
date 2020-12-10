@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { MyCheckBox } from "../checkbox";
 import { TimePickers } from "./time-pickers";

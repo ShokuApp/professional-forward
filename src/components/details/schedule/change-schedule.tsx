@@ -10,7 +10,6 @@ import { Restaurant } from "../../../models";
 import { DayPickers } from "./day-pickers";
 import { ScheduleTimePicker } from "./schedule-time-picker";
 import { TimeRange } from "../../../models";
-import { useNavigation } from "@react-navigation/native";
 
 const styles = StyleSheet.create({
   container: {
