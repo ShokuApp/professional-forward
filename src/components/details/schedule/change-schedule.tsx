@@ -1,5 +1,11 @@
 import React, { FC, useState } from "react";
-import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
+import {
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  Text,
+  ScrollView,
+} from "react-native";
 import { Restaurant } from "../../../models";
 import { DayPickers } from "./day-pickers";
 import { ScheduleTimePicker } from "./schedule-time-picker";
@@ -129,7 +135,7 @@ export const ChangeSchedule: FC<ChangeScheduleProps> = ({
   const [fullTime, setFullTime] = useState(false);
   const { navigate } = useNavigation();
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <ScheduleTimePicker
         setMinStartMidDay={setMinStartMidDay}
         setMinEndMidDay={setMinEndMidDay}
@@ -171,6 +177,6 @@ export const ChangeSchedule: FC<ChangeScheduleProps> = ({
           <Text style={styles.textButton}>Appliquer</Text>
         </View>
       </TouchableOpacity>
-    </View>
+    </ScrollView>
   );
 };
