@@ -9,11 +9,13 @@ import {
   RestaurantLoadingState,
   RestaurantInitialState,
   RestaurantSetEvent,
+  RestaurantSetState,
 } from "../../blocs";
 import { RestaurantRepository } from "../../repositories";
 import { BlocBuilder } from "@felangel/react-bloc";
 import { Restaurant } from "../../models/restaurant";
 import { ChangeSchedule } from "../../components/details/schedule/change-schedule";
+import { useNavigation } from "@react-navigation/native";
 
 const styles = StyleSheet.create({
   container: {
@@ -26,17 +28,23 @@ const styles = StyleSheet.create({
 const ChangeSchedulePage: FC = () => {
   const id = "999db654-b612-4ddd-a6de-1b1c7f745350";
   const restaurantBloc = new RestaurantBloc(new RestaurantRepository());
-
   restaurantBloc.add(new RestaurantGetEvent(id));
 
   const editRestaurant = (id: string, restaurant: Partial<Restaurant>) => {
     restaurantBloc.add(new RestaurantSetEvent(id, restaurant));
   };
-
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <BlocBuilder
         bloc={restaurantBloc}
+        condition={(_, currentState) => {
+          if (currentState instanceof RestaurantSetState) {
+            navigation.goBack();
+            return false;
+          }
+          return true;
+        }}
         builder={(state: RestaurantState) => {
           if (state instanceof RestaurantErrorState) {
             return <Text>Error</Text>;

@@ -133,7 +133,6 @@ export const ChangeSchedule: FC<ChangeScheduleProps> = ({
   const [hourEndEvening, setHourEndEvening] = useState("00");
   const [closed, setClosed] = useState(false);
   const [fullTime, setFullTime] = useState(false);
-  const { navigate } = useNavigation();
   return (
     <ScrollView style={styles.container}>
       <ScheduleTimePicker
@@ -170,7 +169,6 @@ export const ChangeSchedule: FC<ChangeScheduleProps> = ({
               oldOpeningTime: restaurant.openingTime,
             }),
           });
-          navigate("mySchedule");
         }}
       >
         <View style={styles.button}>
