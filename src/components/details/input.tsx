@@ -38,7 +38,6 @@ export const Input: FC<RestaurantTypeProps> = ({
         onChangeText={(text) => setData(text)}
         value={data}
         defaultValue={data}
-        clearButtonMode="while-editing"
         style={styles.input}
       />
     </View>

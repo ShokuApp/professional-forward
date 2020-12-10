@@ -10,6 +10,14 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderWidth: 2,
   },
+  closedContainer: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    borderColor: "black",
+    borderRadius: 5,
+    borderWidth: 2,
+  },
   input: {
     width: 40,
     paddingVertical: 5,
@@ -25,11 +33,16 @@ const styles = StyleSheet.create({
     color: "#2196F3",
     fontSize: 24,
   },
+  closedText: {
+    color: "#9A9A9A",
+    fontSize: 24,
+  },
 });
 
 type Props = {
   onHoursChange: (hours: string) => void;
   onMinutesChange: (minutes: string) => void;
+  closed: boolean;
 };
 
 export const TimePicker: FC<Props> = (props) => {
@@ -68,12 +81,17 @@ export const TimePicker: FC<Props> = (props) => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={props.closed ? styles.closedContainer : styles.container}>
       <TextInput
         keyboardType={"number-pad"}
-        style={[styles.input, styles.hourInput, styles.text]}
-        selectionColor={"#2196F3"}
+        style={[
+          styles.input,
+          styles.hourInput,
+          props.closed ? styles.closedText : styles.text,
+        ]}
+        selectionColor={props.closed ? "#9A9A9A" : "#2196F3"}
         value={hours}
+        editable={props.closed ? false : true}
         onChangeText={(text) => {
           const newHours = onChange(text, setHours, 24);
 
@@ -85,13 +103,18 @@ export const TimePicker: FC<Props> = (props) => {
           props.onHoursChange(newHours);
         }}
       />
-      <Text style={styles.text}>:</Text>
+      <Text style={props.closed ? styles.closedText : styles.text}>:</Text>
       <TextInput
         ref={minuteRef}
         keyboardType={"number-pad"}
-        style={[styles.input, styles.minuteInput, styles.text]}
-        selectionColor={"#2196F3"}
+        style={[
+          styles.input,
+          styles.minuteInput,
+          props.closed ? styles.closedText : styles.text,
+        ]}
+        selectionColor={props.closed ? "#9A9A9A" : "#2196F3"}
         value={minutes}
+        editable={props.closed ? false : true}
         onChangeText={(text) => {
           const newMinutes = onChange(text, setMinutes, 60);
 

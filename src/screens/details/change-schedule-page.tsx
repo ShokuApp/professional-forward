@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import {
   RestaurantBloc,
   RestaurantGetEvent,
@@ -8,13 +8,14 @@ import {
   RestaurantErrorState,
   RestaurantLoadingState,
   RestaurantInitialState,
+  RestaurantSetEvent,
+  RestaurantSetState,
 } from "../../blocs";
 import { RestaurantRepository } from "../../repositories";
 import { BlocBuilder } from "@felangel/react-bloc";
-import { Schedule } from "../../components/details/schedule/schedule";
-import { useIsFocused } from "@react-navigation/native";
-import "react-native-get-random-values";
-import { v4 as uuidv4 } from "uuid";
+import { Restaurant } from "../../models/restaurant";
+import { ChangeSchedule } from "../../components/details/schedule/change-schedule";
+import { useNavigation } from "@react-navigation/native";
 
 const styles = StyleSheet.create({
   container: {
@@ -24,16 +25,26 @@ const styles = StyleSheet.create({
   },
 });
 
-const SchedulePage: FC = () => {
+const ChangeSchedulePage: FC = () => {
   const id = "999db654-b612-4ddd-a6de-1b1c7f745350";
   const restaurantBloc = new RestaurantBloc(new RestaurantRepository());
-  useIsFocused();
   restaurantBloc.add(new RestaurantGetEvent(id));
+
+  const editRestaurant = (id: string, restaurant: Partial<Restaurant>) => {
+    restaurantBloc.add(new RestaurantSetEvent(id, restaurant));
+  };
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <BlocBuilder
-        key={uuidv4()}
         bloc={restaurantBloc}
+        condition={(_, currentState) => {
+          if (currentState instanceof RestaurantSetState) {
+            navigation.goBack();
+            return false;
+          }
+          return true;
+        }}
         builder={(state: RestaurantState) => {
           if (state instanceof RestaurantErrorState) {
             return <Text>Error</Text>;
@@ -45,8 +56,9 @@ const SchedulePage: FC = () => {
             return <Text>Loading</Text>;
           }
           return (
-            <Schedule
-              openingTime={(state as RestaurantGetState).restaurant.openingTime}
+            <ChangeSchedule
+              callback={editRestaurant}
+              restaurant={(state as RestaurantGetState).restaurant}
             />
           );
         }}
@@ -55,4 +67,4 @@ const SchedulePage: FC = () => {
   );
 };
 
-export default SchedulePage;
+export default ChangeSchedulePage;

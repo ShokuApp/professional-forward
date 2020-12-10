@@ -15,7 +15,8 @@ import AddIngredients from "./plates/add-ingredients";
 import AddSauces from "./plates/add-sauces";
 import AddCardPlate from "./card/card-add-plate";
 import SchedulePage from "./details/schedule-page";
-import { ChangeScheduleIcon } from "./details/change-schedule-icon";
+import { ChangeScheduleIcon } from "../components/details/schedule/change-schedule-icon";
+import ChangeSchedulePage from "./details/change-schedule-page";
 
 const styles = StyleSheet.create({
   container: {
@@ -135,6 +136,21 @@ const Home: FC = () => {
               />
             ),
             headerRight: () => <ChangeScheduleIcon />,
+          }}
+        />
+        <Stack.Screen
+          name="changeMySchedule"
+          component={ChangeSchedulePage}
+          options={{
+            title: "Mes horaires",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
           }}
         />
         <Stack.Screen
