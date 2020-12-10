@@ -13,6 +13,7 @@ import AddPlate from "./plates/add-plate";
 import ModifyPlate from "./plates/modify-plate";
 import AddIngredients from "./plates/add-ingredients";
 import AddSauces from "./plates/add-sauces";
+import AddCardPlate from "./card/card-add-plate";
 import SchedulePage from "./details/schedule-page";
 import { ChangeScheduleIcon } from "./details/change-schedule-icon";
 
@@ -240,6 +241,21 @@ const Home: FC = () => {
               />
             ),
             headerRight: () => <AddPlateIcon />,
+          }}
+        />
+        <Stack.Screen
+          name="AddCardPlatePage"
+          component={AddCardPlate}
+          options={{
+            title: "Ajouter un plat",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
           }}
         />
       </Stack.Navigator>
