@@ -73,7 +73,7 @@ export const Details: FC<DetailsProps> = ({
         <Input
           data={address}
           setData={setAddress}
-          label={"Addresse :"}
+          label={"Adresse :"}
           keyboardCategory={"default"}
         />
         <Input
