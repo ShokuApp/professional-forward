@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import {
   CardBloc,
-  CardListEvent,
   CardSetEvent,
   CardSetState,
   DishBloc,

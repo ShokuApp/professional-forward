@@ -8,7 +8,6 @@ import {
 } from "react-native";
 import React, { FC, useEffect, useState } from "react";
 import { Card, Dish } from "../../../models";
-import { useNavigation } from "@react-navigation/native";
 import { Button } from "../../common/button";
 import { AddCardPlatesScreenRouteProps } from "../../../navigator/navigator-card-add-plate";
 import { CardAddPlateToAdd } from "./card-add-plate-preview";

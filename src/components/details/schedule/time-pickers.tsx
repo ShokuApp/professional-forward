@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import { ChooseTimePicker } from "./choose-time-picker";
 
 type TimePickersProps = {

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import CardCategory, {
   CardCategoryProps,
@@ -8,14 +8,13 @@ import CardMenuCategory from "../components/card-page/card-menu-category";
 import { BlocBuilder } from "@felangel/react-bloc";
 import {
   CardBloc,
+  CardErrorState,
   CardGetEvent,
   CardGetState,
-  CardState,
-  CardErrorState,
-  CardLoadingState,
   CardInitialState,
+  CardLoadingState,
   CardSetEvent,
-  CardSetState,
+  CardState,
 } from "../blocs";
 import { CardRepository } from "../repositories";
 import { useIsFocused } from "@react-navigation/native";

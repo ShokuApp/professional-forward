@@ -42,11 +42,6 @@ type TableComponentProps = {
   allergens: Pictogram[];
 };
 
-type imageMapProps = {
-  label: string;
-  image: ImageSourcePropType;
-};
-
 export const TableComponent: FC<TableComponentProps> = ({
   card,
   allergens,

@@ -1,5 +1,5 @@
 import { RouteProp } from "@react-navigation/native";
-import { Card } from "../models/card";
+import { Card } from "../models";
 
 type RootStackParamList = {
   AddCardPlatePage: {

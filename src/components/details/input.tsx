@@ -32,7 +32,7 @@ export const Input: FC<RestaurantTypeProps> = ({
 }: RestaurantTypeProps) => {
   return (
     <View style={styles.container}>
-      <CategoryTitle label={label}></CategoryTitle>
+      <CategoryTitle label={label} />
       <TextInput
         keyboardType={keyboardCategory}
         onChangeText={(text) => setData(text)}

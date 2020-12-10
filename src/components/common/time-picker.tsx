@@ -91,7 +91,7 @@ export const TimePicker: FC<Props> = (props) => {
         ]}
         selectionColor={props.closed ? "#9A9A9A" : "#2196F3"}
         value={hours}
-        editable={props.closed ? false : true}
+        editable={!props.closed}
         onChangeText={(text) => {
           const newHours = onChange(text, setHours, 24);
 
@@ -114,7 +114,7 @@ export const TimePicker: FC<Props> = (props) => {
         ]}
         selectionColor={props.closed ? "#9A9A9A" : "#2196F3"}
         value={minutes}
-        editable={props.closed ? false : true}
+        editable={!props.closed}
         onChangeText={(text) => {
           const newMinutes = onChange(text, setMinutes, 60);
 

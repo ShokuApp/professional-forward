@@ -7,7 +7,7 @@ import {
   View,
 } from "react-native";
 import { Banner } from "./banner";
-import { Restaurant } from "../../models/restaurant";
+import { Restaurant } from "../../models";
 import { Input } from "./input";
 import { ScheduleButton } from "./schedule/schedule-button";
 

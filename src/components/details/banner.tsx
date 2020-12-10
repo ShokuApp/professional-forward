@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { StyleSheet, View, Image, Text } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
 
 const styles = StyleSheet.create({
   container: {

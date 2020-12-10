@@ -13,7 +13,7 @@ import {
 } from "../../blocs";
 import { RestaurantRepository } from "../../repositories";
 import { BlocBuilder } from "@felangel/react-bloc";
-import { Restaurant } from "../../models/restaurant";
+import { Restaurant } from "../../models";
 import { ChangeSchedule } from "../../components/details/schedule/change-schedule";
 import { useNavigation } from "@react-navigation/native";
 

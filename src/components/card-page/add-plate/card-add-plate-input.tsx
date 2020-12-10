@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Autocomplete from "react-native-autocomplete-input";
-import { Dish } from "../../../models/dish";
+import { Dish } from "../../../models";
 
 const styles = StyleSheet.create({
   container: {

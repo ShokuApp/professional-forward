@@ -1,8 +1,7 @@
 import React, { FC } from "react";
-import { StyleSheet, TouchableOpacity, Text } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import { Icon } from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
-import SchedulePage from "../../../screens/details/schedule-page";
 
 const styles = StyleSheet.create({
   container: {

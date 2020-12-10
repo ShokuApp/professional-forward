@@ -1,8 +1,8 @@
-import React, { FC, SetStateAction, Dispatch } from "react";
-import { View, StyleSheet, Text, Alert } from "react-native";
+import React, { Dispatch, FC, SetStateAction } from "react";
+import { StyleSheet, View } from "react-native";
 import { CategoryTitle } from "../../common/category-title";
 import { AddSauceButton } from "./add-sauce-button";
-import { Sauce } from "../../../models/sauce";
+import { Sauce } from "../../../models";
 import { SauceItem } from "./sauce-item";
 
 const styles = StyleSheet.create({
