@@ -85,7 +85,7 @@ export const PlateIngredientsForm: FC<Props> = ({
       </ScrollView>
       <View style={styles.button}>
         <Button
-          label="Créer"
+          label="Ajouter"
           onPress={() => {
             route.params.onGoBack(ingredientsToAdd);
             navigation.goBack();

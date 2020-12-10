@@ -146,7 +146,7 @@ export const ModifyPlateForm: FC<ModifyPlateFormProps> = ({
             }
           }}
         >
-          <Text style={styles.textButton}>Créer</Text>
+          <Text style={styles.textButton}>Modifier</Text>
         </TouchableOpacity>
       </ScrollView>
     </KeyboardAvoidingView>
