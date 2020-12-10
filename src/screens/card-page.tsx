@@ -62,8 +62,7 @@ const CardPage: FC = () => {
   cardBloc.add(new CardGetEvent(id));
 
   const deleteDish = (card: Card, dishId: string) => {
-    const newCard = card;
-    newCard.dishes = newCard.dishes.filter((dish) => dish.id !== dishId);
+    card.dishes = card.dishes.filter((dish) => dish.id !== dishId);
     cardBloc.add(new CardSetEvent(card.id, card));
   };
 
