@@ -5,7 +5,7 @@ import { DayPickerItem } from "./day-picker-item";
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 40,
+    paddingTop: 15,
     display: "flex",
     flexDirection: "column",
     paddingHorizontal: 10,

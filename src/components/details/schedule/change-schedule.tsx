@@ -1,8 +1,11 @@
 import React, { FC, useState } from "react";
 import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
-import { Restaurant } from "../../../models/restaurant";
-import { TimePicker } from "../../common/time-picker";
+import { Restaurant } from "../../../models";
 import { DayPickers } from "./day-pickers";
+import { ScheduleTimePicker } from "./schedule-time-picker";
+import { TimeRange } from "../../../models";
+import { useNavigation } from "@react-navigation/native";
+
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
@@ -32,6 +35,66 @@ type ChangeScheduleProps = {
   callback: (id: string, restaurant: Partial<Restaurant>) => void;
 };
 
+type newOpeningTime = {
+  days: boolean[];
+  minStartMidDay: string;
+  minEndMidDay: string;
+  hourStartMidDay: string;
+  hourEndMidDay: string;
+  minStartEvening: string;
+  minEndEvening: string;
+  hourStartEvening: string;
+  hourEndEvening: string;
+  closed: boolean;
+  fullTime: boolean;
+  oldOpeningTime: TimeRange[][];
+};
+
+const changeOpeningTime: (newOpeningTime: newOpeningTime) => TimeRange[][] = ({
+  days,
+  minStartMidDay,
+  minEndMidDay,
+  hourStartMidDay,
+  hourEndMidDay,
+  minStartEvening,
+  minEndEvening,
+  hourStartEvening,
+  hourEndEvening,
+  closed,
+  fullTime,
+  oldOpeningTime,
+}: newOpeningTime) => {
+  const openingTime: TimeRange[][] = [];
+  for (const idx in days) {
+    if (!days[idx]) {
+      openingTime.push(oldOpeningTime[idx]);
+    } else {
+      const tmp: TimeRange[] = [];
+      if (closed) {
+        openingTime.push(tmp);
+      } else {
+        if (fullTime) {
+          tmp.push({
+            from: hourStartMidDay + ":" + minStartMidDay,
+            to: hourEndMidDay + ":" + minEndMidDay,
+          });
+        } else {
+          tmp.push({
+            from: hourStartMidDay + ":" + minStartMidDay,
+            to: hourEndMidDay + ":" + minEndMidDay,
+          });
+          tmp.push({
+            from: hourStartEvening + ":" + minStartEvening,
+            to: hourEndEvening + ":" + minEndEvening,
+          });
+        }
+        openingTime.push(tmp);
+      }
+    }
+  }
+  return openingTime;
+};
+
 export const ChangeSchedule: FC<ChangeScheduleProps> = ({
   restaurant,
   callback,
@@ -54,16 +117,55 @@ export const ChangeSchedule: FC<ChangeScheduleProps> = ({
     "Samedi",
     "Dimanche",
   ];
-
+  const [minStartMidDay, setMinStartMidDay] = useState("00");
+  const [minEndMidDay, setMinEndMidDay] = useState("00");
+  const [minStartEvening, setMinStartEvening] = useState("00");
+  const [minEndEvening, setMinEndEvening] = useState("00");
+  const [hourStartMidDay, setHourStartMidDay] = useState("00");
+  const [hourEndMidDay, setHourEndMidDay] = useState("00");
+  const [hourStartEvening, setHourStartEvening] = useState("00");
+  const [hourEndEvening, setHourEndEvening] = useState("00");
+  const [closed, setClosed] = useState(false);
+  const [fullTime, setFullTime] = useState(false);
+  const { navigate } = useNavigation();
   return (
     <View style={styles.container}>
+      <ScheduleTimePicker
+        setMinStartMidDay={setMinStartMidDay}
+        setMinEndMidDay={setMinEndMidDay}
+        setMinStartEvening={setMinStartEvening}
+        setMinEndEvening={setMinEndEvening}
+        setHourStartMidDay={setHourStartMidDay}
+        setHourEndMidDay={setHourEndMidDay}
+        setHourStartEvening={setHourStartEvening}
+        setHourEndEvening={setHourEndEvening}
+        closed={closed}
+        setClosed={setClosed}
+        fullTime={fullTime}
+        setFullTime={setFullTime}
+      />
       <DayPickers days={days} setDays={setDays} date={date} />
       <TouchableOpacity
         style={styles.buttonContainer}
         onPress={() => {
+          restaurant.openingTime;
           callback(restaurant.id, {
-            name: "Oui",
+            openingTime: changeOpeningTime({
+              days,
+              minStartMidDay,
+              minEndMidDay,
+              minStartEvening,
+              minEndEvening,
+              hourStartMidDay,
+              hourEndMidDay,
+              hourStartEvening,
+              hourEndEvening,
+              closed,
+              fullTime,
+              oldOpeningTime: restaurant.openingTime,
+            }),
           });
+          navigate("mySchedule");
         }}
       >
         <View style={styles.button}>
