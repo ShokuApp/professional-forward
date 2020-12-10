@@ -14,9 +14,14 @@ import {
   CardErrorState,
   CardLoadingState,
   CardInitialState,
+  CardSetEvent,
+  CardSetState,
 } from "../blocs";
 import { CardRepository } from "../repositories";
-import {useIsFocused} from "@react-navigation/native";
+import { useIsFocused } from "@react-navigation/native";
+import { Card } from "../models";
+import "react-native-get-random-values";
+import { v4 as uuidv4 } from "uuid";
 
 const styles = StyleSheet.create({
   container: {
@@ -56,10 +61,17 @@ const CardPage: FC = () => {
 
   cardBloc.add(new CardGetEvent(id));
 
+  const deleteDish = (card: Card, dishId: string) => {
+    const newCard = card;
+    newCard.dishes = newCard.dishes.filter((dish) => dish.id !== dishId);
+    cardBloc.add(new CardSetEvent(card.id, card));
+  };
+
   return (
     <ScrollView style={styles.container}>
       <BlocBuilder
         bloc={cardBloc}
+        key={uuidv4()}
         builder={(state: CardState) => {
           if (state instanceof CardErrorState) {
             return <Text>Error</Text>;
@@ -79,7 +91,7 @@ const CardPage: FC = () => {
                     key={cardCategory.title}
                   >
                     <CardCategory
-                      cardBloc={cardBloc}
+                      callback={deleteDish}
                       props={cardCategory}
                       card={(state as CardGetState).card}
                     />

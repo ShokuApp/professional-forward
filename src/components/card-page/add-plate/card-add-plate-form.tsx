@@ -55,7 +55,6 @@ export const AddCardPlatesForm: FC<Props> = ({
   callback,
 }) => {
   const [platesToAdd, setPlatesToAdd] = useState<Dish[]>([]);
-  const navigation = useNavigation();
   const addPlates = (item: Dish) => {
     setPlatesToAdd([...platesToAdd, item]);
   };

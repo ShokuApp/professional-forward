@@ -21,17 +21,12 @@ export type CardCategoryProps = {
 };
 
 type Props = {
-  cardBloc: CardBloc;
+  callback: (card: Card, dishId: string) => void;
   props: CardCategoryProps;
   card: Card;
 };
 
-const CardCategory: FC<Props> = ({ cardBloc, props, card }: Props) => {
-  const deleteDish = (dishId: string) => {
-    card.dishes = card.dishes.filter((dish) => dish.id !== dishId);
-    cardBloc.add(new CardSetEvent(card.id, card));
-  };
-
+const CardCategory: FC<Props> = ({ callback, props, card }: Props) => {
   const alertConfirmation = (dish: Dish) => {
     Alert.alert(
       dish.name,
@@ -39,7 +34,9 @@ const CardCategory: FC<Props> = ({ cardBloc, props, card }: Props) => {
       [
         {
           text: "Supprimer",
-          onPress: () => deleteDish(dish.id),
+          onPress: () => {
+            callback(card, dish.id);
+          },
         },
         {
           text: "Annuler",
