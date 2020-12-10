@@ -8,9 +8,16 @@ import PlatePage from "./plates/plates";
 import CardPage from "./card-page";
 import AllergenNotebookPage from "./allergen-notebook";
 import { Icon } from "react-native-elements";
+import RestaurantPage from "./details/restaurant-page";
 import AddPlate from "./plates/add-plate";
+import ModifyPlate from "./plates/modify-plate";
 import AddIngredients from "./plates/add-ingredients";
 import AddSauces from "./plates/add-sauces";
+import AddCardPlate from "./card/card-add-plate";
+import SchedulePage from "./details/schedule-page";
+import { ChangeScheduleIcon } from "../components/details/schedule/change-schedule-icon";
+import ChangeSchedulePage from "./details/change-schedule-page";
+import { ChangeScheduleDayPage } from "./details/change-schedule-day";
 
 const styles = StyleSheet.create({
   container: {
@@ -102,6 +109,67 @@ const Home: FC = () => {
           }}
         />
         <Stack.Screen
+          name="myRestaurant"
+          component={RestaurantPage}
+          options={{
+            title: "Mon restaurant",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="mySchedule"
+          component={SchedulePage}
+          options={{
+            title: "Mes horaires",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
+            headerRight: () => <ChangeScheduleIcon />,
+          }}
+        />
+        <Stack.Screen
+          name="ChangeScheduleDay"
+          component={ChangeScheduleDayPage}
+          options={{
+            title: "Mes horaires",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="changeMySchedule"
+          component={ChangeSchedulePage}
+          options={{
+            title: "Mes horaires",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
           name="CardPage"
           component={CardPage}
           options={{
@@ -136,6 +204,21 @@ const Home: FC = () => {
           component={AddPlate}
           options={{
             title: "Nouveau plat",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="ModifyPlatePage"
+          component={ModifyPlate}
+          options={{
+            title: "Modifier un plat",
             headerBackImage: () => (
               <Icon
                 type="antdesign"
@@ -190,6 +273,21 @@ const Home: FC = () => {
               />
             ),
             headerRight: () => <AddPlateIcon />,
+          }}
+        />
+        <Stack.Screen
+          name="AddCardPlatePage"
+          component={AddCardPlate}
+          options={{
+            title: "Ajouter un plat",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
           }}
         />
       </Stack.Navigator>

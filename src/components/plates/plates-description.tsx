@@ -3,6 +3,7 @@ import { Dimensions, StyleSheet, Text, View } from "react-native";
 import { Icon } from "react-native-elements";
 import PlateComposition from "./plates-composition";
 import { Dish } from "../../models";
+import { useNavigation } from "@react-navigation/native";
 
 const { width } = Dimensions.get("window");
 
@@ -56,14 +57,23 @@ type Props = {
 };
 
 const PlateDescription: FC<Props> = ({ dish }: Props) => {
+  const { navigate } = useNavigation();
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <View></View>
         <View style={styles.titleContainer}>
           <Text style={styles.label}>{dish.name}</Text>
         </View>
-        <Icon type="simple-line-icon" name="pencil" size={16} color="white" />
+        <Icon
+          type="simple-line-icon"
+          name="pencil"
+          size={16}
+          color="white"
+          onPress={() => {
+            navigate("ModifyPlatePage", { dish });
+          }}
+        />
       </View>
       <View style={styles.composition}>
         <PlateComposition label={"Ingrédients :"} list={dish.ingredients} />

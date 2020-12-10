@@ -1,11 +1,5 @@
 import React, { FC } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  ImageSourcePropType,
-} from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import { Pictogram } from "../../models";
 
 const styles = StyleSheet.create({

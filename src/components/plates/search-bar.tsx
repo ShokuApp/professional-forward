@@ -16,6 +16,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 5,
   },
+  containerLeft: {
+    display: "flex",
+    flexDirection: "row",
+  },
   searchText: {
     marginLeft: 5,
     color: "#767680",
@@ -26,8 +30,10 @@ const styles = StyleSheet.create({
 const SearchBar: FC = () => {
   return (
     <View style={styles.container}>
-      <Icon type="evil-icon" name="search" size={24} color="#767680" />
-      <Text style={styles.searchText}>Rechercher</Text>
+      <View style={styles.containerLeft}>
+        <Icon type="evil-icon" name="search" size={24} color="#767680" />
+        <Text style={styles.searchText}>Rechercher</Text>
+      </View>
     </View>
   );
 };

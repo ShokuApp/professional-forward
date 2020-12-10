@@ -1,29 +1,24 @@
 import React, { FC, useState } from "react";
 import {
   SafeAreaView,
-  View,
   StyleSheet,
   Text,
   TouchableOpacity,
+  View,
 } from "react-native";
 import { TableComponent } from "../components/allergen-notebook/table";
 import { BlocBuilder } from "@felangel/react-bloc";
 import {
   CardBloc,
+  CardErrorState,
   CardGetEvent,
   CardGetState,
   CardState,
-  CardErrorState,
-  CardLoadingState,
-  CardInitialState,
   PictogramBloc,
-  PictogramListEvent,
-  PictogramState,
   PictogramErrorState,
-  PictogramInitialState,
-  PictogramLoadingState,
+  PictogramListEvent,
   PictogramListState,
-  CardListState,
+  PictogramState,
 } from "../blocs";
 import { CardRepository, PictogramRepository } from "../repositories";
 import { Card } from "../models";

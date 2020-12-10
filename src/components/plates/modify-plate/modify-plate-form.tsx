@@ -6,8 +6,6 @@ import {
   Text,
   TouchableOpacity,
 } from "react-native";
-import "react-native-get-random-values";
-import { v4 as uuidv4 } from "uuid";
 import { Dish } from "../../../models";
 import { Ingredient } from "../../../models";
 import { Sauce } from "../../../models";
@@ -46,7 +44,8 @@ const styles = StyleSheet.create({
   },
 });
 
-type newPlateParam = {
+type updatePlateParam = {
+  uuid: string;
   plateName: string;
   ingredients: Ingredient[];
   sauces: Sauce[];
@@ -55,19 +54,20 @@ type newPlateParam = {
   isAdaptable: boolean;
 };
 
-const addNewPlate: (param: newPlateParam) => Dish | undefined = ({
+const updatePlate: (param: updatePlateParam) => Dish | undefined = ({
+  uuid,
   plateName,
   ingredients,
   sauces,
   price,
   plateType,
   isAdaptable,
-}: newPlateParam) => {
+}: updatePlateParam) => {
   if (plateName && ingredients.length !== 0 && price && plateType) {
     const priceVal = Number(price.replace(/,/g, "."));
     if (!Number.isNaN(priceVal) || priceVal !== 0) {
       const newPlate: Dish = {
-        id: uuidv4(),
+        id: uuid,
         name: plateName,
         type: plateType,
         description: "",
@@ -82,17 +82,21 @@ const addNewPlate: (param: newPlateParam) => Dish | undefined = ({
   return undefined;
 };
 
-type PlateFormProps = {
+type ModifyPlateFormProps = {
   callback: (dish: Dish) => void;
+  dish: Dish;
 };
 
-export const PlateForm: FC<PlateFormProps> = ({ callback }: PlateFormProps) => {
-  const [plateName, setPlateName] = useState("");
-  const [ingredients, setIngredients] = useState<Ingredient[]>([]);
-  const [sauces, setSauces] = useState<Sauce[]>([]);
-  const [price, setPrice] = useState("");
-  const [plateType, setPlateType] = useState("plate");
-  const [isAdaptable, setAdaptable] = useState(false);
+export const ModifyPlateForm: FC<ModifyPlateFormProps> = ({
+  callback,
+  dish,
+}) => {
+  const [plateName, setPlateName] = useState(dish.name);
+  const [ingredients, setIngredients] = useState(dish.ingredients);
+  const [sauces, setSauces] = useState(dish.sauces);
+  const [price, setPrice] = useState(dish.price.toString());
+  const [plateType, setPlateType] = useState(dish.type);
+  const [isAdaptable, setAdaptable] = useState(dish.isAdaptable);
 
   const refreshIngredients: (newIngredientsTab: Ingredient[]) => void = (
     newIngredientsTab
@@ -128,7 +132,8 @@ export const PlateForm: FC<PlateFormProps> = ({ callback }: PlateFormProps) => {
         <TouchableOpacity
           style={styles.buttonContainer}
           onPress={() => {
-            const newDish = addNewPlate({
+            const newDish = updatePlate({
+              uuid: dish.id,
               plateName,
               ingredients,
               sauces,
@@ -141,7 +146,7 @@ export const PlateForm: FC<PlateFormProps> = ({ callback }: PlateFormProps) => {
             }
           }}
         >
-          <Text style={styles.textButton}>Créer</Text>
+          <Text style={styles.textButton}>Modifier</Text>
         </TouchableOpacity>
       </ScrollView>
     </KeyboardAvoidingView>
