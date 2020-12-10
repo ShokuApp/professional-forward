@@ -17,6 +17,7 @@ import AddCardPlate from "./card/card-add-plate";
 import SchedulePage from "./details/schedule-page";
 import { ChangeScheduleIcon } from "../components/details/schedule/change-schedule-icon";
 import ChangeSchedulePage from "./details/change-schedule-page";
+import { ChangeScheduleDayPage } from "./details/change-schedule-day";
 
 const styles = StyleSheet.create({
   container: {
@@ -136,6 +137,21 @@ const Home: FC = () => {
               />
             ),
             headerRight: () => <ChangeScheduleIcon />,
+          }}
+        />
+        <Stack.Screen
+          name="ChangeScheduleDay"
+          component={ChangeScheduleDayPage}
+          options={{
+            title: "Mes horaires",
+            headerBackImage: () => (
+              <Icon
+                type="antdesign"
+                name="arrowleft"
+                size={25}
+                style={styles.arrowLeft}
+              />
+            ),
           }}
         />
         <Stack.Screen
