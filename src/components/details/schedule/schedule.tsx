@@ -19,7 +19,14 @@ export const Schedule: FC<ScheduleProps> = ({ openingTime }: ScheduleProps) => {
   return (
     <View style={styles.container}>
       {openingTime.map((time, id) => {
-        return <ScheduleItem openingTime={time} key={id} id={id} />;
+        return (
+          <ScheduleItem
+            openingTime={time}
+            key={id}
+            id={id}
+            schedule={openingTime}
+          />
+        );
       })}
     </View>
   );

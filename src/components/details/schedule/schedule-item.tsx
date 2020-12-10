@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { FC } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { TimeRange } from "../../../models";
@@ -51,11 +52,13 @@ const TimeRanges: FC<TimeRangesProps> = ({ openingTime }: TimeRangesProps) => {
 type ScheduleItemProps = {
   openingTime: TimeRange[];
   id: number;
+  schedule: TimeRange[][];
 };
 
 export const ScheduleItem: FC<ScheduleItemProps> = ({
   openingTime,
   id,
+  schedule,
 }: ScheduleItemProps) => {
   const date = [
     "Lundi",
@@ -66,10 +69,13 @@ export const ScheduleItem: FC<ScheduleItemProps> = ({
     "Samedi",
     "Dimanche",
   ];
+  const { navigate } = useNavigation();
   return (
     <TouchableOpacity
       style={styles.container}
-      onPress={() => alert("Rediriger vers les horaires de " + date[id])}
+      onPress={() =>
+        navigate("ChangeScheduleDay", { day: id, openingTime, schedule })
+      }
     >
       <Text style={styles.date}>{date[id]}</Text>
       {openingTime[0] ? (
