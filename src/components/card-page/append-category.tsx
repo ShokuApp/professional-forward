@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { TouchableOpacity, StyleSheet, Text } from "react-native";
+import { Alert, TouchableOpacity, StyleSheet, Text } from "react-native";
 import { Icon } from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
 import { Card } from "../../models";
@@ -42,7 +42,9 @@ const AppendCategory: FC<AppendCategoryProps> = ({
     <TouchableOpacity
       style={styles.categoryAppend}
       onPress={() =>
-        type ? navigateToAddCardPlates(type, card) : alert("Todo")
+        type
+          ? navigateToAddCardPlates(type, card)
+          : Alert.alert("", "Cette fonctionnalité n'est pas encore disponible.")
       }
     >
       <Icon type="antdesign" name="plus" size={20} color="#2196F3" />
