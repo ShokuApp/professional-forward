@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { Alert, View, StyleSheet, Text } from "react-native";
 import { Menu } from "../../models";
 import { CategoryText } from "../common/category-text";
 import { Icon } from "react-native-elements";
@@ -32,6 +32,12 @@ const CardMenu: FC<MenuProps> = ({ menu }: MenuProps) => {
             name="pencil"
             size={15}
             color="#C6C6C8"
+            onPress={() =>
+              Alert.alert(
+                "",
+                "Cette fonctionnalité n'est pas encore disponible."
+              )
+            }
           />
         }
       />
