@@ -16,7 +16,7 @@ import { Details } from "../../components/details/details";
 import { Restaurant } from "../../models";
 
 const RestaurantPage: FC = () => {
-  const id = "999db654-b612-4ddd-a6de-1b1c7f745350";
+  const id = "a8ee1a54-0115-49ff-ae17-333cb060c7b8";
   const restaurantBloc = new RestaurantBloc(new RestaurantRepository());
 
   restaurantBloc.add(new RestaurantGetEvent(id));
