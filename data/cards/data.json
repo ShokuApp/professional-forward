@@ -379,5 +379,25 @@
             "6cd36b0d-a374-4ba0-aed2-3273dbf8cbc0",
             "d6c5bb1d-37fe-4078-8ac7-2ac8199df2bc"
         ]
+    },
+    {
+        "id": "6cffd2e5-e2f3-4690-9e5b-ca6b6e3ec9a5",
+        "name": "Card 21",
+        "dishes": [
+            "bcdda62f-75ae-41b9-a08a-cfb36093a59c",
+            "fdc442ad-41cc-4b96-be42-fcecfa9d4640",
+            "ed378895-baca-4673-8d18-0a30bf81dd74",
+            "b9c97ff0-98ad-4b80-8cb4-0ae1165cd534",
+            "3c3a12e4-1a0d-434a-bf4f-0b1deba4236f",
+            "083f3e79-90b6-4711-ac5d-a75768e8e889",
+            "7b7f15f3-6338-43b9-8f3e-2a1ee1b8b055",
+            "967d7555-859f-4102-a100-559faf352000",
+            "8185fdf5-3b2e-4295-b23a-5d00899d588a"
+        ],
+        "menus": [
+            "ff21520c-acde-48f1-9a2f-319012f11871",
+            "6cd36b0d-a374-4ba0-aed2-3273dbf8cbc0",
+            "66ba7216-369d-463e-8b5f-40396ac4a465"
+        ]
     }
 ]

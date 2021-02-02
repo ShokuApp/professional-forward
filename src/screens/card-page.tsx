@@ -54,7 +54,7 @@ const CARD_CATEGORY: CardCategoryProps[] = [
 ];
 
 const CardPage: FC = () => {
-  const id = "46087e3d-1943-4e57-9ced-2af2291e1f91";
+  const id = "6cffd2e5-e2f3-4690-9e5b-ca6b6e3ec9a5";
   const cardBloc = new CardBloc(new CardRepository());
   useIsFocused();
 
