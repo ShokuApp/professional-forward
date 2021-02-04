@@ -108,7 +108,7 @@ const AllergenFetcher: FC<AllergenFetcherProps> = ({
 };
 
 const DisplayAllergenNotebook: FC = () => {
-  const id = "6cffd2e5-e2f3-4690-9e5b-ca6b6e3ec9a5";
+  const id = "d5512655-33a4-4196-a7b3-e568b9cca9f3";
   const cardBloc = new CardBloc(new CardRepository());
 
   cardBloc.add(new CardGetEvent(id));
