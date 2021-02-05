@@ -43,7 +43,10 @@ const RestaurantButton: FC = () => {
     >
       <View style={{ flexDirection: "row", alignItems: "center" }}>
         <Image
-          source={require("../../../assets/images/Memphis.jpg")}
+          source={{
+            uri:
+              "https://unsplash.com/photos/yXnPoTkkY94/download?force=true&w=1920",
+          }}
           style={styles.imageContainer}
         />
         <View

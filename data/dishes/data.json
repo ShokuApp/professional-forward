@@ -312,5 +312,26 @@
         ],
         "sauces": [],
         "is_adaptable": "false"
+    },
+    {
+        "id": "bcdda62f-75ae-41b9-a08a-cfb36093a59c",
+        "name": "Entrecôte 450g, frites",
+        "type": "plate",
+        "description": "Une tendre et généreuse entrecôte de boeuf servie avec ses frites et une sauce au choix",
+        "price": "17",
+        "ingredients": [
+            "bcf92313-25c1-4b56-8911-82955e5006e7",
+            "0180d42d-a663-48a9-bd62-a6a8849d923c",
+            "cd002746-cf62-4be0-b934-f99c9bd8b5a9",
+            "3f2a3432-9c03-4ed8-a1e9-7ace655e2bf2",
+            "722c924c-da15-4d60-945a-a6731c619f0c"
+        ],
+        "sauces": [
+            "ba82e1a5-41b8-4053-8da4-29ce90314edd",
+            "7021643b-2791-432c-b145-c35de0b8b151",
+            "d2011a02-8220-4eb7-b9e9-fae9a5448ebf",
+            "4b7ae32a-90da-42d0-ab45-a25e30c0a96a"
+        ],
+        "is_adaptable": "false"
     }
 ]
